@@ -1,3 +1,4 @@
+from re import L
 import sys
 from timeit import Timer
 import requests
@@ -45,8 +46,6 @@ if os.path.exists('debug.log'):
 
 logging.basicConfig(filename='debug.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 #class SignalEmitter(QObject):
-#   race_data_loaded_signal = pyqtSignal(int, str, int, list)
-#  laps_fetched_signal = pyqtSignal(str, list, int)
 class ConfigManager:
     def __init__(self):
         self.config_file = 'config.ini'
@@ -85,6 +84,7 @@ class ConfigManager:
                     config.write(configfile)
 
                 print(f"Config file created with default settings at {self.config_file}.")
+                logging.info(f"Config file created with default settings at {self.config_file}.")
             else:
                 # Read the existing config file
                 config.read(self.config_file)
@@ -96,9 +96,11 @@ class ConfigManager:
                     config.write(configfile)
 
                 print(f"Config file at {self.config_file} updated with version {self.__version__}.")
+                logging.info(f"Config file at {self.config_file} updated with version {self.__version__}.")
         
         except (configparser.Error, IOError) as e:
             print(f"An error occurred while accessing the config file: {e}")
+            logging.info(f"An error occurred while accessing the config file: {e}")
             return None        
     
         
@@ -113,6 +115,7 @@ class ConfigManager:
         
         except (configparser.Error, IOError) as e:
             print(f"An error occurred while accessing the config file: {e}")
+            logging.info(f"An error occurred while accessing the config file: {e}")
             return None
 
     def get_metadata(self):
@@ -195,19 +198,12 @@ def create_database():
 #class DatabaseThread(threading.Thread):
 class DatabaseThread(QThread):
     race_data_loaded_signal = pyqtSignal(object, object, object)
-    laps_fetched_signal = pyqtSignal(str, list, int)
+    #laps_fetched_signal = pyqtSignal(str, list, int)
     load_race_on_start_signal = pyqtSignal(list, list)
     score_data_signal = pyqtSignal(object, object, object)
     load_sessionid_on_start_signal = pyqtSignal(object)
     def __init__(self, db_queue):
         super().__init__()
-        #QObject.__init__(self)  # Initialize QObject
-        #threading.Thread.__init__(self)  # Initialize threading.Thread
-        #self.conn = sqlite3.connect('RaceDB.db')
-        #self.cursor = self.conn.cursor()
-        #self.signals = SignalEmitter()  # Initialize SignalEmitter instance
-        #self.signals.moveToThread(self)  # Move signals to the same thread
-        #self.session_id_queue = queue.Queue()
         self.db_queue = db_queue
         self.running = True
 
@@ -220,63 +216,84 @@ class DatabaseThread(QThread):
             try:
                 operation, args = self.db_queue.get()
                 #print(f"Operation: {operation} Args: {args}")
+                logging.info(f"Operation: {operation} Args: {args}")
                 #print(f"Operation: {operation} ")
                 if operation == 'stop':
                     break
                 if operation == 'write_race':
                     print("DB write Race")
+                    logging.info("DB write Race")
                     self.write_race(*args)
                 elif operation == 'insert_lap_data':
                     self.insert_lap_data(*args)
                     #print("DB insert Lap Data")
+                    logging.info("DB insert Lap Data")
                 elif operation == 'finalize_race':
                     print("DB Finalize Race")
+                    logging.info("DB Finalize Race")
                     self.finalize_race(*args)
                 elif operation == 'delete_race':
                     print("DB Delete Race")
+                    logging.info("DB Delete Race")
                     self.delete_race(*args)
                 elif operation == 'get_race_id':
                     print ("DB Get Race ID")
+                    logging.info("DB Get Race ID")
                     self.get_race_id(*args)
                 elif operation == 'get_latest_race_id':
                     print ("DB Get latest Race ID")
+                    logging.info("DB Get latest Race ID")
                     self.get_latest_race_id(*args)                    
                 elif operation == 'get_session_id':
                     print ("DB Get Session_id")
+                    logging.info("DB Get Session_id")
                     #session_id = self.initialize_session_id(*args)
                     #self.session_id_queue.put(session_id)
                     self.get_session_id(*args)
                     
                     print ("Initialize Session_id succeeded")
+                    logging.info("Initialize Session_id succeeded")
                 elif operation == 'get_race_index':
                     print("DB Get Race Index")
+                    logging.info("DB Get Race Index")
                     self.get_race_index(*args)
                     print ("DB Get Race Index succeeded")
+                    logging.info("DB Get Race Index succeeded")
                 elif operation == 'load_selected_race':
                     print ("DB Load Selected Race")
+                    logging.info("DB Load Selected Race")
                     self.load_selected_race(*args)
                 elif operation == 'load_race_data_on_start':
                     print ("DB Load race data on start")
+                    logging.info("DB Load Race data on starT")
                     self.load_race_data_on_start(*args)
                 elif operation =='load_sessionid_on_start':
                     print ("DB Load Session ID on start")
+                    logging.info("DB Load Session ID on start")
                     self.load_sessionid_on_start(*args)
-                elif operation == 'fetch_recorded_laps':
-                    #print("Fetch Recorded laps")
-                    self.fetch_recorded_laps(*args)
+
                 elif operation == 'get_race_id_and_delete':
                     print ("DB Get Race ID and Delete")
+                    logging.info("DB Get Race ID and Delete")
                     self.get_race_id_and_delete(*args)
                 elif operation == 'get_score_data':
                     print("DB Get Score Data")
+                    logging.info("DB Get Score Data")
                     self.get_score_data(*args)
                 elif operation == ('get_number_of_rows'):
                     print("DB Get Number of Rows")
+                    logging.info("DB Get Number of Rows")
                     self.get_number_of_rows(*args)
+                '''
+                elif operation == 'fetch_recorded_laps':
+                    #print("Fetch Recorded laps")
+                    logging.info("Fetch Recorded laps")
+                    self.fetch_recorded_laps(*args)
+                '''
           
                 # Add more operations as needed
-            #except Exception as e:
-                #logging.error(f"Unpack failed:Operation: {operation} Message: {e}")
+            except Exception as e:
+                logging.error(f"DB Unpack failed:Operation: {operation} Message: {e}")
                 #print(f"Unpack failed:Operation: {operation} Message: {e}")
             finally:
                 self.db_queue.task_done()
@@ -284,9 +301,11 @@ class DatabaseThread(QThread):
         self.conn.close()
 
     def get_number_of_rows(self,race_id, callback=None):
+        logging.info("DB Def get number of rows entered")
         try:
             self.cursor.execute('SELECT COUNT(*) FROM laps WHERE RaceID = ?',(race_id,))
             rows = self.cursor.fetchone()[0]
+            logging.info(f"DB Rows in laps rows: {rows} where RaceID:{race_id}")
             if callback:
                 callback(rows)  # Pass the deleted race_id back to the main thread
             else:
@@ -299,9 +318,11 @@ class DatabaseThread(QThread):
                 callback(None)               
     
     def get_score_data(self,session_id):
-        print(f"get_score_data called with session_id: {session_id}")
+        print(f"DB get_score_data called with session_id: {session_id}")
+        logging.info(f"DB get_score_data called with session_id: {session_id}")
         try:
-            print("Executing race query for get score data ...")
+            print("DB Executing race query for get score data ...")
+            logging.info("DB Executing race query for get score data ...")
             self.cursor.execute('''
                 SELECT *
                 FROM Races
@@ -311,10 +332,14 @@ class DatabaseThread(QThread):
             
             race_table = self.cursor.fetchall()
             #print(f"Race table: {race_table}")
+            logging.info(f"DB Race table: {race_table} where session id: {session_id}")
             race_ids = [race[0] for race in race_table]  # This will give you a list of all race IDs
+            logging.info(f"DB List of all Race_ids: {race_ids}")
             # Check if race_ids is empty
             if not race_ids:
                 print(f"Race_ids fetched: {race_ids}")  # Debugging output
+                logging.info(f"DB check if race id's are empty Race_ids fetched: {race_ids}")
+                logging.info("DB No Race id's, emitting None")
                 self.score_data_signal.emit(None)
                 return
             query = '''
@@ -323,11 +348,12 @@ class DatabaseThread(QThread):
                 WHERE RaceID IN ({})
             '''.format(','.join('?' * len(race_ids)))
             self.cursor.execute(query, race_ids)
-            #self.cursor.execute(query, tuple(race_ids))
             laps = self.cursor.fetchall()
-            #print(f"Scores fetched: {scores}")  # Debugging output
+            #print(f"Scores fetched: {laps}")  # Debugging output
+            logging.info(f"DB Laps fetched: {laps} with {race_ids}")
             if not laps:
-                print("No scores found, emitting None.")
+                print("DB No scores found, emitting None.")
+                logging.info("DB No scores found, emitting None.")
                 self.score_data_signal.emit(None)
                 return
             query = '''
@@ -336,17 +362,20 @@ class DatabaseThread(QThread):
                 WHERE RaceID IN ({})
             '''.format(','.join('?' * len(race_ids)))
             self.cursor.execute(query, race_ids)
-            #self.cursor.execute(query, tuple(race_ids))  # Passing race_ids as a tuple
             participants = self.cursor.fetchall()
-            #print(f"Best Laps fetched: {best_laps_list}")  # Debugging output
+            #print(f"Best Laps fetched: {participants}")  # Debugging output
+            logging.info(f"DB Best Participants fetched: {participants} with {race_ids}")
             if not participants:
-                print("No best laps list found, emitting None.")
+                print("DB No participants found, emitting None.")
+                logging.info("DB No best laps list found, emitting None.")
                 self.score_data_signal.emit(None, None, None)
                 return
             if laps and race_table and participants:
-               print("Emitting score data signal")
+               print("DB Emitting score data signal")
+               logging.info("DB Emitting score data signal")
                self.score_data_signal.emit(race_table, participants,laps,)
             else:
+               logging.info("DB No laps, race_tables or participants found, emitting None")
                self.score_data_signal.emit(None, None, None)
                
         except Exception as e:
@@ -355,11 +384,14 @@ class DatabaseThread(QThread):
 
 
     def get_race_id_and_delete(self, race_index, callback):
+        logging.info("DB Def get Race ID and delete def entered")
         try:
             self.cursor.execute('SELECT RaceID FROM Races WHERE RaceIndex = ?', (race_index,))
             race = self.cursor.fetchone()
-            print(f"Raceid to delete: {race}")
+            print(f"DB Raceid to delete: {race}")
+            logging.info(f"DB Race_index{race_index} to delete: {race}")
             if race:
+                logging.info("DB race not empty continuing")
                 race_id = race[0]
                 self.cursor.execute('DELETE FROM Laps WHERE RaceID = ?', (race_id,))
                 self.cursor.execute('DELETE FROM Participants WHERE RaceID = ?', (race_id,))
@@ -367,9 +399,11 @@ class DatabaseThread(QThread):
                 self.conn.commit()
 
                 if callback:
+                    logging.info(f"DB Callback {race_id}")
                     callback(race_id)  # Pass the deleted race_id back to the main thread
             else:
                 if callback:
+                    logging.info("DB Callback None")
                     callback(None)  # No race found
 
         except Exception as e:
@@ -377,8 +411,7 @@ class DatabaseThread(QThread):
             if callback:
                 callback(None)
                 
-
-
+    '''
     def fetch_recorded_laps(self, participant_name, race_id, current_lap):
         #print("Goint into try")
         #try:
@@ -406,8 +439,9 @@ class DatabaseThread(QThread):
         except Exception as e:
             logging.error(f"Database operation failed: {e}")
             self.laps_fetched_signal.emit(None)  # Pass empty data on error
-
-    def load_race_data_on_start(self,callback=None):
+    '''
+    def load_race_data_on_start(self,callback=None):    
+        logging.info("DB Def load race data on start def entered")    
         try:
             self.cursor.execute('''
                 SELECT RaceID, RaceIndex, mTranslatedTrackVariation, mLapsInEvent, RaceDate
@@ -415,6 +449,7 @@ class DatabaseThread(QThread):
                 ORDER BY RaceID ASC
             ''')
             races = self.cursor.fetchall()
+            logging.info(f"DB Load race data on start all Races: {races}")
             
             self.cursor.execute('''
                 SELECT RaceID, mCarNames
@@ -422,17 +457,20 @@ class DatabaseThread(QThread):
                 ORDER BY RaceID ASC
             ''')
             participants = self.cursor.fetchall()
+            logging.info(f"DB Paticipants carNames and RaceID fetched: {participants}")
 
             # Emit the signal with the results in the main thread
             self.load_race_on_start_signal.emit(races,participants)
+            logging.info(f"DB Load race on start signal emitted")
 
         except Exception as e:
             logging.error(f"Database operation failed: {e}")
-            print(f"Load Race on start failed: {e}")
+            print(f"DB Load Race on start failed: {e}")
             if callback:
                 callback.emit([])  # Emit an empty list in case of error
     
     def load_sessionid_on_start(self):
+        logging.info("DB Def load session id on start def entered")
         try:
             self.cursor.execute('''
                 SELECT DISTINCT sessionID
@@ -440,20 +478,25 @@ class DatabaseThread(QThread):
                 ORDER BY RaceID ASC
             ''')
             sessionids = self.cursor.fetchall()
+            logging.info(f"DB Load session id on start sessionids: {sessionids} fetched from Races")
             sessionids = [sessionid[0] for sessionid in sessionids]
+            logging.info(f"DB Load session id on start, last session ID: {sessionids}")
             if sessionids:
                 #print(f"Session ID fetched: {sessionids}")
+                logging.info(f"DB Session ID valid, emitting signal")
                 self.load_sessionid_on_start_signal.emit(sessionids)
             # Emit the signal with the results in the main thread
             else:
-                print(f"Session ID not fetched: {sessionids}")
+                print(f"DB Session ID not fetched: {sessionids}")
+                logging.info(f"DB Session ID not fetched: {sessionids}, emitting empty list")
                 self.load_sessionid_on_start_signal.emit([])
         except Exception as e:
             logging.error(f"Database operation failed: {e}")
-            print(f"Load session id  on start failed: {e}")
+            print(f"DB Load session id  on start failed: {e}")
             self.load_sessionid_on_start_signal.emit([])
                 
     def load_selected_race(self, race_index, callback = None):
+        logging.info("DB Load selected race Def entered") 
         #print(f"Race Index:{race_index}")
         try:
             self.cursor.execute('''
@@ -462,10 +505,9 @@ class DatabaseThread(QThread):
                 WHERE RaceIndex = ?
             ''', (race_index,))
             race = self.cursor.fetchone()
-            
-
+            logging.info(f"DB Load selected race: {race} with race_index:{race_index}")
             if race:
-                
+                logging.info(f"DB Race valid, fetching participants and laps with raceID: {race[0]}")
                 self.cursor.execute('''
                     SELECT mName, mRacePosition, mFastestLapTimes, mLastLapTimes, mCarNames, flags
                     FROM Participants
@@ -473,6 +515,7 @@ class DatabaseThread(QThread):
                     ORDER BY mRacePosition ASC
                 ''', (race[0],))
                 participants = self.cursor.fetchall()
+                logging.info(f"DB Load selected race participants: {participants} fetched with raceID:{race[0]}")
                 
                 self.cursor.execute('''
                     SELECT LapID, RaceID, mName, LapNumber, LapTime
@@ -480,9 +523,11 @@ class DatabaseThread(QThread):
                     WHERE RaceID = ?
                 ''', (race[0],))
                 laps = self.cursor.fetchall()
+                logging.info(f"DB Load selected race laps: {laps}")
                                                 
                 # Call the callback with the fetched data
                 #print(f"Sending the signal back!") 
+                logging.info(f"DB Load selected race signal emitted")
                 self.race_data_loaded_signal.emit(race, participants, laps)
 
         except Exception as e:
@@ -493,49 +538,60 @@ class DatabaseThread(QThread):
 
             
     def get_race_index(self, callback=None):
+        logging.info("DB Def get Race Index entered")
         try:
             #print("Trying to get race_index and race_id from DB")
         
             # Fetch the last RaceIndex and its corresponding RaceID from the Races table
             self.cursor.execute('SELECT RaceIndex, RaceID FROM Races ORDER BY RaceID DESC LIMIT 1')
             result = self.cursor.fetchone()
+            logging.info(f"DB Last race index result: {result}")
         
             if result:
+                logging.info(f"DB last race index result valid")
                 last_race_index, last_race_id = result
                 #print(f"Fetched RaceIndex: {last_race_index}, RaceID: {last_race_id}")
+                logging.info(f"DB Fetched RaceIndex: {last_race_index}, RaceID: {last_race_id}")
             
                 # Extract the numerical part of the RaceIndex (e.g., '54' from 'Race_54')
                 last_race_number = int(last_race_index.split('_')[1])
+                logging.info(f"DB Last Race Number:{last_race_number}")
+                
             
                 # Check if there are any laps recorded for the last RaceID
                 self.cursor.execute('SELECT COUNT(*) FROM Laps WHERE RaceID = ?', (last_race_id,))
                 rows_in_race = self.cursor.fetchone()[0]  # This will give the count of laps
+                logging.info(f"DB Rows in race: {rows_in_race}")
                 
                 # check if there are any participants in the race
                 self.cursor.execute('SELECT COUNT(*) FROM Participants WHERE RaceID = ?', (last_race_id,))
                 rows_in_participants = self.cursor.fetchone()[0]  # This will give the count of participants
+                logging.info(f"DB Check if any participants in race, Rows in participants: {rows_in_participants}")
 
                #delete race if there are not laps or participants
                 if rows_in_race == 0 or rows_in_participants == 0:
-                    print(f"Raceid to delete: {last_race_id}")
+                    print(f"DB Raceid to delete: {last_race_id}")
+                    logging.info(f" No Rows or participants, DB Race id to delete: {last_race_id}")
                     if last_race_id:
+                        logging.info("DB last_race_id is valid")
                         race_id = last_race_id
                         self.cursor.execute('DELETE FROM Laps WHERE RaceID = ?', (race_id,))
                         self.cursor.execute('DELETE FROM Participants WHERE RaceID = ?', (race_id,))
                         self.cursor.execute('DELETE FROM Races WHERE RaceID = ?', (race_id,))
                         self.conn.commit() 
-                        print("No laps or participants, race deleted")
-
-
-
+                        print(f"DB No laps or participants, race deleted with race_id:{race_id}")
+                        logging.info(f"DB No laps or participants, race deleted with race_id:{race_id}")
                 # If a callback is provided and it's callable, process the result
                 if callback and callable(callback):
                     if rows_in_race > 0 and rows_in_participants >0:
+                        logging.info(f"DB Rows and participants exist callback last_race_number:{last_race_number}")
                         callback(last_race_number)  # Pass the numerical part if laps exist
                     else:
+                        logging.info(f"DB No rows or participants, callback last_race_number-1:{last_race_number -1}")                 
                         callback(last_race_number - 1)  # Pass the previous number if no laps or participants exist
             else:
-                print("No race records found in the database.")
+                print("DB No race records found in the database.")
+                logging.info("DB No Race records found in the database. Callback None")
                 if callback and callable(callback):
                     callback(None)  # No races found, pass None
         except Exception as e:
@@ -545,19 +601,24 @@ class DatabaseThread(QThread):
 
     def get_session_id(self, callback=None):
         #print("Entered get_session_id")
+        logging.info("DB Def get session ID entered")
         try:
             #print("Trying to get Max session ID from DB")
+            logging.info("Trying to get Max session ID from DB")
             self.cursor.execute('SELECT MAX(SessionID) FROM Races')
             result = self.cursor.fetchone()
             session_id = result[0]
             #print(f"Session ID result: {session_id}")
+            logging.info(f"DB Session ID result: {session_id}")
             if session_id:
                 if callback:
                     #print("Invoking callback with session_id")
+                    logging.info("DB Invoking callback with session_id")
                     callback(session_id)
             else:
                 if callback:
-                    print("No Session ID. Invoking callback with session_id None")
+                    print("DB No Session ID. Invoking callback with session_id None")
+                    logging.info("DB No Session ID. Invoking callback with session_id None")
                     callback(None)        
         except Exception as e:
             logging.error(f"Database operation failed: {e}")
@@ -566,11 +627,14 @@ class DatabaseThread(QThread):
             if callback:
                 callback(None)
                 print(f"DB no session stored, sending default 1: {e}")
+                logging.info(f"DB no session stored, sending default 1: {e}")
                 
     def get_race_id(self, race_index, callback = None):
+        logging.info("DB Def get race id entered")
         try:
             self.cursor.execute('SELECT RaceID FROM Races WHERE RaceIndex = ?', (race_index,))
             race_id = self.cursor.fetchone()[0]
+            logging.info("DB Race ID fetched: {race_id}")
             if race_id:
                 if callback:
                     callback(race_id)  # Pass the deleted race_id back to the main thread
@@ -585,52 +649,69 @@ class DatabaseThread(QThread):
     def get_latest_race_id(self, callback =None):
         try:
             #print("Trying to get race_index from DB")
+            logging.info("DB Def get get latest race id")
             self.cursor.execute('SELECT RaceID FROM Races ORDER BY RaceID DESC LIMIT 1')
             result = self.cursor.fetchone()
+            logging.info(f"DB Last RaceID in races, Result: {result}")
             if result:
+                logging.info("DB Result is valid")
                 last_race_id = result[0]  # Extract the RaceID from the tuple
                 #print(f"Race ID fetched: {last_race_id}")
+                logging.info(f"DB Result valid, calling back last_race_id:{last_race_id}")
                 if callback and callable(callback): callback(last_race_id)
                 else:
                     callback(None)
                     print("Callback is not callable or is None")
+                    logging.info("Callback is not callable or is None")
         except Exception as e:
             logging.error(f"Database operation failed: {e}")
             print(f"Database operation failed: {e}")
             if callback and callable(callback):callback(None)
                 
     def write_race(self, race_index, data, session_id):
+        logging.info("DB Def write entered")
         try:
-            # Replace the incorrect SQL statement with the correct one
             # Concatenate mTranslatedTrackLocation and mTranslatedTrackVariation
             track_info = f"{data['eventInformation']['mTranslatedTrackLocation']} - {data['eventInformation']['mTranslatedTrackVariation']}"
+            # Delete all races without participants or laps
+            #<new code here>           
+            logging.info(f"DB track_info to write:{track_info}")
             self.cursor.execute('''
                 INSERT OR IGNORE INTO Races (RaceIndex, mTranslatedTrackVariation, mLapsInEvent, SessionID)
                 VALUES (?, ?, ?, ?)
             ''', (race_index, track_info, data['eventInformation']['mLapsInEvent'], session_id))         
-
+            logging.info("DB Race Written to DB")
             self.conn.commit()
         except Exception as e:
             print(f"Failed to write race data to the database: {e}")
             logging.error(traceback.format_exc())  # Log the full traceback for debugging
             
     def insert_lap_data(self, race_id, participant_name, current_lap, lap_time):
+        logging.info(f"DB Def insert lap data entered, data to be written:Race_id:{race_id}, p_name:{participant_name}, lap:{current_lap}, lap time:{lap_time}")
         self.cursor.execute('''
             INSERT INTO Laps (RaceID, mName, LapNumber, LapTime)
             VALUES (?, ?, ?, ?)
         ''', (race_id, participant_name, current_lap, lap_time))
+        logging.info("DB Lap data written")
         self.conn.commit()
 
     def finalize_race(self, data, race_index, lap_times_dict, flags_dict):
+        logging.info(f"DB Def finalize entered with values: Full data record, race_index:{race_index}, lap_times_dict:{lap_times_dict}, flags_dict{flags_dict}")
         participants = data['participants']['mParticipantInfo']
-        print(f"Finalizing DB DataRace index: {race_index} Lap times dict:{lap_times_dict} flags: {flags_dict}")        
+        print(f"Finalizing DB DataRace index: {race_index}with participants:{participants} Lap times dict:{lap_times_dict} flags: {flags_dict}")
+        logging.info(f"Finalizing DB DataRace index: {race_index} Lap times dict:{lap_times_dict} flags: {flags_dict}")    
+        # Get the RaceID for the last
+        
         self.cursor.execute('SELECT RaceID FROM Races WHERE RaceIndex = ?', (race_index,))
         race_id = self.cursor.fetchone()[0]
+        logging.info(f"DB RaceID for the last race fetched: {race_id} with race_index{race_index}")
         
         # Check if there are any laps recorded for the last RaceID
         self.cursor.execute('SELECT COUNT(*) FROM Laps WHERE RaceID = ?', (race_id,))
         rows_in_race = self.cursor.fetchone()[0]  # This will give the count of laps
+        logging.info(f"DB Check if there are any laps recorded for the last raceID. Rows in race: {rows_in_race}")
         if rows_in_race == 0:
+            logging.info("DB No rows, returning")
             return
         for participant in participants:
             participant_name = participant['mName']
@@ -640,7 +721,9 @@ class DatabaseThread(QThread):
                 participant['mLastLapTimes'] = None
             # Retrieve the flag data for this participant from the dictionary
             flags_data = flags_dict.get(participant_name, None)
+            logging.info(f"DB Flags data for participant: {participant_name} is {flags_data}")
             # Insert or update participant data in the database
+            logging.info("Inserting or updating participant data in the database")
             self.cursor.execute('''
                 INSERT OR REPLACE INTO Participants (
                     RaceID, mName, mCarNames, mRacePosition, mFastestLapTimes, mLastLapTimes, flags
@@ -655,8 +738,11 @@ class DatabaseThread(QThread):
                 participant['mLastLapTimes'],
                 flags_data
             ))
-
+            logging.info(f"DB Participant data for {participant_name} written to DB")
+            #Insert lap data for this participant
+            logging.info(f"DB Inserting lap data for {participant_name}")
             current_lap = participant.get('mCurrentLap', 0)
+            logging.info(f"DB Current lap for {participant_name}: {current_lap}")
 
             if current_lap > 1:
                 lap_times = lap_times_dict.get(participant_name, [])
@@ -670,13 +756,15 @@ class DatabaseThread(QThread):
                         INSERT INTO Laps (RaceID, mName, LapNumber, LapTime)
                         VALUES (?, ?, ?, ?)
                     ''', (race_id, participant_name, current_lap, lap_time))
-
+                logging.info(f"DB Lap data for {participant_name} written to DB with race_id:{race_id}, Name:{participant_name}, Current Lap:{current_lap}, lap time:{lap_time}")
         self.conn.commit()
 
     def delete_race(self, race_id):
+        logging.info(f"DB Def delete db entered with raceid;{race_id}")
         self.cursor.execute('DELETE FROM Laps WHERE RaceID = ?', (race_id,))
         self.cursor.execute('DELETE FROM Participants WHERE RaceID = ?', (race_id,))
         self.cursor.execute('DELETE FROM Races WHERE RaceID = ?', (race_id,))
+        logging.info("DB Race deleted from DB")
         self.conn.commit()
 
     def stop(self):
@@ -718,13 +806,14 @@ class MonitorThread(QThread):
         self.session = requests.Session()
         self.lap_times_dict = {}
         self.driver_flags = {}
+        self.race_loop_first_time = True
         #Signalling
         self.race_monitor_app.session_id_updated.connect(self.set_session_id) # Connect the signal to a slot that updates Session ID
        
         # Adjusting race_count based on existing data in the database
         Previous_ipaddress = "127.0.0.1"
         # Get the latest RaceID and corresponding RaceIndex
-        logging.info(f"Thread ID in operation: {threading.get_ident()}")
+        #logging.info(f"Thread ID in operation: {threading.get_ident()}")
         #print(f"Monitor init Thread ID in operation: {threading.get_ident()}")
         self.db_queue.put(('get_race_index', (self.set_race_index,)))
         self.db_queue.put(('get_session_id', (self.set_session_id,)))
@@ -739,23 +828,29 @@ class MonitorThread(QThread):
          #self.race_count_updated.emit(new_race_index)
        
     def set_race_index(self, new_race_count):
+        logging.info("MT Def set_race_index entered")
         if new_race_count is None:
-            print("Race index is None, setting to 0")
+            #print("MT Race index is None, setting to 0")
+            logging.info("MT Race index is None, setting to 0")
             self.race_index = 0
         else:
             self.race_index = new_race_count
-        #print(f"Monitorapp Race index updated to {self.race_index}")    
+        #print(f"MT Race index updated to {self.race_index}")    
+        logging.info(f"MT Race index updated to {self.race_index}")        
     
     def set_session_id(self, new_session_id):
+        logging.info("MT Def set_session_id entered")
         if new_session_id is None:
-            print("Session ID is None, setting to 1")
+            print("MT Session ID is None, setting to 1")
             self.session_id = 1
         else:            
             self.session_id = new_session_id
             print(f"Monitorapp Session ID updated to {self.session_id}") 
 
     def receive_number_of_rows(self,rows):
-        self.number_of_rows = rows            
+        logging.info("MT Def receive_number_of_rows entered")
+        self.number_of_rows = rows     
+        logging.info(f"MT Number of rows updated to {self.number_of_rows}")
         
     
         
@@ -766,7 +861,7 @@ class MonitorThread(QThread):
             try:
                 
                 Previous_ipaddress=self.ip_address
-                #logging.info("Attempting to get data from the API.")
+                logging.info("Attempting to get data from the API.")
                 self.ip_address = self.config_manager.read_ip_address()  # Read IP address before each API call
                 
                 with self.session.get(f'http://{self.ip_address}:8180/crest2/v1/api') as response:
@@ -802,10 +897,9 @@ class MonitorThread(QThread):
                 #logging.info(f"Full API response: {json.dumps(data, indent=2)}")
                 if Previous_ipaddress != self.ip_address:
                     print(f"Ipadress changed, new ipadress {self.ip_address}")
-                
+                    logging.info(f"Ipadress changed, new ipadress {self.ip_address}")
 
                 #logging.info(f"Current Race_State: {current_race_state}")              
-               
                 self.connection_restored.emit() # Emit signal for successful connection restoration to clear error message
                 
                 #logging.info(f"Race_state emitted!")
@@ -851,7 +945,7 @@ class MonitorThread(QThread):
                         else:
                             self.current_race_id = race_id
                             #print(f"Monitorthread Race ID received from DB Race id: {self.current_race_id}")
-                    #    print(f"Race_id Signal sendt to GUI: {self.current_race_id}")
+                            logging.info(f"Monitorthread Race ID received from DB Race id: {self.current_race_id}")
                     self.db_queue.put(('get_race_id', (race_index,handle_race_id)))  # Only pass the necessary data, not the function
 
                     while self.running: #loop while race is running
@@ -859,7 +953,7 @@ class MonitorThread(QThread):
                             #self.race_id_updated.emit(self.current_race_id)  # Emit signal with the updated RaceID   
                             Previous_ipaddress=self.ip_address
                             previous_data = data
-                            logging.info("Attempting to get data from the API.")
+                            #logging.info("Attempting to get data from the API.")
                             #print("Attempting to get data from the API.")
                             self.ip_address = self.config_manager.read_ip_address()  # Read IP address before each API call
                             with self.session.get(f'http://{self.ip_address}:8180/crest2/v1/api') as response:
@@ -887,7 +981,7 @@ class MonitorThread(QThread):
                             participants = data.get('participants', {}).get('mParticipantInfo', [])
                             if not participants:
                                 data = previous_data  # Revert to the previous data if no participants are found
-                                logging.info("No participants found, Race is over")
+                                logging.info("No participants found, Race is over, breaking the loop")
                                 print("No participants found, Race is over.")
                                 self.first_time_run = True
                                 break # Race is over, break the loop
@@ -896,69 +990,41 @@ class MonitorThread(QThread):
                             #print(f"Processing data for {len(participants)} participants. Current Race_ID {self.current_race_id}")
                       
                             self.connection_restored.emit() # Emit signal for successful connection restoration to clear the error message
-                            logging.info(f"RaceID for {race_index} is {self.current_race_id}.")
-                            #print(f"RaceID for {race_index} is {race_id}.")
+                            if self.race_loop_first_time:
+                                logging.info(f"MT RaceID for {race_index} is {self.current_race_id}.")
+                                print(f"RaceID for {race_index} is {self.current_race_id}.")
 
                             for participant in participants:
-                                participant_name = participant['mName']
-                                current_lap = participant.get('mCurrentLap', 0)
-                                logging.info(f"Participant {participant_name} is on lap {current_lap}.")
-                                #print(f"Participant {participant_name} is on lap {current_lap}.")
-                                if participant_name not in self.lap_times_dict:
-                                    self.lap_times_dict[participant_name] = []
-                                latest_lap_time = participant.get('mLastLapTimes', None)
-                                #print(f"Latest Lap Time: {latest_lap_time}")
-                                lap_times = self.lap_times_dict[participant_name]
-                                #lap_number =  len(self.lap_times_dict[participant_name])
-                                #previous_lap = current_lap - 1
-                                #print(f"number of laps: {lap_number} Current lap:{previous_lap}")
-                                if latest_lap_time is not None and len(self.lap_times_dict[participant_name]) < current_lap - 1:
-                                    self.lap_times_dict[participant_name].append(latest_lap_time)
-                                    #print(f"Updated lap_times for {lap_times}  {participant_name} at lap {current_lap}: {self.lap_times_dict[participant_name]}")
-                                    logging.info(f"Updated lap_times for {lap_times}  {participant_name} at lap {current_lap}: {self.lap_times_dict[participant_name]}")
-                                    #print(f"Updated lap_times for {lap_times}  {participant_name} at lap {current_lap}: {self.lap_times_dict[participant_name]}")
-                                    logging.info(f"Lap times list for {participant_name}: {lap_times}")
-                                    #print(f"Lap times list for {participant_name}: {lap_times}")
-
-                                #print(f"number of laps: {lap_number} Current lap:{previous_lap}")
-                                if current_lap > last_lap_counts.get(participant_name, 1):
-                                    if current_lap - 1 <= len(lap_times):
-                                        lap_time = lap_times[current_lap - 2]
-                                        if participant_name not in driver_total_times:
-                                            driver_total_times[participant_name] = 0  # Initialize the key with a value of 0
-                                        if lap_time is not None:    
-                                            driver_total_times[participant_name] += lap_time
-                                        logging.info(f"Storing lap time for {participant_name}: Lap {current_lap}, Time {lap_time}")
-                                        # mLapInvalidated = data.get('timings', {}).get('mLapInvalidated', 'Unknown')
-                                        # print(f"Participant: {participant_name}, mLapInvalidated: {mLapInvalidated}")
-                                        #print(f"Storing lap time for {participant_name}: Lap {current_lap}, Time {lap_time}")
-                                        #print(f"Storing lap time for {participant_name}: Lap {current_lap}, Time {lap_time},{participant.get('mLastLapTimes', None)} ")
-                                        logging.info(f"Storing lap time for {participant_name}: Lap {current_lap}, Time {lap_time},{participant.get('mLastLapTimes', None)} ")                                        
-
-                                        #self.db_queue.put(('get_number_of_rows',(self.current_race_id, self.receive_number_of_rows)))
-                                        if current_lap == 2 and latest_lap_time == -123:
-                                            #print(f"Number of rows: {self.number_of_rows}")
-                                            #if self.number_of_rows >= participant.get('mRacePosition', None):
-                                            print(f"Adding Falsestart to Flags for {participant_name} Current lap:{current_lap}")
-                                            self.driver_flags[participant_name] = 'Falsestart'
-                                            self.flags_updated.emit(self.driver_flags)
-
-                                        self.db_queue.put(('insert_lap_data', (self.current_race_id, participant_name, current_lap - 1, lap_time))) #insert lap into Table
-                                        last_lap_counts[participant_name] = current_lap
-
-                            #time.sleep(5)     
+                                if participant['mName'] not in self.lap_times_dict: self.lap_times_dict[participant['mName']] = [] # Initialize the key with an empty list
+                                latest_lap_time = participant.get('mLastLapTimes', None) # Get the latest lap time None if empty
+                                #print(f"Participant {participant['mName']} is on lap {participant.get('mCurrentLap', 0)}, number of laps: {lap_number} Current lap:{previous_lap} Latest Lap Time: {latest_lap_time}")
+                                #logging.info(f"Participant {participant['mName']} is on lap {participant.get('mCurrentLap', 0)}, number of laps: {lap_number} Current lap:{previous_lap} Latest Lap Time: {latest_lap_time}")
+                                if participant.get('mCurrentLap', 0) > last_lap_counts.get(participant['mName'], 1):
+                                    #print(f"Updated lap_times for {participant['mName']} {self.lap_times_dict[participant['mName']]}   at lap {participant.get('mCurrentLap', 0)}: {self.lap_times_dict[participant['mName']]}")
+                                    logging.info(f"Storing lap time for {participant['mName']}: Lap {participant.get('mCurrentLap', 0)}, Time {lap_time},Last Lap:{participant.get('mLastLapTimes', None)} Driver Total Time: {driver_total_times[participant_name]} ")
+                                    print(f"Storing lap time for {participant['mName']}: Lap {participant.get('mCurrentLap', 0)}, Time {lap_time},Last Lap:{participant.get('mLastLapTimes', None)} Driver Total Time: {driver_total_times[participant_name]} ")
+                                    lap_time = self.lap_times_dict[participant['mName']][participant.get('mCurrentLap', 0) - 1]
+                                    if participant['mName'] not in driver_total_times: driver_total_times[participant['mName']] = 0  # Initialize the key with a value of 0
+                                    if lap_time is not None: driver_total_times[participant['mName']] += lap_time 
+                                    if participant.get('mCurrentLap', 0) == 2 and latest_lap_time == -123:
+                                        print(f"Adding Falsestart to Flags for {participant['mName']} Current lap:{participant.get('mCurrentLap', 0)}")
+                                        logging.info(f"MT Adding Falsestart to Flags for {participant['mName']} Current lap:{participant.get('mCurrentLap', 0)}")
+                                        self.driver_flags[participant['mName']] = 'Falsestart'
+                                        self.flags_updated.emit(self.driver_flags)
+                                    self.db_queue.put(('insert_lap_data', (self.current_race_id, participant['mName'], participant.get('mCurrentLap', 0) - 1, lap_time))) #insert lap into Table
+                                    last_lap_counts[participant['mName']] = participant.get('mCurrentLap', 0)
+                                    self.lap_times_dict[participant['mName']].append(latest_lap_time)
+                                    #if participant.get('mCurrentLap', 0) - 1 <= len(self.lap_times_dict[participant['mName']]:
                             current_race_state = data['gameStates']['mGameState']       
-                            self.data_updated.emit(data) #Send the data to Live view
+                            self.data_updated.emit(data) #Send the data to Live view 
+                            #print(f"Data Sent to live view {race_index}.")
                             if current_race_state != self.previous_race_state:
                                 print(f"Game state changed to {current_race_state}")  # Ensure console output remains
                                 logging.info(f"Race state changed to {current_race_state}")
                                 self.previous_race_state = current_race_state                            
-                            #print(f"Data Sent to live view {race_index}.")
                             time.sleep(2)
-
                             current_race_state = data['gameStates']['mGameState']
-                            #print (f"Last line of the loop: Current_Race_State: {current_race_state} self.running: {self.running}")
-                            logging.info(f"Last line of the loop: Current_Race_State: {current_race_state} self.running: {self.running}")
+                            self.race_loop_first_time = False
                         except Exception as e:
                             logging.error(f"An error occurred while processing participant data: {e}")
                             print(f"An error occurred while processing participant data: {e}")
@@ -981,52 +1047,60 @@ class MonitorThread(QThread):
                             self.error_occurred.emit(f'Request Error: {str(e)}')
                             time.sleep(2)                            
                     logging.info(f"Race {self.race_index} has ended. Current_Race_State: {current_race_state} self.running: {self.running}")
+                    self.race_loop_first_time = True
                     print(f"Race Ended Finalizing Race for Race_index: {race_index}, Current_Race_State: {current_race_state} self.running: {self.running}")
+                    logging.info(f"Race Ended Finalizing Race for Race_index: {race_index}, Current_Race_State: {current_race_state} self.running: {self.running}")
                     participants = data.get('participants', {}).get('mParticipantInfo', [])
                     total_laps = data['eventInformation']['mLapsInEvent']
                     total_time_participant = {}
                     print(f"Driver Total times: {driver_total_times}")
+                    logging.info(f"Driver Total times: {driver_total_times}")
                     if not driver_total_times:
                         print("No reason to write race, no one finished.")
+                        logging.info("No reason to write race, no one finished.")
                         break   # no reason to write the race, no one finished
                     best_participant = min(driver_total_times, key=driver_total_times.get)
                     if not best_participant:
                         print("No reason to write race, no one finished.")
+                        logging.info("No reason to write race, no one finished.")
                         break   # no reason to write the race, no one finished
                         
                     print(f"Best Participant: {best_participant}")
-                    winner_data = next((p for p in participants if p['mRacePosition'] == 1), None)
-                    winner = winner_data.get('mName', 'Unknown')
-                    print(f"Winner: {winner}")
+                    logging.info(f"Best Participant: {best_participant}")
+                    #winner_data = next((p for p in participants if p['mRacePosition'] == 1), None)
+                    #winner = winner_data.get('mName', 'Unknown')
+                    #print(f"Winner: {winner}")
+                    logging.info(f"Winner: {winner}")
                     for participant in participants:
-                        #total_time_participant = driver_total_times.get(participant['participant'], 0)
-                        
                         if participant.get('mRacePosition') == 1:
                             winner = participant['mName']
                             print(f"Winner: {winner}")
                         total_time_participant[participant['mName']] = driver_total_times.get(participant['mName'], 100000)
                         print(f"Participant: {participant['mName']}, Race Position: {participant.get('mRacePosition', 0)}, Total Laps: {total_laps} Tolal Time: {total_time_participant[participant['mName']]}")
+                        logging.info(f"Participant: {participant['mName']}, Race Position: {participant.get('mRacePosition', 0)}, Total Laps: {total_laps} Tolal Time: {total_time_participant[participant['mName']]}")
                         participant_name = participant['mName']
                         current_lap = participant.get('mCurrentLap', 0)
                         print(f"Participant: {participant_name}, Current Lap: {current_lap}, Total Laps: {total_laps}")
                         print(f"Best Participant: {best_participant}, Winner: {winner}")
                         if participant['mName'] == winner and current_lap < total_laps:
                             print(f"Driver is {participant_name} same as {winner} and did not finish. That means False start!")
+                            logging.info(f"Driver is {participant_name} same as {winner} and did not finish. That means False start!")
                             print(f"Adding Falsestart to Flags for {participant_name}")
+                            logging.info(f"Adding Falsestart to Flags for {participant_name}")
                             self.driver_flags[participant_name] = 'Falsestart'
-                                #self.driver_flags[participant_name].append('Falsestart')
                         if current_lap <= total_laps: # Driver has fewer laps less than he should, either False start Or DNF
                             # Check if the participant has a 'Falsestart' flag
                             print(f"Participant: {participant_name}, Flags: {self.driver_flags}")
-                            #if participant_name in self.driver_flags:
+                            logging.info(f"Participant: {participant_name}, Flags: {self.driver_flags}")
                             if self.driver_flags.get(participant_name) != 'Falsestart':
                                 print(f"Adding DNF to Flags for {participant_name}")
+                                logging.info(f"Adding DNF to Flags for {participant_name}")
                                 self.driver_flags[participant_name] = 'DNF'  # Initialize an empty list for the driver's flags
                         #Participant Loop is over
                     self.flags_updated.emit(self.driver_flags)
                     print(f"Sending Data for the last time")
+                    logging.info(f"Sending Data for the last time")
                     self.data_updated.emit(data) #Send the data to Live view to update the flags
- 
                     self.db_queue.put(('finalize_race', (data, race_index, self.lap_times_dict,self.driver_flags)))
                     time.sleep (3)
                     self.race_finished.emit()
@@ -1063,17 +1137,6 @@ class MonitorThread(QThread):
         self.quit()
         self.wait()
 
-#class Worker(QObject):
-    #switch_tab_signal = pyqtSignal(int)  # Define a signal to switch tabs
-    #race_written = pyqtSignal(bool)  # Signal to indicate whether the race was written successfully
-        #switch_tab_signal = pyqtSignal(int)  # Define a signal to switch tabs
-    #race_data_loaded = pyqtSignal(list)  # Signal that will carry the race data
-    #laps_fetched_signal = pyqtSignal(str, list, int)  # Signal for fetched laps
-    #self.signals.laps_fetched_signal.emit(participant_name, recorded_laps, current_lap)
-    #race_data_loaded_signal = pyqtSignal(int, str, int, list)  # Signal to emit loaded race data
-    #self.signals.race_data_loaded_signal.emit(race_id, track_variation, laps_in_event, participants)
-    session_id_updated = pyqtSignal(int)  # Signal to update the SessionID    
-
 class RaceMonitorApp(QMainWindow):
     session_id_updated = pyqtSignal(int)  # Signal to update the SessionID
     def __init__(self):
@@ -1101,7 +1164,6 @@ class RaceMonitorApp(QMainWindow):
         self.live_first_time_run =True
         self.driver_flags = {}
         self.session_id_dropdown = None
-         #self.runs = 0
  
         #Get DB values
         self.db_queue.put(('get_session_id', (self.set_session_id,)))
@@ -1129,8 +1191,6 @@ class RaceMonitorApp(QMainWindow):
         self.db_thread.race_data_loaded_signal.connect(self.on_race_loaded)  # queue.put already directs this to the correct function
         self.db_thread.score_data_signal.connect(self.calculate_score) # Connect the signal to the slot that sends score data
         self.monitor_thread.start()
-
-
 
         # Apply the translucent style to the tab buttons.
         '''
@@ -1191,11 +1251,10 @@ class RaceMonitorApp(QMainWindow):
         self.setup_final_view() # Initialize the final view
         self.setup_result_view() # Initialize the result view
         self.tab_widget.setCurrentIndex(1) #Set the Status view as the default tab
-        # Tabs addition end
+
         # Connect tab change to background update
         self.tab_widget.currentChanged.connect(self.on_tab_changed)
         # Load the background image
-        #self.background_image = QPixmap("LiveRace.jpg")
         self.status_background_image = QPixmap(liverace_status_img_path)  # Background for Status view
         self.live_background_image = QPixmap(liverace_liveview_img_path)  # Background for Live view
 
@@ -1208,7 +1267,6 @@ class RaceMonitorApp(QMainWindow):
         self.layout.setAlignment(Qt.AlignTop)
         
         #Add Dropdown for selecting previous races
-        
         self.dropdown = QComboBox(self)
         self.labels['dropdown'] = self.dropdown
         self.dropdown.setStyleSheet("""
@@ -1291,34 +1349,32 @@ class RaceMonitorApp(QMainWindow):
         self.tab_widget.setCurrentIndex(1)
         
     def update_flags(self, flags):
+        logging.info("Flags updated def entered")
         self.driver_flags=flags # Update the flags label with the message
         
     def initialize_dropdown(self):
-         #self.load_sessionid_on_start()   
-         #self.load_race_data_on_start()
-         self.db_queue.put(('load_race_data_on_start',())) #Send the request to the DatabaseThread to load race data on start
-         self.db_queue.put(('load_sessionid_on_start',())) 
-    #def load_race_data_on_start(self):
+        logging.info("Initialize Dropdown def entered") 
+        #self.load_sessionid_on_start()   
+        #self.load_race_data_on_start()
+        self.db_queue.put(('load_race_data_on_start',())) #Send the request to the DatabaseThread to load race data on start
+        self.db_queue.put(('load_sessionid_on_start',())) 
 
-     
-    #def load_sessionid_on_start(self):
-
-         
-
-
-        
     def set_session_id(self, new_session_id):
+        logging.info("Def set_session_id entered")
         if new_session_id is None:
             print(f"Session ID not found in the database, setting to 1")
+            logging.info(f"Session ID not found in the database, setting to 1")
             self.session_id = 1
         else:
             print("Loading Dropdown boxes")
+            logging.info("Loading Dropdown boxes")
             self.session_id = new_session_id
             #self.load_race_data_on_start()
                
         #print(f"RaceMonitorApp Session ID updated to {self.session_id}")  
         
     def handle_race_data(self, races, participants):
+        logging.info("Def handle race data entered")
         self.dropdown.clear()  # Clear the dropdown first
         if races:
             for race in races:
@@ -1336,6 +1392,7 @@ class RaceMonitorApp(QMainWindow):
         self.load_selected_race()
            
     def handle_sessionid_data(self, sessionids):
+        logging.info("Def handle sessionid data entered")
         self.dropdown_sessionid.clear()  # Add this line to clear the dropdown
         #print(f"Session ID data received: {sessionids}")
         if sessionids:
@@ -1345,10 +1402,8 @@ class RaceMonitorApp(QMainWindow):
                 self.dropdown_sessionid.blockSignals(False)
             # Load the latest race results by default
 
-
-        
-
     def on_tab_changed(self, index):
+        logging.info("Def on_tab_changed entered")
         # Hide all widgets first
         for widget_list in self.tab_widget_mapping.values():
             for widget_name in widget_list:
@@ -1362,31 +1417,38 @@ class RaceMonitorApp(QMainWindow):
         elif index == 1: self.update_background('status')
 
     def update_background(self, view):
+        logging.info("Def update_background entered")
         if view == 'status': self.background_label.setPixmap(self.status_background_image)
         elif view == 'live': self.background_label.setPixmap(self.live_background_image)
 
     def clear_error_message(self):
+        logging.info("Def clear_error_message entered")
         if hasattr(self, 'error_label'):
             self.error_label.deleteLater()
             del self.error_label
         if hasattr(self, 'timer') and self.timer.isActive(): self.timer.stop()
 
     def handle_connection_restored(self):
+        logging.info("Def handle_connection_restored entered")
         self.clear_error_message() # Clear the error message immediately upon restoring the connection
         
     def update_status_message(self, message):
+        logging.info("Def update_status_message entered")
         self.status_label.setText(message) # Update the status label with the message
 
     def blink_status_message(self):
+        logging.info("Def blink_status_message entered")
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.toggle_status_visibility)
         self.timer.start(500)  # Blink every 500 ms
 
     def toggle_status_visibility(self):
+        logging.info("Def toggle_status_visibility entered")
         if self.status_label.isVisible(): self.status_label.setVisible(False)
         else: self.status_label.setVisible(True)
    
     def show_error_message(self, message):
+        logging.info("Def show_error_message entered")
         # Check if the error label already exists with the same message
         if hasattr(self, 'error_label') and self.error_label.text() == message: return  # Do not create a new label if the message is the same
         if hasattr(self, 'error_label'): self.error_label.deleteLater()  # Remove the existing error label
@@ -1399,16 +1461,19 @@ class RaceMonitorApp(QMainWindow):
         self.blink_error_message()
 
     def blink_error_message(self):
+        logging.info("Def blink_error_message entered")
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.toggle_error_visibility)
         self.timer.start(500)  # Blink every 500 ms
 
     def toggle_error_visibility(self):
+        logging.info("Def toggle_error_visibility entered")
         if hasattr(self, 'error_label') and self.error_label is not None:
             if self.error_label.isVisible(): self.error_label.setVisible(False)
             else: self.error_label.setVisible(True)
 
     def setup_live_view(self):
+        logging.info("Def setup_live_view entered")
         # Setup your live view widgets here
         self.live_heading = QLabel(f"Waiting for a new race to start...Current Session: {self.session_id}", self.live_view_widget)
         self.live_heading.setStyleSheet("font-size: 16px;font-weight:bold; color: black;")
@@ -1432,6 +1497,7 @@ class RaceMonitorApp(QMainWindow):
         # You can add other live view specific components here as per the original design.
 
     def setup_result_view(self):
+        logging.info("Def setup_result_view entered")
         # Content label for displaying loaded results
         self.results_content = QLabel("No race data available", self.results_view_widget)
         self.results_content.setStyleSheet("font-size: 14px;font-weight:bold; color: black;")
@@ -1439,6 +1505,7 @@ class RaceMonitorApp(QMainWindow):
         self.results_view_layout.addStretch(1)
         
     def setup_final_view(self):
+        logging.info("Def setup_final_view entered")
         # Content label for displaying Final results
         self.final_content = QLabel("No race data available", self.final_view_widget)
         self.final_content.setStyleSheet("font-size: 14px;font-weight:bold; color: black;")
@@ -1447,10 +1514,12 @@ class RaceMonitorApp(QMainWindow):
         
         
     def set_race_id(self, new_latest_id):
+        logging.info("set race id def entered")
         self.current_race_id = new_latest_id
         #print(f"Racemonitorapp Race ID set to {self.current_race_id}")
         
     def on_first_live_view_run(self):
+        logging.info("Def on_first_live_view_run entered")
         #print("Should only run once!")
         self.db_queue.put(('get_latest_race_id', (self.set_race_id,)))
         #self.load_race_data_on_start() # Knapp oppdatert med nytt race
@@ -1563,11 +1632,6 @@ class RaceMonitorApp(QMainWindow):
             label.show()  # Make the label visible
         self.live_first_time_run = False
        
-        #def update_participant_label(self, participant_name, recorded_laps, current_lap,):
-        #self.laps_to_display = [lap for lap in recorded_laps if lap[0] < current_lap]
-        #lap_times_str = ", ".join(f"{int(lap[1] // 60)}:{lap[1] % 60:05.2f}" for lap in self.laps_to_display)
-        # print(f"Laps received from DB: {participant_name}, Recorded laps: {recorded_laps} Laps: {lap_times_str} run: {self.runs}")
-
     def format_lap_time(self, lap_time):
         #Helper function to format lap time from seconds to 'MM:SS.ss' format.
         if lap_time is None or lap_time == -123.0:
@@ -1589,6 +1653,7 @@ class RaceMonitorApp(QMainWindow):
         )
     
     def display_final_results(self):
+        logging.info("Def display_final_results entered")
         # Display the score data in the final view
         self.live_first_time_run =True
         self.initialize_dropdown()
@@ -1606,7 +1671,7 @@ class RaceMonitorApp(QMainWindow):
         #self.initialize_dropdown()
     
     def display_score(self):
-        logging.info(f"Display Score Result")
+        logging.info(f"Display Score Result def entered")
         print(f"Display score Result")
         selected_index = self.dropdown_sessionid.currentIndex()
         if selected_index >= 0:
@@ -1626,6 +1691,7 @@ class RaceMonitorApp(QMainWindow):
            
  
     def calculate_score(self, races, participants, laps):
+        logging.info("Def calculate_score entered")
         if not laps:
             return
         # Initialize dictionaries for storing aggregated data across all races
@@ -1680,23 +1746,28 @@ class RaceMonitorApp(QMainWindow):
                     driver_total_times[mName] = 0
                 driver_total_times[mName] += lap_time
                 #print(f"best lap times {best_lap_times}")
+                logging.info(f"best lap times {best_lap_times}")
              # Checking to see if there are any participants in this race
             race_participants = [p for p in participants if p[0] == race_id]
             if not race_participants:
                 print(f"No participants found for race {race_id}. Skipping score calculation for this race.")
+                logging.info(f"No participants found for race {race_id}. Skipping score calculation for this race.")
                 continue               
             # Retrieve flags and best lap times from the participants table for the current race
             for participant in participants:
                 participant_race_id = participant[0]
                 #print(f"Participant Race ID: {participant_race_id} Race ID:{race_id}")
+                logging.info(f"Participant Race ID: {participant_race_id} Race ID:{race_id}")
                 if participant_race_id != race_id:
                     #print(f"Participant Race ID: {participant_race_id} Race ID:{race_id}")
+                    logging.info(f"Participant Race ID: {participant_race_id} Race ID:{race_id}")
                     #print(f"Participant not in Race")
                     continue  # Only consider participants from the current race
                     
                 mName = participant[1]
                 flag = participant[6]  # Flags column in the participants table
                 #print(f"Name: {mName} Flag: {flag}")
+                logging.info(f"Name: {mName} Flag: {flag}")
                 if flag == 'DNF' and mName not in driver_total_times:
                     driver_total_times[mName] = 0  # Assign a total time of 0
                     driver_flags[mName] = 'DNF'  # Ensure the DNF flag is assigned
@@ -1709,14 +1780,15 @@ class RaceMonitorApp(QMainWindow):
                     driver_flags[mName] = 'No Flag'
                 best_lap = participant[4]  # Best lap time in the participants table
                 #print(f"Best Lap: {best_lap}")
+                logging.info(f"Best Lap: {best_lap}")
 
                 # Store the flag  for each driver
                 driver_flags[mName] = flag if flag else "No Flag"
                 best_lap_times[mName] = best_lap if best_lap else float('inf')
                 #print(f"Best Lap Times: {best_lap_times}")
+                logging.info(f"Best Lap Times: {best_lap_times}")
             
             # Rank drivers based on flags and total race time for the current race
-            #ranked_drivers = sorted(driver_total_times.items(), key=lambda x: (driver_flags.get(x[0], "No Flag"), x[1]))
             # Custom flag priority function
             def flag_priority(flag):
                 if flag == 'No Flag' or flag is None:
@@ -1730,10 +1802,9 @@ class RaceMonitorApp(QMainWindow):
             # Rank drivers based on custom flag priority and total race time
             ranked_drivers = sorted(driver_total_times.items(), key=lambda x: (flag_priority(driver_flags.get(x[0], "No Flag")),x[1]))  # Sort primarily by flag priority
             #print(f"Ranking: {ranked_drivers}")
-            #for driver, total_time in driver_total_times.items():
-               # print(f"Driver: {driver}, Flag: {driver_flags.get(driver)}, Time: {total_time}, "
-                #      f"Sort Key: ({flag_priority(driver_flags.get(driver, 'No Flag'))}, "
-               #       f"{total_time if driver_flags.get(driver) == 'No Flag' else float('inf')})")
+            logging.info(f"Ranking: {ranked_drivers}")
+            # print(f"Driver: {driver}, Flag: {driver_flags.get(driver)}, Time: {total_time}, "
+            logging.info(f"Driver: {driver}, Flag: {driver_flags.get(driver)}, Time: {driver_total_times}, ")
 
             # Output the sorted results
             for driver, time in ranked_drivers:
@@ -1743,6 +1814,7 @@ class RaceMonitorApp(QMainWindow):
                     time if flag_priority(flag) == 0 else float('inf')
                 )
                 #print(f"Driver: {driver}, Flag: {flag}, Time: {time}, Sort Key: {sort_key}")
+                logging.info(f"Driver: {driver}, Flag: {flag}, Time: {time}, Sort Key: {sort_key}")
 
             # Assign scores for the current race
             place = 1
@@ -1762,14 +1834,19 @@ class RaceMonitorApp(QMainWindow):
                 # Adjust the final display to ensure the correct driver is recognized as the winner
                
             # Determine the driver with the best lap time in the race
-            #print(f"Best lap times: {best_lap_times}")    
+            #print(f"Best lap times: {best_lap_times}")   
+            logging.info(f"Best lap times: {best_lap_times}")    
             if best_lap_times:  # Ensure there are lap times to compare
                 best_lap_driver = min(best_lap_times.items(), key=lambda x: x[1])[0]
                 #print(f"Best lap driver: {best_lap_driver} Time: {best_lap_times[best_lap_driver]} for Race ID:{race_id} ")
+                logging.info(f"Best lap driver: {best_lap_driver} Time: {best_lap_times[best_lap_driver]} for Race ID:{race_id} ")
                 # Award the best lap bonus to that driver
                 #print(f"Race ID:{race_id}")
+                logging.info(f"Race ID:{race_id}")
                 #print(f"Race Scores:{race_scores}")
+                logging.info(f"Race Scores:{race_scores}")
                 #print(f"{race_scores[race_id][best_lap_driver]}")
+                logging.info(f"{race_scores[race_id][best_lap_driver]}")
                 if best_lap_times[best_lap_driver] < float('inf'):
                     if best_lap_driver in race_scores[race_id]:
                         race_scores[race_id][best_lap_driver] += best_lap_bonus
@@ -1788,6 +1865,7 @@ class RaceMonitorApp(QMainWindow):
         self.format_score_view(total_scores, len(processed_race_ids), last_positions, medal_counts)        
 
     def format_score_view(self, total_scores, race_count, last_positions, medal_counts):
+        logging.info("Def format_score_view entered")
         # Sort the drivers by their total score, highest to lowest
         sorted_scores = sorted(total_scores.items(), key=lambda x: x[1], reverse=True)
 
@@ -1842,7 +1920,9 @@ class RaceMonitorApp(QMainWindow):
         self.final_content.setText(final_score_str)
      
     def load_selected_race(self): # Function to be called when the data is loaded
+        logging.info("Load Selected selected race")
         #print("Load Selected race def entered")
+        logging.info("Load Selected race def entered")
         selected_index = self.dropdown.currentIndex()
         if selected_index >= 0:
             race_text = self.dropdown.itemText(selected_index)
@@ -1851,11 +1931,14 @@ class RaceMonitorApp(QMainWindow):
             self.viewing_race_id = None  # Reset viewing_race_id before loading
             self.db_queue.put(('load_selected_race', (race_index,) )) # Queue the operation to DatabaseThread
             #print(f"Signal Sent")
+            logging.infoprint(f"Load selected race Signal Sent")
             
     def on_race_loaded(self, race, participants, laps):
+        logging.info("on race loaded def entered")
         
         race_id, track_variation, laps_in_event, Session_id = race # Function to be called when the data is loaded
         #print(f"Signal received")
+        logging.info(f"Load selected race Signal received")
         if race_id:
             self.viewing_race_id = race_id  # Set the viewing_race_id with the loaded race_id
             logging.info(f"Load Selected Race, RaceID: {self.viewing_race_id}")
@@ -1902,7 +1985,7 @@ class RaceMonitorApp(QMainWindow):
             self.display_score()
 
     def delete_selected_race(self):
-        logging.info(f"Thread ID in operation: {threading.get_ident()}")
+        logging.info(f"Delete selected race def entered")
         #print(f"Delete Race Thread ID in operation: {threading.get_ident()}")
         
         selected_index = self.dropdown.currentIndex()
@@ -1912,6 +1995,7 @@ class RaceMonitorApp(QMainWindow):
             
             def on_race_deleted(race_id):
                 print("Should only see this once")
+                logging.info("Should only see this once")
                 if race_id is not None:
                     if self.viewing_race_id == race_id:
                         self.results_content.setText("Race Deleted")
@@ -1927,9 +2011,9 @@ class RaceMonitorApp(QMainWindow):
             # Send request to DatabaseThread
             self.set_delete_mode(True)  # Activates delete mode
             self.db_queue.put(('get_race_id_and_delete', (race_index, on_race_deleted)))
-            
-    
+
     def set_delete_mode(self, is_active):
+        logging.info("Def set_delete_mode entered")
         if is_active:
             self.delete_button.setText("Deleting Race...")
             '''
@@ -1956,6 +2040,7 @@ class RaceMonitorApp(QMainWindow):
             self.delete_button.setEnabled(True)         
             
     def start_new_session(self):
+        logging.info("Def start_new_session entered")
         self.session_id += 1
         self.session_id_updated.emit(self.session_id)
         

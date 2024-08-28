@@ -1,0 +1,1 @@
+pyinstaller RaceMonitor_v1.3.2.spec

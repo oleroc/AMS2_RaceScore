@@ -1,0 +1,1599 @@
+(['C:\\Users\\Live For '
+  'Speed\\Documents\\GitHub\\AMS2_RaceScore\\RaceMonitor_v1.3.2.py'],
+ ['C:\\Users\\Live For Speed\\Documents\\GitHub\\AMS2_RaceScore'],
+ [],
+ ['C:\\Users\\Live For '
+  'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\numpy\\_pyinstaller',
+  'C:\\Users\\Live For '
+  'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\hooks\\stdhooks',
+  'C:\\Users\\Live For '
+  'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\hooks'],
+ {},
+ [],
+ [],
+ False,
+ {},
+ 0,
+ [],
+ [('Bronse.png',
+   'C:\\Users\\Live For Speed\\Documents\\GitHub\\AMS2_RaceScore\\Bronse.png',
+   'DATA'),
+  ('Gold.png',
+   'C:\\Users\\Live For Speed\\Documents\\GitHub\\AMS2_RaceScore\\Gold.png',
+   'DATA'),
+  ('LiveRace_LiveView.jpg',
+   'C:\\Users\\Live For '
+   'Speed\\Documents\\GitHub\\AMS2_RaceScore\\LiveRace_LiveView.jpg',
+   'DATA'),
+  ('LiveRace_Status.jpg',
+   'C:\\Users\\Live For '
+   'Speed\\Documents\\GitHub\\AMS2_RaceScore\\LiveRace_Status.jpg',
+   'DATA'),
+  ('Name.png',
+   'C:\\Users\\Live For Speed\\Documents\\GitHub\\AMS2_RaceScore\\Name.png',
+   'DATA'),
+  ('Place.png',
+   'C:\\Users\\Live For Speed\\Documents\\GitHub\\AMS2_RaceScore\\Place.png',
+   'DATA'),
+  ('Points.png',
+   'C:\\Users\\Live For Speed\\Documents\\GitHub\\AMS2_RaceScore\\Points.png',
+   'DATA'),
+  ('RockyTM.ico',
+   'C:\\Users\\Live For Speed\\Documents\\GitHub\\AMS2_RaceScore\\RockyTM.ico',
+   'DATA'),
+  ('Silver.png',
+   'C:\\Users\\Live For Speed\\Documents\\GitHub\\AMS2_RaceScore\\Silver.png',
+   'DATA'),
+  ('Table_background.png',
+   'C:\\Users\\Live For '
+   'Speed\\Documents\\GitHub\\AMS2_RaceScore\\Table_background.png',
+   'DATA'),
+  ('lastplace.png',
+   'C:\\Users\\Live For '
+   'Speed\\Documents\\GitHub\\AMS2_RaceScore\\lastplace.png',
+   'DATA')],
+ '3.11.3 (tags/v3.11.3:f3909b8, Apr  4 2023, 23:49:59) [MSC v.1934 64 bit '
+ '(AMD64)]',
+ [('pyi_rth_inspect',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_inspect.py',
+   'PYSOURCE'),
+  ('pyi_rth_pyqt5',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_pyqt5.py',
+   'PYSOURCE'),
+  ('pyi_rth_pkgutil',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_pkgutil.py',
+   'PYSOURCE'),
+  ('RaceMonitor_v1.3.2',
+   'C:\\Users\\Live For '
+   'Speed\\Documents\\GitHub\\AMS2_RaceScore\\RaceMonitor_v1.3.2.py',
+   'PYSOURCE')],
+ [('_pyi_rth_utils',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyInstaller\\fake-modules\\_pyi_rth_utils\\__init__.py',
+   'PYMODULE'),
+  ('_pyi_rth_utils.qt',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyInstaller\\fake-modules\\_pyi_rth_utils\\qt.py',
+   'PYMODULE'),
+  ('importlib',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\__init__.py',
+   'PYMODULE'),
+  ('importlib._bootstrap_external',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\_bootstrap_external.py',
+   'PYMODULE'),
+  ('importlib.metadata',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\metadata\\__init__.py',
+   'PYMODULE'),
+  ('typing',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\typing.py',
+   'PYMODULE'),
+  ('importlib.abc',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\abc.py',
+   'PYMODULE'),
+  ('importlib.resources.abc',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\resources\\abc.py',
+   'PYMODULE'),
+  ('importlib.resources',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\resources\\__init__.py',
+   'PYMODULE'),
+  ('importlib.resources._legacy',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\resources\\_legacy.py',
+   'PYMODULE'),
+  ('importlib.resources._common',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\resources\\_common.py',
+   'PYMODULE'),
+  ('importlib.resources._adapters',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\resources\\_adapters.py',
+   'PYMODULE'),
+  ('tempfile',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\tempfile.py',
+   'PYMODULE'),
+  ('random',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\random.py',
+   'PYMODULE'),
+  ('statistics',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\statistics.py',
+   'PYMODULE'),
+  ('decimal',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\decimal.py',
+   'PYMODULE'),
+  ('_pydecimal',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\_pydecimal.py',
+   'PYMODULE'),
+  ('contextvars',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\contextvars.py',
+   'PYMODULE'),
+  ('fractions',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\fractions.py',
+   'PYMODULE'),
+  ('numbers',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\numbers.py',
+   'PYMODULE'),
+  ('hashlib',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\hashlib.py',
+   'PYMODULE'),
+  ('bisect',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\bisect.py',
+   'PYMODULE'),
+  ('shutil',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\shutil.py',
+   'PYMODULE'),
+  ('tarfile',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\tarfile.py',
+   'PYMODULE'),
+  ('argparse',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\argparse.py',
+   'PYMODULE'),
+  ('gettext',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\gettext.py',
+   'PYMODULE'),
+  ('gzip',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\gzip.py',
+   'PYMODULE'),
+  ('_compression',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\_compression.py',
+   'PYMODULE'),
+  ('copy',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\copy.py',
+   'PYMODULE'),
+  ('struct',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\struct.py',
+   'PYMODULE'),
+  ('lzma',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\lzma.py',
+   'PYMODULE'),
+  ('bz2',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\bz2.py',
+   'PYMODULE'),
+  ('fnmatch',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\fnmatch.py',
+   'PYMODULE'),
+  ('importlib._abc',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\_abc.py',
+   'PYMODULE'),
+  ('importlib.machinery',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\machinery.py',
+   'PYMODULE'),
+  ('contextlib',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\contextlib.py',
+   'PYMODULE'),
+  ('importlib.metadata._itertools',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\metadata\\_itertools.py',
+   'PYMODULE'),
+  ('importlib.metadata._functools',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\metadata\\_functools.py',
+   'PYMODULE'),
+  ('importlib.metadata._collections',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\metadata\\_collections.py',
+   'PYMODULE'),
+  ('importlib.metadata._meta',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\metadata\\_meta.py',
+   'PYMODULE'),
+  ('importlib.metadata._adapters',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\metadata\\_adapters.py',
+   'PYMODULE'),
+  ('importlib.metadata._text',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\metadata\\_text.py',
+   'PYMODULE'),
+  ('email.message',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\email\\message.py',
+   'PYMODULE'),
+  ('email.policy',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\email\\policy.py',
+   'PYMODULE'),
+  ('email.contentmanager',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\email\\contentmanager.py',
+   'PYMODULE'),
+  ('email.quoprimime',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\email\\quoprimime.py',
+   'PYMODULE'),
+  ('string',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\string.py',
+   'PYMODULE'),
+  ('email.headerregistry',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\email\\headerregistry.py',
+   'PYMODULE'),
+  ('email._header_value_parser',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\email\\_header_value_parser.py',
+   'PYMODULE'),
+  ('urllib',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\urllib\\__init__.py',
+   'PYMODULE'),
+  ('email.iterators',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\email\\iterators.py',
+   'PYMODULE'),
+  ('email.generator',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\email\\generator.py',
+   'PYMODULE'),
+  ('email._encoded_words',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\email\\_encoded_words.py',
+   'PYMODULE'),
+  ('base64',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\base64.py',
+   'PYMODULE'),
+  ('getopt',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\getopt.py',
+   'PYMODULE'),
+  ('email.charset',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\email\\charset.py',
+   'PYMODULE'),
+  ('email.encoders',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\email\\encoders.py',
+   'PYMODULE'),
+  ('email.base64mime',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\email\\base64mime.py',
+   'PYMODULE'),
+  ('email._policybase',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\email\\_policybase.py',
+   'PYMODULE'),
+  ('email.header',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\email\\header.py',
+   'PYMODULE'),
+  ('email.errors',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\email\\errors.py',
+   'PYMODULE'),
+  ('email.utils',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\email\\utils.py',
+   'PYMODULE'),
+  ('email._parseaddr',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\email\\_parseaddr.py',
+   'PYMODULE'),
+  ('calendar',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\calendar.py',
+   'PYMODULE'),
+  ('urllib.parse',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\urllib\\parse.py',
+   'PYMODULE'),
+  ('socket',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\socket.py',
+   'PYMODULE'),
+  ('selectors',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\selectors.py',
+   'PYMODULE'),
+  ('quopri',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\quopri.py',
+   'PYMODULE'),
+  ('textwrap',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\textwrap.py',
+   'PYMODULE'),
+  ('zipfile',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\zipfile.py',
+   'PYMODULE'),
+  ('py_compile',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\py_compile.py',
+   'PYMODULE'),
+  ('threading',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\threading.py',
+   'PYMODULE'),
+  ('_threading_local',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\_threading_local.py',
+   'PYMODULE'),
+  ('importlib.util',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\util.py',
+   'PYMODULE'),
+  ('email',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\email\\__init__.py',
+   'PYMODULE'),
+  ('email.parser',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\email\\parser.py',
+   'PYMODULE'),
+  ('email.feedparser',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\email\\feedparser.py',
+   'PYMODULE'),
+  ('csv',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\csv.py',
+   'PYMODULE'),
+  ('importlib.readers',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\readers.py',
+   'PYMODULE'),
+  ('importlib.resources.readers',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\resources\\readers.py',
+   'PYMODULE'),
+  ('importlib.resources._itertools',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\resources\\_itertools.py',
+   'PYMODULE'),
+  ('tokenize',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\tokenize.py',
+   'PYMODULE'),
+  ('token',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\token.py',
+   'PYMODULE'),
+  ('importlib._bootstrap',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\importlib\\_bootstrap.py',
+   'PYMODULE'),
+  ('pkgutil',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\pkgutil.py',
+   'PYMODULE'),
+  ('zipimport',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\zipimport.py',
+   'PYMODULE'),
+  ('inspect',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\inspect.py',
+   'PYMODULE'),
+  ('dis',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\dis.py',
+   'PYMODULE'),
+  ('opcode',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\opcode.py',
+   'PYMODULE'),
+  ('ast',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\ast.py',
+   'PYMODULE'),
+  ('pathlib',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\pathlib.py',
+   'PYMODULE'),
+  ('stringprep',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\stringprep.py',
+   'PYMODULE'),
+  ('tracemalloc',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\tracemalloc.py',
+   'PYMODULE'),
+  ('pickle',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\pickle.py',
+   'PYMODULE'),
+  ('pprint',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\pprint.py',
+   'PYMODULE'),
+  ('dataclasses',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\dataclasses.py',
+   'PYMODULE'),
+  ('_compat_pickle',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\_compat_pickle.py',
+   'PYMODULE'),
+  ('_py_abc',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\_py_abc.py',
+   'PYMODULE'),
+  ('datetime',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\datetime.py',
+   'PYMODULE'),
+  ('_strptime',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\_strptime.py',
+   'PYMODULE'),
+  ('PyQt5',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\__init__.py',
+   'PYMODULE'),
+  ('configparser',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\configparser.py',
+   'PYMODULE'),
+  ('subprocess',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\subprocess.py',
+   'PYMODULE'),
+  ('signal',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\signal.py',
+   'PYMODULE'),
+  ('logging',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\logging\\__init__.py',
+   'PYMODULE'),
+  ('json',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\json\\__init__.py',
+   'PYMODULE'),
+  ('json.encoder',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\json\\encoder.py',
+   'PYMODULE'),
+  ('json.decoder',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\json\\decoder.py',
+   'PYMODULE'),
+  ('json.scanner',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\json\\scanner.py',
+   'PYMODULE'),
+  ('queue',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\queue.py',
+   'PYMODULE'),
+  ('sqlite3',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\sqlite3\\__init__.py',
+   'PYMODULE'),
+  ('sqlite3.dump',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\sqlite3\\dump.py',
+   'PYMODULE'),
+  ('sqlite3.dbapi2',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\sqlite3\\dbapi2.py',
+   'PYMODULE'),
+  ('requests',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\requests\\__init__.py',
+   'PYMODULE'),
+  ('requests.status_codes',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\requests\\status_codes.py',
+   'PYMODULE'),
+  ('requests.structures',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\requests\\structures.py',
+   'PYMODULE'),
+  ('requests.compat',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\requests\\compat.py',
+   'PYMODULE'),
+  ('urllib.request',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\urllib\\request.py',
+   'PYMODULE'),
+  ('getpass',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\getpass.py',
+   'PYMODULE'),
+  ('nturl2path',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\nturl2path.py',
+   'PYMODULE'),
+  ('ftplib',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\ftplib.py',
+   'PYMODULE'),
+  ('netrc',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\netrc.py',
+   'PYMODULE'),
+  ('shlex',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\shlex.py',
+   'PYMODULE'),
+  ('mimetypes',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\mimetypes.py',
+   'PYMODULE'),
+  ('urllib.response',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\urllib\\response.py',
+   'PYMODULE'),
+  ('urllib.error',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\urllib\\error.py',
+   'PYMODULE'),
+  ('http.client',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\http\\client.py',
+   'PYMODULE'),
+  ('http.cookies',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\http\\cookies.py',
+   'PYMODULE'),
+  ('http.cookiejar',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\http\\cookiejar.py',
+   'PYMODULE'),
+  ('http',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\http\\__init__.py',
+   'PYMODULE'),
+  ('requests.models',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\requests\\models.py',
+   'PYMODULE'),
+  ('idna',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\idna\\__init__.py',
+   'PYMODULE'),
+  ('idna.intranges',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\idna\\intranges.py',
+   'PYMODULE'),
+  ('idna.core',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\idna\\core.py',
+   'PYMODULE'),
+  ('idna.uts46data',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\idna\\uts46data.py',
+   'PYMODULE'),
+  ('idna.idnadata',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\idna\\idnadata.py',
+   'PYMODULE'),
+  ('idna.package_data',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\idna\\package_data.py',
+   'PYMODULE'),
+  ('requests.hooks',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\requests\\hooks.py',
+   'PYMODULE'),
+  ('requests.cookies',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\requests\\cookies.py',
+   'PYMODULE'),
+  ('requests.auth',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\requests\\auth.py',
+   'PYMODULE'),
+  ('requests._internal_utils',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\requests\\_internal_utils.py',
+   'PYMODULE'),
+  ('urllib3.util',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\urllib3\\util\\__init__.py',
+   'PYMODULE'),
+  ('urllib3.util.wait',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\urllib3\\util\\wait.py',
+   'PYMODULE'),
+  ('urllib3.util.url',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\urllib3\\util\\url.py',
+   'PYMODULE'),
+  ('urllib3.util.util',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\urllib3\\util\\util.py',
+   'PYMODULE'),
+  ('urllib3.util.timeout',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\urllib3\\util\\timeout.py',
+   'PYMODULE'),
+  ('urllib3.util.ssl_',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\urllib3\\util\\ssl_.py',
+   'PYMODULE'),
+  ('urllib3.util.ssltransport',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\urllib3\\util\\ssltransport.py',
+   'PYMODULE'),
+  ('hmac',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\hmac.py',
+   'PYMODULE'),
+  ('urllib3.util.retry',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\urllib3\\util\\retry.py',
+   'PYMODULE'),
+  ('urllib3.response',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\urllib3\\response.py',
+   'PYMODULE'),
+  ('urllib3.connection',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\urllib3\\connection.py',
+   'PYMODULE'),
+  ('urllib3.util.ssl_match_hostname',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\urllib3\\util\\ssl_match_hostname.py',
+   'PYMODULE'),
+  ('ipaddress',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\ipaddress.py',
+   'PYMODULE'),
+  ('urllib3._version',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\urllib3\\_version.py',
+   'PYMODULE'),
+  ('urllib3._collections',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\urllib3\\_collections.py',
+   'PYMODULE'),
+  ('urllib3._base_connection',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\urllib3\\_base_connection.py',
+   'PYMODULE'),
+  ('urllib3.connectionpool',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\urllib3\\connectionpool.py',
+   'PYMODULE'),
+  ('urllib3.util.proxy',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\urllib3\\util\\proxy.py',
+   'PYMODULE'),
+  ('urllib3._request_methods',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\urllib3\\_request_methods.py',
+   'PYMODULE'),
+  ('urllib3.util.response',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\urllib3\\util\\response.py',
+   'PYMODULE'),
+  ('urllib3.util.request',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\urllib3\\util\\request.py',
+   'PYMODULE'),
+  ('urllib3.util.connection',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\urllib3\\util\\connection.py',
+   'PYMODULE'),
+  ('__future__',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\__future__.py',
+   'PYMODULE'),
+  ('urllib3.filepost',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\urllib3\\filepost.py',
+   'PYMODULE'),
+  ('urllib3.fields',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\urllib3\\fields.py',
+   'PYMODULE'),
+  ('requests.api',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\requests\\api.py',
+   'PYMODULE'),
+  ('requests.sessions',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\requests\\sessions.py',
+   'PYMODULE'),
+  ('requests.adapters',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\requests\\adapters.py',
+   'PYMODULE'),
+  ('urllib3.contrib.socks',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\urllib3\\contrib\\socks.py',
+   'PYMODULE'),
+  ('urllib3.poolmanager',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\urllib3\\poolmanager.py',
+   'PYMODULE'),
+  ('requests.__version__',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\requests\\__version__.py',
+   'PYMODULE'),
+  ('requests.utils',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\requests\\utils.py',
+   'PYMODULE'),
+  ('requests.certs',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\requests\\certs.py',
+   'PYMODULE'),
+  ('certifi',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\certifi\\__init__.py',
+   'PYMODULE'),
+  ('certifi.core',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\certifi\\core.py',
+   'PYMODULE'),
+  ('requests.packages',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\requests\\packages.py',
+   'PYMODULE'),
+  ('urllib3.exceptions',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\urllib3\\exceptions.py',
+   'PYMODULE'),
+  ('urllib3.contrib.pyopenssl',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\urllib3\\contrib\\pyopenssl.py',
+   'PYMODULE'),
+  ('urllib3.contrib',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\urllib3\\contrib\\__init__.py',
+   'PYMODULE'),
+  ('ssl',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\ssl.py',
+   'PYMODULE'),
+  ('charset_normalizer',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\charset_normalizer\\__init__.py',
+   'PYMODULE'),
+  ('charset_normalizer.version',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\charset_normalizer\\version.py',
+   'PYMODULE'),
+  ('charset_normalizer.utils',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\charset_normalizer\\utils.py',
+   'PYMODULE'),
+  ('charset_normalizer.constant',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\charset_normalizer\\constant.py',
+   'PYMODULE'),
+  ('charset_normalizer.models',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\charset_normalizer\\models.py',
+   'PYMODULE'),
+  ('charset_normalizer.cd',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\charset_normalizer\\cd.py',
+   'PYMODULE'),
+  ('charset_normalizer.legacy',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\charset_normalizer\\legacy.py',
+   'PYMODULE'),
+  ('charset_normalizer.api',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\charset_normalizer\\api.py',
+   'PYMODULE'),
+  ('requests.exceptions',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\requests\\exceptions.py',
+   'PYMODULE'),
+  ('urllib3',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\urllib3\\__init__.py',
+   'PYMODULE'),
+  ('urllib3.contrib.emscripten',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\urllib3\\contrib\\emscripten\\__init__.py',
+   'PYMODULE'),
+  ('urllib3.contrib.emscripten.connection',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\urllib3\\contrib\\emscripten\\connection.py',
+   'PYMODULE'),
+  ('urllib3.contrib.emscripten.response',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\urllib3\\contrib\\emscripten\\response.py',
+   'PYMODULE'),
+  ('urllib3.contrib.emscripten.request',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\urllib3\\contrib\\emscripten\\request.py',
+   'PYMODULE'),
+  ('urllib3.contrib.emscripten.fetch',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\urllib3\\contrib\\emscripten\\fetch.py',
+   'PYMODULE'),
+  ('timeit',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\timeit.py',
+   'PYMODULE')],
+ [('python311.dll',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\python311.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\bin\\opengl32sw.dll',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\opengl32sw.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\bin\\libEGL.dll',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\libEGL.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\bin\\libGLESv2.dll',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\libGLESv2.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\bin\\d3dcompiler_47.dll',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\d3dcompiler_47.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\plugins\\imageformats\\qtga.dll',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\imageformats\\qtga.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\plugins\\imageformats\\qicns.dll',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\imageformats\\qicns.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\plugins\\imageformats\\qsvg.dll',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\imageformats\\qsvg.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\plugins\\imageformats\\qwebp.dll',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\imageformats\\qwebp.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\plugins\\platforms\\qminimal.dll',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\platforms\\qminimal.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\plugins\\platformthemes\\qxdgdesktopportal.dll',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\platformthemes\\qxdgdesktopportal.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\plugins\\imageformats\\qico.dll',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\imageformats\\qico.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\plugins\\platforms\\qwindows.dll',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\platforms\\qwindows.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\plugins\\imageformats\\qtiff.dll',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\imageformats\\qtiff.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\plugins\\imageformats\\qwbmp.dll',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\imageformats\\qwbmp.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\plugins\\platforms\\qoffscreen.dll',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\platforms\\qoffscreen.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\plugins\\imageformats\\qgif.dll',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\imageformats\\qgif.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\plugins\\iconengines\\qsvgicon.dll',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\iconengines\\qsvgicon.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\plugins\\platforms\\qwebgl.dll',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\platforms\\qwebgl.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\plugins\\imageformats\\qjpeg.dll',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\imageformats\\qjpeg.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\plugins\\generic\\qtuiotouchplugin.dll',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\generic\\qtuiotouchplugin.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\plugins\\styles\\qwindowsvistastyle.dll',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\plugins\\styles\\qwindowsvistastyle.dll',
+   'BINARY'),
+  ('_decimal.pyd',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\DLLs\\_decimal.pyd',
+   'EXTENSION'),
+  ('_hashlib.pyd',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\DLLs\\_hashlib.pyd',
+   'EXTENSION'),
+  ('_lzma.pyd',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\DLLs\\_lzma.pyd',
+   'EXTENSION'),
+  ('_bz2.pyd',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\DLLs\\_bz2.pyd',
+   'EXTENSION'),
+  ('unicodedata.pyd',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\DLLs\\unicodedata.pyd',
+   'EXTENSION'),
+  ('select.pyd',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\DLLs\\select.pyd',
+   'EXTENSION'),
+  ('_socket.pyd',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\DLLs\\_socket.pyd',
+   'EXTENSION'),
+  ('PyQt5\\QtCore.pyd',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\QtCore.pyd',
+   'EXTENSION'),
+  ('PyQt5\\sip.cp311-win_amd64.pyd',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\sip.cp311-win_amd64.pyd',
+   'EXTENSION'),
+  ('PyQt5\\QtGui.pyd',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\QtGui.pyd',
+   'EXTENSION'),
+  ('PyQt5\\QtWidgets.pyd',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\QtWidgets.pyd',
+   'EXTENSION'),
+  ('_queue.pyd',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\DLLs\\_queue.pyd',
+   'EXTENSION'),
+  ('_sqlite3.pyd',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\DLLs\\_sqlite3.pyd',
+   'EXTENSION'),
+  ('_ssl.pyd',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\DLLs\\_ssl.pyd',
+   'EXTENSION'),
+  ('charset_normalizer\\md__mypyc.cp311-win_amd64.pyd',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\charset_normalizer\\md__mypyc.cp311-win_amd64.pyd',
+   'EXTENSION'),
+  ('charset_normalizer\\md.cp311-win_amd64.pyd',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\charset_normalizer\\md.cp311-win_amd64.pyd',
+   'EXTENSION'),
+  ('api-ms-win-crt-locale-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-crt-locale-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-conio-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-crt-conio-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-heap-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-crt-heap-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-stdio-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-crt-stdio-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-convert-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-crt-convert-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-runtime-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-crt-runtime-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-process-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-crt-process-l1-1-0.dll',
+   'BINARY'),
+  ('VCRUNTIME140.dll',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\VCRUNTIME140.dll',
+   'BINARY'),
+  ('api-ms-win-crt-math-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-crt-math-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-environment-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-crt-environment-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-time-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-crt-time-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-string-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-crt-string-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-filesystem-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-crt-filesystem-l1-1-0.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\bin\\VCRUNTIME140.dll',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\VCRUNTIME140.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\bin\\MSVCP140.dll',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\MSVCP140.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\bin\\VCRUNTIME140_1.dll',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\VCRUNTIME140_1.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\bin\\Qt5Gui.dll',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\Qt5Gui.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\bin\\Qt5Core.dll',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\Qt5Core.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\bin\\Qt5Svg.dll',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\Qt5Svg.dll',
+   'BINARY'),
+  ('api-ms-win-crt-utility-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-crt-utility-l1-1-0.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\bin\\Qt5DBus.dll',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\Qt5DBus.dll',
+   'BINARY'),
+  ('VCRUNTIME140_1.dll',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\VCRUNTIME140_1.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\bin\\Qt5Network.dll',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\Qt5Network.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\bin\\Qt5WebSockets.dll',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\Qt5WebSockets.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\bin\\Qt5Quick.dll',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\Qt5Quick.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\bin\\Qt5Widgets.dll',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\Qt5Widgets.dll',
+   'BINARY'),
+  ('libcrypto-1_1.dll',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\DLLs\\libcrypto-1_1.dll',
+   'BINARY'),
+  ('python3.dll',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\python3.dll',
+   'BINARY'),
+  ('sqlite3.dll',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\DLLs\\sqlite3.dll',
+   'BINARY'),
+  ('libssl-1_1.dll',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\DLLs\\libssl-1_1.dll',
+   'BINARY'),
+  ('ucrtbase.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\ucrtbase.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\bin\\MSVCP140_1.dll',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\MSVCP140_1.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\bin\\Qt5Qml.dll',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\Qt5Qml.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\bin\\Qt5QmlModels.dll',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\Qt5QmlModels.dll',
+   'BINARY'),
+  ('api-ms-win-core-file-l1-2-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-file-l1-2-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-heap-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-heap-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-synch-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-synch-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-localization-l1-2-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-localization-l1-2-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-processenvironment-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-processenvironment-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-interlocked-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-interlocked-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-memory-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-memory-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-handle-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-handle-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-string-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-string-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-rtlsupport-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-rtlsupport-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-processthreads-l1-1-1.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-processthreads-l1-1-1.dll',
+   'BINARY'),
+  ('api-ms-win-core-file-l2-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-file-l2-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-datetime-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-datetime-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-debug-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-debug-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-processthreads-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-processthreads-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-util-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-util-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-synch-l1-2-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-synch-l1-2-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-sysinfo-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-sysinfo-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-console-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-console-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-timezone-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-timezone-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-libraryloader-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-libraryloader-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-file-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-file-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-errorhandling-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-errorhandling-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-profile-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-profile-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-namedpipe-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-namedpipe-l1-1-0.dll',
+   'BINARY')],
+ [],
+ [],
+ [('Bronse.png',
+   'C:\\Users\\Live For Speed\\Documents\\GitHub\\AMS2_RaceScore\\Bronse.png',
+   'DATA'),
+  ('Gold.png',
+   'C:\\Users\\Live For Speed\\Documents\\GitHub\\AMS2_RaceScore\\Gold.png',
+   'DATA'),
+  ('LiveRace_LiveView.jpg',
+   'C:\\Users\\Live For '
+   'Speed\\Documents\\GitHub\\AMS2_RaceScore\\LiveRace_LiveView.jpg',
+   'DATA'),
+  ('LiveRace_Status.jpg',
+   'C:\\Users\\Live For '
+   'Speed\\Documents\\GitHub\\AMS2_RaceScore\\LiveRace_Status.jpg',
+   'DATA'),
+  ('Name.png',
+   'C:\\Users\\Live For Speed\\Documents\\GitHub\\AMS2_RaceScore\\Name.png',
+   'DATA'),
+  ('Place.png',
+   'C:\\Users\\Live For Speed\\Documents\\GitHub\\AMS2_RaceScore\\Place.png',
+   'DATA'),
+  ('Points.png',
+   'C:\\Users\\Live For Speed\\Documents\\GitHub\\AMS2_RaceScore\\Points.png',
+   'DATA'),
+  ('RockyTM.ico',
+   'C:\\Users\\Live For Speed\\Documents\\GitHub\\AMS2_RaceScore\\RockyTM.ico',
+   'DATA'),
+  ('Silver.png',
+   'C:\\Users\\Live For Speed\\Documents\\GitHub\\AMS2_RaceScore\\Silver.png',
+   'DATA'),
+  ('Table_background.png',
+   'C:\\Users\\Live For '
+   'Speed\\Documents\\GitHub\\AMS2_RaceScore\\Table_background.png',
+   'DATA'),
+  ('lastplace.png',
+   'C:\\Users\\Live For '
+   'Speed\\Documents\\GitHub\\AMS2_RaceScore\\lastplace.png',
+   'DATA'),
+  ('base_library.zip',
+   'C:\\Users\\Live For '
+   'Speed\\Documents\\GitHub\\AMS2_RaceScore\\build\\RaceMonitor_v1.3.2\\base_library.zip',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_ja.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_ja.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_bg.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_bg.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_zh_TW.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_zh_TW.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_bg.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_bg.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_gl.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_gl.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_tr.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_tr.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_es.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_es.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_en.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_en.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_de.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_de.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_fr.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_fr.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_ca.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_ca.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_fi.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_fi.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_hu.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_hu.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_ca.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_ca.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_pl.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_pl.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_ko.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_ko.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_uk.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_uk.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_zh_CN.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_zh_CN.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_cs.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_cs.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_he.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_he.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_zh_CN.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_zh_CN.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_gd.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_gd.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_cs.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_cs.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_sv.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_sv.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_ru.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_ru.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_cs.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_cs.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_de.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_de.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_hu.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_hu.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_en.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_en.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_sl.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_sl.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_ko.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_ko.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_ru.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_ru.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_ko.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_ko.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_sk.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_sk.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_ar.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_ar.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_lv.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_lv.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_lv.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_lv.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_bg.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_bg.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_pl.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_pl.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_gl.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_gl.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_ja.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_ja.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_uk.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_uk.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_en.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_en.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_fi.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_fi.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_sk.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_sk.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_he.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_he.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_gd.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_gd.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_da.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_da.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_hu.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_hu.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_it.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_it.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_ar.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_ar.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_pt.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_pt.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_es.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_es.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_ar.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_ar.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_uk.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_uk.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_it.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_it.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_lt.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_lt.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_zh_TW.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_zh_TW.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_tr.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_tr.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_zh_TW.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_zh_TW.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_da.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_da.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_de.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_de.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_fr.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_fr.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_ru.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_ru.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_es.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_es.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_fr.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_fr.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_it.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_it.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_sl.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_sl.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_ca.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_ca.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_pl.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_pl.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_fa.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_fa.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_tr.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_tr.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_ja.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_ja.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_da.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_da.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_sk.qm',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_sk.qm',
+   'DATA'),
+  ('certifi\\cacert.pem',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\certifi\\cacert.pem',
+   'DATA'),
+  ('certifi\\py.typed',
+   'C:\\Users\\Live For '
+   'Speed\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\certifi\\py.typed',
+   'DATA')])
