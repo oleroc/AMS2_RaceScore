@@ -1,68 +1,73 @@
-2024-08-28 10:50:50,315 - INFO - Config file at config.ini updated with version 1.3.2.
-2024-08-28 10:50:50,315 - INFO - Operation: get_latest_session_id Args: (<bound method RaceMonitorApp.set_session_id of <__main__.RaceMonitorApp object at 0x0000026547E05360>>,)
-2024-08-28 10:50:50,316 - INFO - RMA Def setup_live_view entered
-2024-08-28 10:50:50,317 - INFO - DB Get Latest Session_id
-2024-08-28 10:50:50,318 - INFO - RMA Def setup_final_view entered
-2024-08-28 10:50:50,319 - INFO - RMA Def setup_result_view entered
-2024-08-28 10:50:50,319 - INFO - DB Def get latest session ID entered
-2024-08-28 10:50:51,666 - INFO - Trying to get Max session ID from DB
-2024-08-28 10:50:51,667 - INFO - DB Session ID result: 3
-2024-08-28 10:50:51,667 - INFO - DB Invoking callback with session_id
-2024-08-28 10:50:51,668 - INFO - RMA Def set_session_id entered
-2024-08-28 10:50:51,668 - INFO - RMA Session ID fetched: (3)
-2024-08-28 10:50:51,668 - INFO - Get Session_id succeeded
-2024-08-28 10:50:51,668 - INFO - Operation: get_latest_session_id Args: (<bound method MonitorThread.set_session_id of <__main__.MonitorThread object at 0x0000026547E055A0>>,)
-2024-08-28 10:50:51,668 - INFO - DB Get Latest Session_id
-2024-08-28 10:50:51,669 - INFO - DB Def get latest session ID entered
-2024-08-28 10:50:51,669 - INFO - Trying to get Max session ID from DB
-2024-08-28 10:50:51,671 - INFO - DB Session ID result: 3
-2024-08-28 10:50:51,671 - INFO - DB Invoking callback with session_id
-2024-08-28 10:50:51,671 - INFO - MT Def set_session_id entered
-2024-08-28 10:50:51,672 - INFO - Get Session_id succeeded
-2024-08-28 10:50:51,673 - INFO - RMA Def on_tab_changed entered
-2024-08-28 10:50:51,673 - INFO - MT No participants found, Still waiting for race start.
-2024-08-28 10:50:51,674 - INFO - RMA Def on_tab_changed entered
-2024-08-28 10:50:51,676 - INFO - RMA Def update_background entered
-2024-08-28 10:50:51,762 - INFO - RMA Initialize Dropdown def entered
-2024-08-28 10:50:51,763 - INFO - Operation: load_race_data_on_start Args: ()
-2024-08-28 10:50:51,763 - INFO - DB Load Race data on starT
-2024-08-28 10:50:51,763 - INFO - DB Def load race data on start def entered
-2024-08-28 10:50:51,765 - INFO - DB Load race data on start all Races: [(9, 'Knockhill - Tri_Oval', 1, '2024-08-28'), (10, 'Knockhill - Tri_Oval', 1, '2024-08-28'), (11, 'Knockhill - Tri_Oval', 1, '2024-08-28'), (12, 'Knockhill - Tri_Oval', 1, '2024-08-28'), (13, 'Knockhill - Tri_Oval', 1, '2024-08-28'), (14, 'Knockhill - Tri_Oval', 1, '2024-08-28'), (15, 'Knockhill - Tri_Oval', 1, '2024-08-28'), (16, 'Knockhill - Tri_Oval', 1, '2024-08-28'), (17, 'Knockhill - Tri_Oval', 1, '2024-08-28'), (18, 'Knockhill - Tri_Oval', 1, '2024-08-28'), (19, 'Knockhill - Tri_Oval', 1, '2024-08-28'), (20, 'Knockhill - Tri_Oval', 1, '2024-08-28')]
-2024-08-28 10:50:51,766 - INFO - DB Paticipants carNames and RaceID fetched: [(9, 'Volkswagen Polo RX'), (9, 'Volkswagen Polo RX'), (9, 'Volkswagen Polo RX'), (9, 'Volkswagen Polo RX'), (9, 'Volkswagen Polo RX'), (9, 'Volkswagen Polo RX'), (9, 'Volkswagen Polo RX'), (9, 'Volkswagen Polo RX'), (10, 'Volkswagen Polo RX'), (10, 'Volkswagen Polo RX'), (10, 'Volkswagen Polo RX'), (10, 'Volkswagen Polo RX'), (10, 'Volkswagen Polo RX'), (10, 'Volkswagen Polo RX'), (10, 'Volkswagen Polo RX'), (10, 'Volkswagen Polo RX'), (11, 'Volkswagen Polo RX'), (11, 'Volkswagen Polo RX'), (11, 'Volkswagen Polo RX'), (11, 'Volkswagen Polo RX'), (11, 'Volkswagen Polo RX'), (11, 'Volkswagen Polo RX'), (11, 'Volkswagen Polo RX'), (11, 'Volkswagen Polo RX'), (12, 'Volkswagen Polo RX'), (12, 'Volkswagen Polo RX'), (12, 'Volkswagen Polo RX'), (12, 'Volkswagen Polo RX'), (12, 'Volkswagen Polo RX'), (12, 'Volkswagen Polo RX'), (12, 'Volkswagen Polo RX'), (12, 'Volkswagen Polo RX'), (13, 'Volkswagen Polo RX'), (13, 'Volkswagen Polo RX'), (13, 'Volkswagen Polo RX'), (13, 'Volkswagen Polo RX'), (13, 'Volkswagen Polo RX'), (13, 'Volkswagen Polo RX'), (13, 'Volkswagen Polo RX'), (13, 'Volkswagen Polo RX'), (14, 'Volkswagen Polo RX'), (14, 'Volkswagen Polo RX'), (14, 'Volkswagen Polo RX'), (14, 'Volkswagen Polo RX'), (14, 'Volkswagen Polo RX'), (14, 'Volkswagen Polo RX'), (14, 'Volkswagen Polo RX'), (14, 'Volkswagen Polo RX'), (15, 'Volkswagen Polo RX'), (15, 'Volkswagen Polo RX'), (15, 'Volkswagen Polo RX'), (15, 'Volkswagen Polo RX'), (15, 'Volkswagen Polo RX'), (15, 'Volkswagen Polo RX'), (15, 'Volkswagen Polo RX'), (15, 'Volkswagen Polo RX'), (16, 'Volkswagen Polo RX'), (16, 'Volkswagen Polo RX'), (16, 'Volkswagen Polo RX'), (16, 'Volkswagen Polo RX'), (16, 'Volkswagen Polo RX'), (16, 'Volkswagen Polo RX'), (16, 'Volkswagen Polo RX'), (16, 'Volkswagen Polo RX'), (17, 'Volkswagen Polo RX'), (17, 'Volkswagen Polo RX'), (17, 'Volkswagen Polo RX'), (17, 'Volkswagen Polo RX'), (17, 'Volkswagen Polo RX'), (17, 'Volkswagen Polo RX'), (17, 'Volkswagen Polo RX'), (17, 'Volkswagen Polo RX'), (18, 'Volkswagen Polo RX'), (18, 'Volkswagen Polo RX'), (18, 'Volkswagen Polo RX'), (18, 'Volkswagen Polo RX'), (18, 'Volkswagen Polo RX'), (18, 'Volkswagen Polo RX'), (18, 'Volkswagen Polo RX'), (18, 'Volkswagen Polo RX'), (19, 'Volkswagen Polo RX'), (19, 'Volkswagen Polo RX'), (19, 'Volkswagen Polo RX'), (19, 'Volkswagen Polo RX'), (19, 'Volkswagen Polo RX'), (19, 'Volkswagen Polo RX'), (19, 'Volkswagen Polo RX'), (19, 'Volkswagen Polo RX'), (20, 'Volkswagen Polo RX'), (20, 'Volkswagen Polo RX'), (20, 'Volkswagen Polo RX'), (20, 'Volkswagen Polo RX'), (20, 'Volkswagen Polo RX'), (20, 'Volkswagen Polo RX'), (20, 'Volkswagen Polo RX'), (20, 'Volkswagen Polo RX')]
-2024-08-28 10:50:51,769 - INFO - DB Load race on start signal emitted
-2024-08-28 10:50:51,769 - INFO - Operation: load_sessionid_on_start Args: ()
-2024-08-28 10:50:51,769 - INFO - DB Load Session IDs on start
-2024-08-28 10:50:51,769 - INFO - DB Def load session ids on start def entered
-2024-08-28 10:50:51,771 - INFO - DB Load session id on start sessionids: [(3,), (1,)] fetched from Races
-2024-08-28 10:50:51,771 - INFO - DB Load session id on start, last session ID: [3, 1]
-2024-08-28 10:50:51,771 - INFO - DB Session ID valid, emitting signal
-2024-08-28 10:50:51,822 - INFO - RMA Def handle race data on start entered
-2024-08-28 10:50:51,827 - INFO - RMA Load Selected race def entered
-2024-08-28 10:50:51,828 - INFO - RMA Load selected race Signal Sent
-2024-08-28 10:50:51,828 - INFO - Operation: load_selected_race Args: (20,)
-2024-08-28 10:50:51,828 - INFO - Race not selected:11
-2024-08-28 10:50:51,829 - INFO - RMA Def handle sessionid data entered
-2024-08-28 10:50:51,829 - INFO - DB Load Selected Race
-2024-08-28 10:50:51,829 - INFO - DB Load selected race Def entered with race_id: 20
-2024-08-28 10:50:51,829 - INFO - DB Load selected race: (20, 'Knockhill - Tri_Oval', 1, 3)
-2024-08-28 10:50:51,829 - INFO - DB Race valid, fetching participants and laps with raceID: 20
-2024-08-28 10:50:51,830 - INFO - DB Load selected race participants: [('Olav Christopher Viken  (AI)', 1, 24.666, 24.666, 'Volkswagen Polo RX', None), ('Ilya Malyuev  (AI)', 2, 25.2073, 25.2073, 'Volkswagen Polo RX', None), ('Alois Fiser  (AI)', 3, 26.6815, 26.6815, 'Volkswagen Polo RX', None), ('Dag Ohman  (AI)', 4, None, None, 'Volkswagen Polo RX', 'DNF'), ('Giancarlo Rampanelli  (AI)', 5, None, None, 'Volkswagen Polo RX', 'DNF'), ('Alister McKay  (AI)', 6, None, None, 'Volkswagen Polo RX', 'DNF'), ('S-8', 7, None, None, 'Volkswagen Polo RX', 'DNF'), ('Lee Chorley  (AI)', 8, None, None, 'Volkswagen Polo RX', 'DNF')] fetched with raceID:20
-2024-08-28 10:50:51,830 - INFO - DB Load selected race laps: [(221, 20, 'Olav Christopher Viken  (AI)', 1, 24.666), (222, 20, 'Ilya Malyuev  (AI)', 1, 25.2073), (223, 20, 'Alois Fiser  (AI)', 1, 26.6815)]
-2024-08-28 10:50:51,830 - INFO - DB Load selected race signal emitted
-2024-08-28 10:50:51,839 - INFO - RMA on race loaded def entered
-2024-08-28 10:50:51,839 - INFO - RMA Load selected race Signal received
-2024-08-28 10:50:51,839 - INFO - RMA Load Selected Race, RaceID: 20
-2024-08-28 10:50:51,846 - INFO - RMA Display Score Result def entered
-2024-08-28 10:50:51,847 - INFO - Operation: get_score_data Args: 3
-2024-08-28 10:50:51,848 - INFO - DB Get Score Data
-2024-08-28 10:50:51,849 - INFO - DB get_score_data called with session_id: 3
-2024-08-28 10:50:51,849 - INFO - DB Executing race query for get score data ...
-2024-08-28 10:50:51,849 - INFO - DB Race table: [(9, 'Knockhill - Tri_Oval', 1, '2024-08-28', 3), (10, 'Knockhill - Tri_Oval', 1, '2024-08-28', 3), (14, 'Knockhill - Tri_Oval', 1, '2024-08-28', 3), (15, 'Knockhill - Tri_Oval', 1, '2024-08-28', 3), (16, 'Knockhill - Tri_Oval', 1, '2024-08-28', 3), (17, 'Knockhill - Tri_Oval', 1, '2024-08-28', 3), (18, 'Knockhill - Tri_Oval', 1, '2024-08-28', 3), (19, 'Knockhill - Tri_Oval', 1, '2024-08-28', 3), (20, 'Knockhill - Tri_Oval', 1, '2024-08-28', 3)] where session id: 3
-2024-08-28 10:50:51,849 - INFO - DB List of all Race_ids: [9, 10, 14, 15, 16, 17, 18, 19, 20]
-2024-08-28 10:50:51,850 - INFO - DB Laps fetched: [(162, 9, 'Lee Chorley  (AI)', 1, 24.0172), (163, 9, 'Dag Ohman  (AI)', 1, 25.4742), (164, 9, 'Olav Christopher Viken  (AI)', 1, 25.9547), (165, 9, 'Alois Fiser  (AI)', 1, 27.1187), (166, 9, 'Ilya Malyuev  (AI)', 1, 28.3044), (167, 10, 'Ilya Malyuev  (AI)', 1, 21.16), (168, 10, 'Alister McKay  (AI)', 1, 21.7078), (169, 10, 'Alois Fiser  (AI)', 1, 22.2849), (170, 10, 'Olav Christopher Viken  (AI)', 1, 22.7941), (171, 10, 'Dag Ohman  (AI)', 1, 23.4142), (172, 10, 'Giancarlo Rampanelli  (AI)', 1, 23.9552), (173, 10, 'Lee Chorley  (AI)', 1, 24.5151), (188, 14, 'Dag Ohman  (AI)', 1, 21.1707), (189, 14, 'Giancarlo Rampanelli  (AI)', 1, 21.6812), (190, 14, 'Lee Chorley  (AI)', 1, 22.4661), (191, 14, 'Olav Christopher Viken  (AI)', 1, 22.7964), (192, 14, 'Ilya Malyuev  (AI)', 1, 23.1307), (193, 14, 'Alister McKay  (AI)', 1, 24.0821), (194, 14, 'Alois Fiser  (AI)', 1, 24.8358), (195, 15, 'Alois Fiser  (AI)', 1, 22.1346), (196, 15, 'Giancarlo Rampanelli  (AI)', 1, 23.5043), (197, 15, 'Dag Ohman  (AI)', 1, 25.0928), (198, 15, 'Ilya Malyuev  (AI)', 1, 26.4879), (199, 16, 'Dag Ohman  (AI)', 1, 25.0928), (200, 16, 'Alois Fiser  (AI)', 1, 22.1346), (201, 16, 'Giancarlo Rampanelli  (AI)', 1, 23.5043), (202, 16, 'Ilya Malyuev  (AI)', 1, 26.4879), (203, 17, 'Olav Christopher Viken  (AI)', 1, 33.2595), (204, 17, 'Dag Ohman  (AI)', 1, 22.6591), (205, 17, 'Alois Fiser  (AI)', 1, 23.8166), (206, 17, 'Alister McKay  (AI)', 1, 26.5508), (207, 17, 'Lee Chorley  (AI)', 1, 22.147), (208, 17, 'Giancarlo Rampanelli  (AI)', 1, 24.3502), (209, 17, 'Ilya Malyuev  (AI)', 1, 21.107), (210, 18, 'Giancarlo Rampanelli  (AI)', 1, 22.042), (211, 18, 'Olav Christopher Viken  (AI)', 1, 23.1338), (212, 18, 'Alister McKay  (AI)', 1, 23.6714), (213, 18, 'Lee Chorley  (AI)', 1, 24.6228), (214, 18, 'Dag Ohman  (AI)', 1, 25.3407), (215, 19, 'Alister McKay  (AI)', 1, 23.6714), (216, 19, 'Alois Fiser  (AI)', 1, 40.6343), (217, 19, 'Dag Ohman  (AI)', 1, 25.3407), (218, 19, 'Olav Christopher Viken  (AI)', 1, 23.1338), (219, 19, 'Giancarlo Rampanelli  (AI)', 1, 22.042), (220, 19, 'Lee Chorley  (AI)', 1, 24.6228), (221, 20, 'Olav Christopher Viken  (AI)', 1, 24.666), (222, 20, 'Ilya Malyuev  (AI)', 1, 25.2073), (223, 20, 'Alois Fiser  (AI)', 1, 26.6815)] with [9, 10, 14, 15, 16, 17, 18, 19, 20]
-2024-08-28 10:50:51,851 - INFO - DB Best Participants fetched: [(9, 'Alister McKay  (AI)', 'Volkswagen Polo RX', 8, None, None, 0, 'DNF', 0.0, 8), (9, 'Alois Fiser  (AI)', 'Volkswagen Polo RX', 4, 27.1187, 27.1187, 1, None, 27.1187, 4), (9, 'Dag Ohman  (AI)', 'Volkswagen Polo RX', 2, 25.4742, 25.4742, 1, None, 25.4742, 2), (9, 'Giancarlo Rampanelli  (AI)', 'Volkswagen Polo RX', 6, None, None, 0, 'DNF', 0.0, 6), (9, 'Ilya Malyuev  (AI)', 'Volkswagen Polo RX', 5, 28.3044, 28.3044, 1, None, 28.3044, 5), (9, 'Lee Chorley  (AI)', 'Volkswagen Polo RX', 1, 24.0172, 24.0172, 1, None, 24.0172, 1), (9, 'Olav Christopher Viken  (AI)', 'Volkswagen Polo RX', 3, 25.9547, 25.9547, 1, None, 25.9547, 3), (9, 'S-8', 'Volkswagen Polo RX', 7, None, None, 0, 'DNF', 0.0, 7), (10, 'Alister McKay  (AI)', 'Volkswagen Polo RX', 2, 21.7078, 21.7078, 1, None, 21.7078, 2), (10, 'Alois Fiser  (AI)', 'Volkswagen Polo RX', 3, 22.2849, 22.2849, 1, None, 22.2849, 3), (10, 'Dag Ohman  (AI)', 'Volkswagen Polo RX', 5, 23.4142, 23.4142, 1, None, 23.4142, 5), (10, 'Giancarlo Rampanelli  (AI)', 'Volkswagen Polo RX', 6, 23.9552, 23.9552, 1, None, 23.9552, 6), (10, 'Ilya Malyuev  (AI)', 'Volkswagen Polo RX', 1, 21.16, 21.16, 1, None, 21.16, 1), (10, 'Lee Chorley  (AI)', 'Volkswagen Polo RX', 7, 24.5151, 24.5151, 1, None, 24.5151, 7), (10, 'Olav Christopher Viken  (AI)', 'Volkswagen Polo RX', 4, 22.7941, 22.7941, 1, None, 22.7941, 4), (10, 'S-8', 'Volkswagen Polo RX', 8, None, None, 0, 'DNF', 0.0, 8), (14, 'Alister McKay  (AI)', 'Volkswagen Polo RX', 6, 24.0821, 24.0821, 1, None, 24.0821, 6), (14, 'Alois Fiser  (AI)', 'Volkswagen Polo RX', 7, 24.8358, 24.8358, 1, None, 24.8358, 7), (14, 'Dag Ohman  (AI)', 'Volkswagen Polo RX', 1, 21.1707, 21.1707, 1, None, 21.1707, 1), (14, 'Giancarlo Rampanelli  (AI)', 'Volkswagen Polo RX', 2, 21.6812, 21.6812, 1, None, 21.6812, 2), (14, 'Ilya Malyuev  (AI)', 'Volkswagen Polo RX', 5, 23.1307, 23.1307, 1, None, 23.1307, 5), (14, 'Lee Chorley  (AI)', 'Volkswagen Polo RX', 3, 22.4661, 22.4661, 1, None, 22.4661, 3), (14, 'Olav Christopher Viken  (AI)', 'Volkswagen Polo RX', 4, 22.7964, 22.7964, 1, None, 22.7964, 4), (14, 'S-8', 'Volkswagen Polo RX', 8, None, None, 0, 'DNF', 0.0, 8), (15, 'Alister McKay  (AI)', 'Volkswagen Polo RX', 6, None, None, 0, 'DNF', 0.0, 6), (15, 'Alois Fiser  (AI)', 'Volkswagen Polo RX', 1, 22.1346, 22.1346, 1, None, 22.1346, 1), (15, 'Dag Ohman  (AI)', 'Volkswagen Polo RX', 3, 25.0928, 25.0928, 1, None, 25.0928, 3), (15, 'Giancarlo Rampanelli  (AI)', 'Volkswagen Polo RX', 2, 23.5043, 23.5043, 1, None, 23.5043, 2), (15, 'Ilya Malyuev  (AI)', 'Volkswagen Polo RX', 4, 26.4879, 26.4879, 1, None, 26.4879, 4), (15, 'Lee Chorley  (AI)', 'Volkswagen Polo RX', 8, None, None, 0, 'DNF', 0.0, 8), (15, 'Olav Christopher Viken  (AI)', 'Volkswagen Polo RX', 5, None, None, 0, 'DNF', 0.0, 5), (15, 'S-8', 'Volkswagen Polo RX', 7, None, None, 0, 'DNF', 0.0, 7), (16, 'Alister McKay  (AI)', 'Volkswagen Polo RX', 6, None, None, 0, 'DNF', 0.0, 6), (16, 'Alois Fiser  (AI)', 'Volkswagen Polo RX', 1, 22.1346, 22.1346, 1, None, 22.1346, 1), (16, 'Dag Ohman  (AI)', 'Volkswagen Polo RX', 3, 25.0928, 25.0928, 1, None, 25.0928, 3), (16, 'Giancarlo Rampanelli  (AI)', 'Volkswagen Polo RX', 2, 23.5043, 23.5043, 1, None, 23.5043, 2), (16, 'Ilya Malyuev  (AI)', 'Volkswagen Polo RX', 4, 26.4879, 26.4879, 1, None, 26.4879, 4), (16, 'Lee Chorley  (AI)', 'Volkswagen Polo RX', 8, None, None, 0, 'DNF', 0.0, 8), (16, 'Olav Christopher Viken  (AI)', 'Volkswagen Polo RX', 5, None, None, 0, 'DNF', 0.0, 5), (16, 'S-8', 'Volkswagen Polo RX', 7, None, None, 0, 'DNF', 0.0, 7), (17, 'Alister McKay  (AI)', 'Volkswagen Polo RX', 6, 26.5508, 26.5508, 1, None, 26.5508, 6), (17, 'Alois Fiser  (AI)', 'Volkswagen Polo RX', 4, 23.8166, 23.8166, 1, None, 23.8166, 4), (17, 'Dag Ohman  (AI)', 'Volkswagen Polo RX', 3, 22.6591, 22.6591, 1, None, 22.6591, 3), (17, 'Giancarlo Rampanelli  (AI)', 'Volkswagen Polo RX', 5, 24.3502, 24.3502, 1, None, 24.3502, 5), (17, 'Ilya Malyuev  (AI)', 'Volkswagen Polo RX', 1, 21.107, 21.107, 1, None, 21.107, 1), (17, 'Lee Chorley  (AI)', 'Volkswagen Polo RX', 2, 22.147, 22.147, 1, None, 22.147, 2), (17, 'Olav Christopher Viken  (AI)', 'Volkswagen Polo RX', 7, 33.2595, 33.2595, 1, None, 33.2595, 7), (17, 'S-8', 'Volkswagen Polo RX', 8, None, None, 0, 'DNF', 0.0, 8), (18, 'Alister McKay  (AI)', 'Volkswagen Polo RX', 3, 23.6714, 23.6714, 1, None, 23.6714, 3), (18, 'Alois Fiser  (AI)', 'Volkswagen Polo RX', 6, None, None, 0, 'DNF', 0.0, 6), (18, 'Dag Ohman  (AI)', 'Volkswagen Polo RX', 5, 25.3407, 25.3407, 1, None, 25.3407, 5), (18, 'Dave Stephenson  (AI)', 'Volkswagen Polo RX', 8, None, None, 0, 'DNF', 0.0, 8), (18, 'Giancarlo Rampanelli  (AI)', 'Volkswagen Polo RX', 1, 22.042, 22.042, 1, None, 22.042, 1), (18, 'Lee Chorley  (AI)', 'Volkswagen Polo RX', 4, 24.6228, 24.6228, 1, None, 24.6228, 4), (18, 'Olav Christopher Viken  (AI)', 'Volkswagen Polo RX', 2, 23.1338, 23.1338, 1, None, 23.1338, 2), (18, 'S-8', 'Volkswagen Polo RX', 7, None, None, 0, 'DNF', 0.0, 7), (19, 'Alister McKay  (AI)', 'Volkswagen Polo RX', 3, 23.6714, 23.6714, 1, None, 23.6714, 3), (19, 'Alois Fiser  (AI)', 'Volkswagen Polo RX', 6, 40.6343, 40.6343, 1, None, 40.6343, 6), (19, 'Dag Ohman  (AI)', 'Volkswagen Polo RX', 5, 25.3407, 25.3407, 1, None, 25.3407, 5), (19, 'Dave Stephenson  (AI)', 'Volkswagen Polo RX', 8, None, None, 0, 'DNF', 0.0, 8), (19, 'Giancarlo Rampanelli  (AI)', 'Volkswagen Polo RX', 1, 22.042, 22.042, 1, None, 22.042, 1), (19, 'Lee Chorley  (AI)', 'Volkswagen Polo RX', 4, 24.6228, 24.6228, 1, None, 24.6228, 4), (19, 'Olav Christopher Viken  (AI)', 'Volkswagen Polo RX', 2, 23.1338, 23.1338, 1, None, 23.1338, 2), (19, 'S-8', 'Volkswagen Polo RX', 7, None, None, 0, 'DNF', 0.0, 7), (20, 'Alister McKay  (AI)', 'Volkswagen Polo RX', 6, None, None, 0, 'DNF', 0.0, 6), (20, 'Alois Fiser  (AI)', 'Volkswagen Polo RX', 3, 26.6815, 26.6815, 1, None, 26.6815, 3), (20, 'Dag Ohman  (AI)', 'Volkswagen Polo RX', 4, None, None, 0, 'DNF', 0.0, 4), (20, 'Giancarlo Rampanelli  (AI)', 'Volkswagen Polo RX', 5, None, None, 0, 'DNF', 0.0, 5), (20, 'Ilya Malyuev  (AI)', 'Volkswagen Polo RX', 2, 25.2073, 25.2073, 1, None, 25.2073, 2), (20, 'Lee Chorley  (AI)', 'Volkswagen Polo RX', 8, None, None, 0, 'DNF', 0.0, 8), (20, 'Olav Christopher Viken  (AI)', 'Volkswagen Polo RX', 1, 24.666, 24.666, 1, None, 24.666, 1), (20, 'S-8', 'Volkswagen Polo RX', 7, None, None, 0, 'DNF', 0.0, 7)] with [9, 10, 14, 15, 16, 17, 18, 19, 20]
-2024-08-28 10:50:51,851 - INFO - DB Emitting score data signal
-2024-08-28 10:50:51,881 - INFO - RMA Def calculate_score entered
-2024-08-28 10:50:51,881 - INFO - RMA Def format_score_view entered
-2024-08-28 10:50:51,882 - INFO - Ranked drivers: ['Olav Christopher Viken  (AI)', 'Ilya Malyuev  (AI)', 'Alois Fiser  (AI)', 'Dag Ohman  (AI)', 'Giancarlo Rampanelli  (AI)', 'Alister McKay  (AI)', 'S-8', 'Lee Chorley  (AI)']
-2024-08-28 12:19:21,365 - INFO - Operation: stop Args: None
+2026-05-12 20:01:59,166 - INFO - GA Line 3576 Def setup_live_view entered
+2026-05-12 20:01:59,168 - INFO - GA Line 3458 Def setup_final_view entered
+2026-05-12 20:01:59,169 - INFO - GA Line 3412 Def setup_result_view entered
+2026-05-12 20:01:59,169 - INFO - GA Line 3504 Def setup_higscore_view entered
+2026-05-12 20:01:59,169 - INFO - GA Line 3540 Def setup_driver_statistics_view entered
+2026-05-12 20:01:59,169 - INFO - GA Line 3664 Def setup_driver_info_view entered
+2026-05-12 20:01:59,981 - INFO - CM Line 108 All required fields are already present in the config file.
+2026-05-12 20:01:59,982 - INFO - RA Line 4381 RaceApp __init__ called
+2026-05-12 20:01:59,983 - INFO - GA Line 3249 Def on_tab_changed entered
+2026-05-12 20:01:59,984 - INFO - GA Line 3288 Def update_background entered
+2026-05-12 20:01:59,994 - INFO - GA Line 3288 Def update_background entered
+2026-05-12 20:01:59,995 - INFO - GA Line 3249 Def on_tab_changed entered
+2026-05-12 20:01:59,997 - INFO - GA Line 3288 Def update_background entered
+2026-05-12 20:01:59,997 - INFO - GA Line 3288 Def update_background entered
+2026-05-12 20:01:59,998 - INFO - RA Line 4469 Def tab_changed entered. Tab index: 1
+2026-05-12 20:01:59,999 - INFO - RA Line 4469 Def tab_changed entered. Tab index: 1
+2026-05-12 20:01:59,999 - INFO - MT Line 1757 IP address changed to 192.168.3.213
+2026-05-12 20:02:00,388 - INFO - DB Line 218 Operation: get_latest_session_id Args: (<bound method MonitorThread.set_session_id of <__main__.MonitorThread object at 0x0000018AC76751C0>>,)
+2026-05-12 20:02:00,389 - INFO - DB Line 666 DB  Date result: 2025-09-10
+2026-05-12 20:02:00,390 - INFO - DB Line 667 DB Session ID result: 193
+2026-05-12 20:02:00,390 - INFO - DB Line 670 Invoking callback with session_id
+2026-05-12 20:02:00,390 - INFO - GA Line 1521 Def set_session_id entered. new.session_id: 193, dato: 2025-09-10
+2026-05-12 20:02:00,392 - INFO - GA Line 1531 Session ID fetched: (193)
+2026-05-12 20:02:00,392 - INFO - GA Line 2861 Initialize Dropdown def entered
+2026-05-12 20:02:00,393 - INFO - GA Line 2867 Initialize Dropdown completed
+2026-05-12 20:02:00,394 - INFO - RA Line 4445 Def update_ip_address entered with IP: 192.168.3.213
+2026-05-12 20:02:00,395 - INFO - GA Line 2871 Update IP Address def entered
+2026-05-12 20:02:00,416 - INFO - GA Line 1534 Date from DB: 2025-09-10
+2026-05-12 20:02:00,417 - INFO - GA Line 1537 GA Session ID is not for today, setting to +1. Session ID: 194
+2026-05-12 20:02:00,420 - INFO - DB Line 218 Operation: load_race_data_on_start Args: ()
+2026-05-12 20:02:00,455 - INFO - RA Line 4500 Def Raceapp latest_session_id entered
+2026-05-12 20:02:00,459 - INFO - RA Line 4507 Latest Session ID: 194
+2026-05-12 20:02:00,460 - INFO - GA Line 2890 Update Session ID def entered with parameter: 194
+2026-05-12 20:02:00,461 - INFO - RA Line 4500 Def Raceapp latest_session_id entered
+2026-05-12 20:02:00,462 - INFO - RA Line 4507 Latest Session ID: 194
+2026-05-12 20:02:00,462 - INFO - GA Line 2890 Update Session ID def entered with parameter: 194
+2026-05-12 20:02:00,557 - INFO - DB Line 577 Load race data on start all Races: 
+2026-05-12 20:02:00,590 - INFO - DB Line 584 Paticipants carNames and RaceID fetched.
+2026-05-12 20:02:00,590 - INFO - DB Line 587 Load race on start signal emitted
+2026-05-12 20:02:00,590 - INFO - DB Line 218 Operation: load_sessionid_on_start Args: ()
+2026-05-12 20:02:00,590 - INFO - GA Line 2903 Def handle race data on start entered
+2026-05-12 20:02:00,632 - INFO - DB Line 610 Load session id on start fetched from Races
+2026-05-12 20:02:00,632 - INFO - DB Line 613 Session ID valid, emitting signal
+2026-05-12 20:02:00,637 - INFO - DB Line 218 Operation: load_highscores_on_start Args: ()
+2026-05-12 20:02:00,913 - INFO - RA Line 4451 RaceApp Def handle sessionid data entered
+2026-05-12 20:02:00,913 - INFO - GA Line 3204 Def handle sessionid data entered
+2026-05-12 20:02:00,921 - INFO - DB Line 531 High Scores fetched: 
+2026-05-12 20:02:00,921 - INFO - DB Line 533 High Scores found, emitting signal
+2026-05-12 20:02:00,921 - INFO - DB Line 218 Operation: load_driver_statistics_on_start Args: ()
+2026-05-12 20:02:00,922 - INFO - DB Line 449 Load driver statistics on start
+2026-05-12 20:02:00,922 - INFO - GA Line 2928 Def handle high scores data entered
+2026-05-12 20:02:01,508 - INFO - GA Line 2969 update dropdowns def entered
+2026-05-12 20:02:01,516 - INFO - GA Line 3008 Def handle driver statistics on start entered
+2026-05-12 20:02:03,005 - ERROR - MT Line 1684MT: Connection Error: Check IP Address in Config.ini: - 
+2026-05-12 20:02:03,006 - INFO - GA Line 3294 Error message triggered
+2026-05-12 20:02:05,289 - INFO - GA Line 3249 Def on_tab_changed entered
+2026-05-12 20:02:05,290 - INFO - GA Line 3288 Def update_background entered
+2026-05-12 20:02:05,292 - INFO - GA Line 3288 Def update_background entered
+2026-05-12 20:02:05,293 - INFO - RA Line 4469 Def tab_changed entered. Tab index: 5
+2026-05-12 20:02:13,044 - ERROR - MT Line 1684MT: Connection Error: Check IP Address in Config.ini: - 
+2026-05-12 20:02:13,045 - INFO - GA Line 3294 Error message triggered
+2026-05-12 20:02:23,075 - ERROR - MT Line 1684MT: Connection Error: Check IP Address in Config.ini: - 
+2026-05-12 20:02:23,076 - INFO - GA Line 3294 Error message triggered
+2026-05-12 20:02:33,111 - ERROR - MT Line 1684MT: Connection Error: Check IP Address in Config.ini: - 
+2026-05-12 20:02:33,111 - INFO - GA Line 3294 Error message triggered
+2026-05-12 20:02:43,131 - ERROR - MT Line 1684MT: Connection Error: Check IP Address in Config.ini: - 
+2026-05-12 20:02:43,131 - INFO - GA Line 3294 Error message triggered
+2026-05-12 20:02:48,452 - INFO - Stopping DatabaseThread...
+2026-05-12 20:02:48,452 - INFO - DB Line 218 Operation: stop Args: None
+2026-05-12 20:02:48,470 - INFO - Stopping MonitorThread...
+2026-05-12 20:02:50,148 - INFO - GA Line 4359 Application stopped successfully.
+2026-05-12 20:02:50,267 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-2' coro=<MonitorThread.connection_monitor() running at C:\Users\DrmRacing\Documents\GitHub\AMS2_RaceScore\RaceMonitor_v1.6.0.py:1762> wait_for=<Future pending cb=[Task.task_wakeup()]>>

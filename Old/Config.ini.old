@@ -1,0 +1,48 @@
+[config]
+ip_address = 192.168.3.208
+width = 1190
+height = 1150
+titlebar = True
+version = 1.5.9
+author = RockyTM
+email = post@drs.no
+path_to_cp_scores = C:\force\gui\
+extra_data = False
+cp_integration = False
+write_cp_scores = False
+
+[simsettings]
+sim-1 = 192.168.3.201
+sim-2 = 192.168.3.202
+sim-3 = 192.168.3.203
+sim-4 = 192.168.3.204
+sim-5 = 192.168.3.205
+sim-6 = 192.168.3.206
+sim-7 = 192.168.3.207
+sim-8 = 192.168.3.208
+sim-9 = 192.168.3.209
+sim-10 = 192.168.3.210
+sim-11 = 192.168.3.211
+sim-12 = 192.168.3.212
+sim-13 = 192.168.3.213
+sim-14 = 192.168.3.214
+sim-15 = 192.168.3.215
+sim-16 = 192.168.3.216
+sim-17 = 192.168.3.217
+sim-18 = 192.168.3.218
+sim-19 = 192.168.3.219
+sim-20 = 192.168.3.220
+
+[Score Table]
+1_place = 25
+2_place = 18
+3_place = 15
+4_place = 12
+5_place = 10
+6_place = 8
+7_place = 6
+8_place = 4
+9_place = 2
+10_place = 1
+best_lap = 5
+

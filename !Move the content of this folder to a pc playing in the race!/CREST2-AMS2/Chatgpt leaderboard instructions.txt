@@ -1,0 +1,607 @@
+Chatgpt:
+I need to record who won the race and their names.
+Can you modify this program, so that when "mRaceState" has the value 3, it writes a score file.
+The score file should be written to location C:\force\gui\score.txt
+The file should always have score for 20 drivers.
+If there are fewer than 20 drivers in the race (mNumParticipants), populate the rest with place 0.
+If the file exist, Add another line in the file.
+If the file does not exist, create it, and put the race result in the first line.
+Do not add my comments to the file.
+
+Format score.txt
+1;2;3;4;5;6;7;8;9;10;11;12;0;0;0;0;0;0;0;0;  //race 1
+1;2;3;4;5;6;7;8;9;10;11;12;13;14;15;16;17;18;19;20; //race 2
+0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0; //race 3
+
+
+Here is the existing code:
+<html>
+<head>
+    <script type="text/javascript">
+        function RequestData(URL){
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.open("GET", URL, false);
+            xmlhttp.send(null);
+			
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+			
+                var myArr = JSON.parse(xmlhttp.responseText);
+				
+                // output complete Shared Memory data to browser developer console
+                console.log(myArr);
+				
+                // simple example how to access single values
+                // in this case showing Track Name, Track Variation and Current Lap Time of the Player
+				
+				// Start building the HTML output
+                var output = "Track: " + myArr.eventInformation.mTranslatedTrackLocation + " - " + myArr.eventInformation.mTranslatedTrackVariation + 
+                    "<br>Current Lap Time: " + myArr.timings.mLastLapTime +
+                    "<br>Car: " + myArr.vehicleInformation.mCarName +
+                    "<br>Car Class: " + myArr.vehicleInformation.mCarClassName +
+                    "<br>Participants: " + myArr.participants.mNumParticipants;
+
+                for (let i = 0; i < myArr.participants.mNumParticipants; i++) {
+                    output += "<br>Current Lap Driver " + (i + 1) + ": " + myArr.participants.mParticipantInfo[i].mCurrentLap;
+					output += "<br>Driver name " + (i + 1) + ": " + myArr.participants.mParticipantInfo[i].mName;
+					output += "<br>Driver name " + (i + 1) + ": " + myArr.participants.mParticipantInfo[i].mFastestLapTimes;
+					output += "<br>Driver name " + (i + 1) + ": " + myArr.participants.mParticipantInfo[i].mRacePosition;
+                }
+				// Add more details to the output
+                output += "<br>Speed: " + (myArr.carState.mSpeed * 3.6).toFixed(0) + " km/h" +
+                    "<br>Gear: " + myArr.carState.mGear +
+                    "<br>Throttle: " + (myArr.carState.mThrottle * 100).toFixed(0) + " %" +
+                    "<br>Brake: " + (myArr.carState.mBrake * 100).toFixed(0) + " %" +
+                    "<br>Clutch: " + (myArr.carState.mClutch * 100).toFixed(0) + " %" +
+                    "<br>mGamestates: " + myArr.gameStates.mGameState +
+                    "<br>mSessionState: " + myArr.gameStates.mSessionState +
+                    "<br>mSessionIsPrivate: " + myArr.gameStates.mSessionIsPrivate +
+                    "<br>mRaceState: " + myArr.gameStates.mRaceState + //1: Race not started, 2: Green light, 3: Race Ended
+                    "<br><br>Timestamp: " + new Date(myArr.timestamp);
+				// Update the innerHTML of the target element with the accumulated output
+                document.getElementById("data").innerHTML = output;
+            }
+        }
+
+        function AutoReload(URL, interval) {
+            // rename and disable Button
+            document.getElementById('RequestAuto').innerText = "Running";
+            document.getElementById('RequestAuto').disabled = true; 
+            // call function RequestData every x milliseconds
+            setInterval(function() { RequestData(URL); }, interval);
+        }
+    </script>
+</head>
+<body>
+<!-- 
+Request data from localhost, you have to open the example.html on the same system where CREST2 is running.
+If you want to open it on another system in your network you have to replace localhost by the ip address of the system where CREST2 is running, e.g. 'http://192.168.0.5:8180/crest2/v1/api'
+ -->
+<p><button id="Request" onclick="RequestData('http://localhost:8180/crest2/v1/api');">Request (once)</button>
+<button id="RequestAuto" onclick="AutoReload('http://localhost:8180/crest2/v1/api',500);">Request (Auto Reload)</button></p>
+<p id="data"></p>
+</body>
+</html>
+
+New Request:
+I need to rewrite a couple of subrutines in AHK V1.
+Instuctions:
+Do not change any of sub routine logic, since it works.
+Only thing we really need to change is the where it pulls the data, and maybe utilize the more direct access to the endpoints. (Eg, instead of pulling participant and then parse all that, just get mFastestLapTimes directly.)
+Make a qualified decision whether the existing logic is the best, changing as little as possible, or if the code will be better by accessing the sub nodes directly. We know the current version works, so it may be wise to stick to it.
+All the existing parsing works, so please keep that in mind
+Make sure the overall functionality of the subroutine stays intact.
+Make sure to comment every line of the code.
+
+Here is a breakdown of the new api:
+
+The basic URL (http://localhost:8180/crest2/v1/api) will expose the full set of data. If parameters are added to the request URL, the set will be limited to the parameters you specify.
+
+The following parameters are available:
+
+1. buildInfo
+2. gameStates
+3. participants
+4. unfilteredInputs
+5. vehicleInformation
+6. eventInformation
+7. timings
+8. flags
+9. pitInfo
+10. carState
+11. motionDeviceRelated
+12. wheelsAndTyres
+13. carDamage
+14. weather
+15. formatted
+
+Example:  http://localhost:8180/crest2/v1/api?buildInfo=true will give you just the buildInfo.
+
+Example2: http://localhost:8180/crest2/v1/api?timings=true&carState=true&weather=true will give you timings, carState and weather.
+
+Example3: http://localhost:8180/crest2/v1/api will give you the full set.
+
+NOTE: Sections are always in the order listed, never in the order of the request parameters.
+
+Here is the existing subroutines:
+GetFastestLapData(racepos)
+{
+
+    ; Parse mRaceState from game state
+    UrlDownloadToFile, http://localhost:22451/gamestate, gamestate.json
+    FileRead, gamestateJson, gamestate.json
+    if (errorlevel = 0)
+    {
+        ; Parse mRaceState
+        raceState := ""
+        jsonParts := StrSplit(gamestateJson, ",")
+        Loop, % jsonParts.MaxIndex()
+        {
+            part := jsonParts[A_Index]
+            if (InStr(part, """mRaceState""")) {
+                RegExMatch(part, "\d+", raceState)
+                break
+            }
+        }
+
+        ; Variables to hold the data
+        fastestDriver := ""
+        fastestDriverLapTime := ""
+        fastestDriverRacePosition := ""
+
+        ; Call the GetFastestLap subroutine
+        GetFastestLap(fastestDriver, fastestDriverLapTime, fastestDriverRacePosition)
+
+        ; Check if data is valid
+        if (fastestDriver != "")
+        {
+			GuiControl, Show, ResultDriver
+			GuiControl, Show, ResultPosition
+			GuiControl, Show, ResultLapTime
+            ; Update the results in the text controls
+			FastestDriverLapconverted:= % Format("{:02}:{:02}", fastestDriverLapTime//60, Mod(fastestDriverLapTime, 60)) ;mm:ss
+            GuiControl,, ResultDriver, Driver: %fastestDriver%
+            GuiControl,, ResultPosition, Race Position: %fastestDriverRacePosition%
+            GuiControl,, ResultLapTime, Fastest Lap Time: %FastestDriverLapconverted%
+        }
+        else
+        {
+            GuiControl,, ResultDriver, Driver: No data available
+            GuiControl,, ResultPosition, Race Position: N/A
+            GuiControl,, ResultLapTime, Fastest Lap Time: N/A
+        }
+
+        ; Show or hide the warning based on the race state
+        if (raceState = 2)
+        {
+            GuiControl,, RaceWarningText, Warning: Race not finished!
+            GuiControl, Show, RaceWarningText
+        }
+        else
+        {
+            GuiControl, Hide, RaceWarningText
+        }
+    }
+racepos:=fastestDriverRacePosition
+Return
+}
+GetFastestLap(ByRef driverName, ByRef fastestLapTime, ByRef racePosition)
+{
+    ; Initialize variables to hold the fastest lap information
+    fastestLapTime := 999999  ; A large number to start with
+    driverName := ""
+    racePosition := ""
+
+    ; Fetch participants
+    UrlDownloadToFile, http://localhost:22451/participants, participants.json
+    FileRead, participantsJson, participants.json
+    if (errorlevel = 0) 
+    {
+        ; Count the number of participants in the array
+        if participantsJson != "[]" 
+        {
+            arrayMatch := StrSplit(participantsJson, "},")
+            participantCount := arrayMatch.MaxIndex()
+        } 
+        else 
+        {
+            participantCount := 0
+        }
+
+        ; Loop through each participant to find the fastest lap
+        Loop, %participantCount%
+        {
+            index := A_Index - 1  ; A_Index starts from 1, but we need 0-based index
+            participantUrl := "http://localhost:22451/participants?index=" . index
+            participantFile := "participant_" . index . ".json"
+
+            UrlDownloadToFile, %participantUrl%, %participantFile%
+            FileRead, participantJson, %participantFile%
+            if (errorlevel = 0) 
+            {
+                ; Find the mFastestLapTimes, mName, and mRacePosition for this participant
+                if (RegExMatch(participantJson, """mFastestLapTimes"":\s*""?([^,""]+)""?", lapMatch) 
+                    && RegExMatch(participantJson, """mName"":\s*""?([^,""]+)""?", nameMatch)
+                    && RegExMatch(participantJson, """mRacePosition"":\s*""?([^,""]+)""?", positionMatch)) 
+                {
+                    tempLapTime := lapMatch1
+                    tempDriverName := nameMatch1
+                    tempRacePosition := positionMatch1
+                    
+                    ; Compare to find the fastest lap
+                    if (tempLapTime < fastestLapTime) 
+                    {
+                        fastestLapTime := tempLapTime
+                        driverName := tempDriverName
+                        racePosition := tempRacePosition
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+Subject: Detailed Code Issue Analysis Request
+
+Description:
+I have a code issue that requires in-depth analysis. The function is supposed to write exactly 20 scores to a file, but it’s currently writing 21, with an extra "0;" at the end of the line. I suspect there’s a logic error related to how the scores are being appended or looped through. Below is the relevant code snippet:
+
+ahk v1 code:
+CheckRaceStatusFunc(IP_Address)
+{
+	static previous_game_state := 0  ; Initialize previous game state variable
+	
+	; Fetch and parse the game state from the API
+	UrlDownloadToFile, http://%IP_Address%:8180/crest2/v1/api?gameStates=true, gamestate.json
+	FileRead, gamestateJson, gamestate.json
+	if (ErrorLevel = 0)
+	{
+		; Parse mGameState and mRaceState from the nested "gameStates" object
+		RegExMatch(gamestateJson, """mGameState"":\s*(\d+)", gameStateMatch)
+		current_game_state := gameStateMatch1
+		RegExMatch(gamestateJson, """mRaceState"":\s*(\d+)", raceStateMatch)
+		raceState := raceStateMatch1
+		
+		; Check if the race has finished (transition from raceState 2 to 3 or 4)
+		if (previous_game_state = 2 and (current_game_state = 3 or current_game_state = 4))
+		{
+			; Fetch participants data
+			UrlDownloadToFile, http://%IP_Address%:8180/crest2/v1/api?participants=true, participants.json
+			FileRead, participantsJson, participants.json
+			if (ErrorLevel = 0)
+			{
+				; Normalize the JSON by removing line breaks
+				participantsJson := StrReplace(participantsJson, "`r`n", "")
+				participantsJson := StrReplace(participantsJson, "`n", "")
+				
+				; Extract the mParticipantInfo array using RegEx
+				if (RegExMatch(participantsJson, """mParticipantInfo"":\s*\[(.*)\]", participantArrayMatch))
+				{
+					participantArray := "[" . participantArrayMatch1 . "]"  ; Proper JSON array
+					
+					; Parse JSON array directly
+					participants := StrSplit(participantArray, "},{")
+					driver_scores := []
+					best_lap_time := 999999  ; Initialize with a large number
+					best_driver := ""
+					
+					; Read driver names from drivers.txt
+					driver_file_path := "C:\force\gui\drivers.txt"
+					FileRead, driver_names, %driver_file_path%
+					driver_names := StrSplit(driver_names, ";")
+					
+					; Initialize driver scores with 0 for each driver in the list
+					Loop, % driver_names.MaxIndex()
+					{
+						driver_name := driver_names[A_Index]
+						driver_scores[driver_name] := 0
+					}
+					
+					; Loop through participants to find scores and best lap driver
+					Loop, % participants.MaxIndex()
+					{
+						part := "{" . participants[A_Index] . "}"
+						
+						; Parse JSON data for required fields
+						if (RegExMatch(part, """mFastestLapTimes"":\s*(-?\d+\.?\d*)", lapMatch)
+						&& RegExMatch(part, """mName"":\s*""([^""]+)""", nameMatch)
+						&& RegExMatch(part, """mRacePosition"":\s*(\d+)", positionMatch))
+						{
+							tempLapTime := lapMatch1
+							tempDriverName := nameMatch1
+							tempRacePosition := positionMatch1
+							
+							; Update the driver score if the driver is in the list
+							if (driver_scores.HasKey(tempDriverName))
+							{
+								driver_scores[tempDriverName] := tempRacePosition
+							}
+							
+							; Check for the best lap time
+							if (tempLapTime < best_lap_time && tempLapTime > 0)  ; Ensure valid lap time
+							{
+								best_lap_time := tempLapTime
+								best_driver := tempDriverName
+							}
+						}
+					}
+					
+					; Write race results to score.txt
+					file_path := "C:\force\gui\score.txt"
+					FileAppend, % JoinScores(driver_scores, driver_names) "`n", %file_path%
+					
+					; Write the best lap driver to bestlap.txt
+					best_lap_file_path := "C:\force\gui\bestlap.txt"
+					if (best_driver != "")
+					{
+						FileAppend, %best_driver%`n, %best_lap_file_path%
+					}
+				}
+			}
+		}
+		
+		previous_game_state := current_game_state  ; Update previous game state
+	}
+	Return
+}
+
+JoinScores(driver_scores, driver_names)
+{
+	result := ""
+	Loop, % driver_names.MaxIndex()
+	{
+		driver_name := driver_names[A_Index]
+		result .= driver_scores[driver_name] . ";"
+	}
+	return result
+}
+
+Key Points to Address:
+
+Analyze the Loop Logic: Please examine how the scores are being appended and ensure the loop is iterating the correct number of times.
+Check for Off-by-One Errors: Pay close attention to potential off-by-one errors that might be causing an extra value to be added.
+Specific Issue: The output should look like this: 0;0;0;0;...;0;0; with exactly 20 scores, but instead, an extra "0;" is being added at the end.
+File Content: The scores should match the driver names in drivers.txt, ensuring that each driver's score is placed in the correct position. If there's only one driver or a specific driver is matched, this logic must still hold.
+Test Scenarios: Please consider scenarios with varying numbers of drivers, including edge cases like a single driver or maximum drivers.
+Focus on Solutions: I’d appreciate if you could explain the root cause and how the proposed changes directly resolve the problem.
+Outcome Expectation:
+I expect a solution that accurately addresses the issue by analyzing and correcting the loop or append logic without introducing new issues. If possible, please outline any changes you make and why they're necessary.
+
+Final Note:
+If you need further clarification or additional details, please ask before suggesting a solution.
+
+
+Detailed Request for Assistance:
+
+I have a script that is intended to write exactly 20 scores to a file called score.txt, with each score separated by a semicolon (;). The scores are determined based on driver names listed in drivers.txt, and each driver is associated with a score from a parsed JSON file.
+
+Problem:
+The current script incorrectly writes an extra score and semicolon at the end of the line, resulting in 21 scores instead of 20. I need the script to handle various cases:
+
+Ensure exactly 20 scores are written, even if some drivers don't have scores.
+If a driver is missing a score, assume a default score of 0.
+Handle edge cases, such as if there are fewer than 20 drivers or if a driver is not found in the JSON data.
+Maintain the correct format: 0;0;0;0;0;0;...;0;, with exactly 20 scores followed by a single trailing semicolon.
+Key Requirements:
+
+The code should be in AHK v1 syntax.
+Avoid adding any extra scores or semicolons at the end.
+Handle both cases where driver scores are found and where they are missing.
+Here’s a snippet of the existing code (specifically the JoinScores function) and what it is intended to do:
+JoinScores(driver_scores, driver_names)
+{
+	result := ""
+	Loop, % driver_names.MaxIndex()
+	{
+		driver_name := driver_names[A_Index]
+		result .= driver_scores[driver_name] . ";"
+	}
+	return result
+}
+Please make sure the final solution:
+
+Correctly handles the number of scores and semicolons.
+Adheres to AHK v1 syntax.
+Avoids the issue of an extra score or semicolon.
+Note: Feel free to clarify any parts of the task, as I'm looking for a solution that adheres closely to the details provided.
+
+
+SQlite Data Harvesting:
+{
+  "buildinfo":{
+    "mVersion":10,
+    "mBuildVersionNumber":1938
+  },
+  "gameStates":{
+    "mGameState":2,
+    "mSessionState":5,
+    "mRaceState":2
+  },
+  "participants":{
+    "mViewedParticipantIndex":0,
+    "mNumParticipants":1,
+    "mParticipantInfo":[
+      {
+        "mIsActive":true,
+        "mName":"M. -VIPER- Morgan",
+        "mWorldPosition":[523.413,22.2485,-459.836],
+        "mCurrentLapDistance":421.552,
+        "mRacePosition":1,
+        "mLapsCompleted":0,
+        "mCurrentLap":1,
+        "mCurrentSector":0,
+        "mRaceStates":2,
+        "mPitModes":0,
+        "mFastestLapTimes":-123,
+        "mLastLapTimes":-123,
+        "mFastestSector1Times":-1,
+        "mFastestSector2Times":-1,
+        "mFastestSector3Times":-1,
+        "mCurrentSector1Times":63.101,
+        "mCurrentSector2Times":-1,
+        "mCurrentSector3Times":-1,
+        "mLapsInvalidated":0,
+        "mOrientations":[-0.0020886,0.0199151,0.00828566],
+        "mSpeeds":11.0682,
+        "mCarNames":"Porsche 911 RSR GTE",
+        "mCarClassNames":"GTE",
+        "mPitSchedules":0,
+        "mHighestFlagColours":0,
+        "mHighestFlagReasons":0,
+        "mNationalities":0
+      }
+    ]
+  },
+  "unfilteredInput":{
+    "mUnfilteredThrottle":0.28525,
+    "mUnfilteredBrake":0,
+    "mUnfilteredSteering":0.00360685,
+    "mUnfilteredClutch":0,
+    "mJoyPad0":0,
+    "mDPad":0
+  },
+  "vehicleInformation":{
+    "mCarName":"Porsche 911 RSR GTE",
+    "mCarClassName":"GTE"
+  },
+  "eventInformation":{
+    "mLapsInEvent":6,
+    "mSessionDuration":0,
+    "mSessionAdditionalLaps":1,
+    "mTrackLocation":"Road_America",
+    "mTrackVariation":"Road_America_RC",
+    "mTrackLength":6440.41,
+    "mTranslatedTrackLocation":"Road America",
+    "mTranslatedTrackVariation":"Road America"
+  },
+  "timings":{
+    "mLapInvalidated":false,
+    "mBestLapTime":-1,
+    "mLastLapTime":-1,
+    "mCurrentTime":63.101,
+    "mSplitTimeAhead":-1,
+    "mSplitTimeBehind":-1,
+    "mSplitTime":0,
+    "mEventTimeRemaining":-1,
+    "mPersonalFastestLapTime":-1,
+    "mWorldFastestLapTime":-1,
+    "mCurrentSector1Time":63.101,
+    "mCurrentSector2Time":-1,
+    "mCurrentSector3Time":-1,
+    "mFastestSector1Time":-1,
+    "mFastestSector2Time":-1,
+    "mFastestSector3Time":-1,
+    "mPersonalFastestSector1Time":-1,
+    "mPersonalFastestSector2Time":-1,
+    "mPersonalFastestSector3Time":-1,
+    "mWorldFastestSector1Time":-1,
+    "mWorldFastestSector2Time":-1,
+    "mWorldFastestSector3Time":-1
+  },
+  "flags":{
+    "mHighestFlagColour":0,
+    "mHighestFlagReason":0
+  },
+  "pitInfo":{
+    "mPitMode":0,
+    "mPitSchedule":0,
+    "mEnforcedPitStopLap":0
+  },
+  "carState":{
+    "mCarFlags":2,
+    "mOilTempCelsius":49.3144,
+    "mWaterTempCelsius":47.6281,
+    "mWaterPressureKPa":109.888,
+    "mFuelPressureKPa":58.5,
+    "mFuelLevel":0.287643,
+    "mFuelCapacity":101,
+    "mSpeed":11.0682,
+    "mRpm":3573.06,
+    "mMaxRPM":9400,
+    "mBrake":0,
+    "mThrottle":0.28525,
+    "mClutch":0,
+    "mSteering":0.00267174,
+    "mGear":1,
+    "mNumGears":6,
+    "mOdometerKM":3.65491,
+    "mAntiLockActive":false,
+    "mLastOpponentCollisionIndex":-1,
+    "mLastOpponentCollisionMagnitude":0,
+    "mBoostActive":false,
+    "mBoostAmount":0,
+    "mEngineSpeed":374.324,
+    "mEngineTorque":78.9802,
+    "mWings":[0,0.5],
+    "mHandBrake":0,
+    "mBrakeBias":0.43,
+    "mTurboBoostPressure":31767.4,
+    "mDrsState":0
+  },
+  "motionAndDeviceRelated":{
+    "mOrientation":[-0.0020886,0.0199151,0.00828566],
+    "mLocalVelocity":[-0.00777138,0.0594001,-11.0627],
+    "mWorldVelocity":[-0.22848,0.0372156,-11.0604],
+    "mAngularVelocity":[0.024259,-0.00214078,0.0320465],
+    "mLocalAcceleration":[-0.0168934,-0.220798,-1.47667],
+    "mWorldAcceleration":[-0.0444295,-0.223886,-1.47562],
+    "mExtentsCentre":[-0.00563502,0.675283,0.140845]
+  },
+  "wheelsAndTyres":{
+    "mTyreFlags":[7,7,7,7],
+    "mTerrain":[2,2,2,2],
+    "mTyreY":[0.0127228,0.0140176,0.0226898,0.0192668],
+    "mTyreRPS":[-32.4319,-32.4225,-31.3527,-31.3527],
+    "mTyreSlipSpeed":[0.535747,0.400029,0.247712,0.204694],
+    "mTyreTemp":[55.4056,55.6436,56.3948,57.0259],
+    "mTyreTempLeft":[55.418,55.6368,56.3431,57.1797],
+    "mTyreTempCenter":[55.4056,55.6436,56.3948,57.0259],
+    "mTyreTempRight":[55.3965,55.6566,56.5227,57.0057],
+    "mTyreGrip":[0.536009,0.639977,0.767629,0.805781],
+    "mTyreHeightAboveGround":[-0.0111708,-0.0117892,-0.0187389,-0.01795],
+    "mTyreLateralStiffness":[0,0,0,0],
+    "mTyreWear":[2.80142e-06,2.74181e-06,0.000343919,0.000306129],
+    "mBrakeDamage":[0,0,0,0],
+    "mSuspensionDamage":[0,0,0,0],
+    "mBrakeTempCelsius":[216.371,216.377,206.712,206.725],
+    "mTyreTreadTemp":[328.561,328.801,329.576,330.227],
+    "mTyreLayerTemp":[321.551,321.684,322.288,322.793],
+    "mTyreCarcassTemp":[340.218,340.238,341.492,341.523],
+    "mTyreRimTemp":[385.065,385.072,388.592,388.601],
+    "mTyreInternalAirTemp":[369.046,369.057,371.498,371.514],
+    "mWheelLocalPositionY":[0.00179119,0.00301761,-0.00267652,-0.00596524],
+    "mSuspensionTravel":[0.054764,0.0534442,0.0709439,0.0742933],
+    "mSuspensionVelocity":[-0.00144445,-0.0246663,-0.0187101,0.0168162],
+    "mRideHeight":[5.90482,5.51946,7.30835,7.41029],
+    "mAirPressure":[153.698,153.703,154.72,154.726],
+    "mTyreCompound":["Soft Slick","Soft Slick","Soft Slick","Soft Slick"]
+  },
+  "carDamage":{
+    "mCrashState":0,
+    "mAeroDamage":0,
+    "mEngineDamage":0.000171006
+  },
+  "weather":{
+    "mAmbientTemperature":16.1621,
+    "mTrackTemperature":28.1677,
+    "mRainDensity":0,
+    "mWindSpeed":0.303705,
+    "mWindDirectionX":-0.389054,
+    "mWindDirectionY":0.2546,
+    "mCloudBrightness":7.01078,
+    "mSnowDensity":0
+  },
+  "timestamp":1643717511325
+}
+
+It is accessible on:
+http://localhost:8180/crest2/v1/api
+Localhost will be changed with the IP-Adress of the current server, it can change at any time.
+First task.
+Make a pythonscript that is run with the ip adress as command line parameter.
+Start pulling date when mGamestate is 2 into an sqlite database in the same folder as the program. (RaceDB).
+Stop pulling data once the mGamestate is not 2.
+When pulling data, show the value of all the nodes in a GUI with the node name as label.
+
+
+

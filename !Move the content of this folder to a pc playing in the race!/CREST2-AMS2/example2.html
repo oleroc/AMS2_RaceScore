@@ -1,0 +1,66 @@
+<html>
+<head>
+    <script type="text/javascript">
+        function RequestData(URL){
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.open("GET", URL, false);
+            xmlhttp.send(null);
+			
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+			
+                var myArr = JSON.parse(xmlhttp.responseText);
+				
+                // output complete Shared Memory data to browser developer console
+                console.log(myArr);
+				
+                // simple example how to access single values
+                // in this case showing Track Name, Track Variation and Current Lap Time of the Player
+				
+				// Start building the HTML output
+                var output = "Track: " + myArr.eventInformation.mTranslatedTrackLocation + " - " + myArr.eventInformation.mTranslatedTrackVariation + 
+                    "<br>Current Lap Time: " + myArr.timings.mLastLapTime +
+                    "<br>Car: " + myArr.vehicleInformation.mCarName +
+                    "<br>Car Class: " + myArr.vehicleInformation.mCarClassName +
+                    "<br>Participants: " + myArr.participants.mNumParticipants;
+
+                for (let i = 0; i < myArr.participants.mNumParticipants; i++) {
+                    output += "<br>Current Lap Driver " + (i + 1) + ": " + myArr.participants.mParticipantInfo[i].mCurrentLap;
+					output += "<br>Driver name " + (i + 1) + ": " + myArr.participants.mParticipantInfo[i].mName;
+					output += "<br>Driver name " + (i + 1) + ": " + myArr.participants.mParticipantInfo[i].mFastestLapTimes;
+					output += "<br>Driver name " + (i + 1) + ": " + myArr.participants.mParticipantInfo[i].mRacePosition;
+                }
+				// Add more details to the output
+                output += "<br>Speed: " + (myArr.carState.mSpeed * 3.6).toFixed(0) + " km/h" +
+                    "<br>Gear: " + myArr.carState.mGear +
+                    "<br>Throttle: " + (myArr.carState.mThrottle * 100).toFixed(0) + " %" +
+                    "<br>Brake: " + (myArr.carState.mBrake * 100).toFixed(0) + " %" +
+                    "<br>Clutch: " + (myArr.carState.mClutch * 100).toFixed(0) + " %" +
+                    "<br>mGamestates: " + myArr.gameStates.mGameState +
+                    "<br>mSessionState: " + myArr.gameStates.mSessionState +
+                    "<br>mSessionIsPrivate: " + myArr.gameStates.mSessionIsPrivate +
+                    "<br>mRaceState: " + myArr.gameStates.mRaceState + //1: Race not started, 2: Green light, 3: Race Ended
+                    "<br><br>Timestamp: " + new Date(myArr.timestamp);
+				// Update the innerHTML of the target element with the accumulated output
+                document.getElementById("data").innerHTML = output;
+            }
+        }
+
+        function AutoReload(URL, interval) {
+            // rename and disable Button
+            document.getElementById('RequestAuto').innerText = "Running";
+            document.getElementById('RequestAuto').disabled = true; 
+            // call function RequestData every x milliseconds
+            setInterval(function() { RequestData(URL); }, interval);
+        }
+    </script>
+</head>
+<body>
+<!-- 
+Request data from localhost, you have to open the example.html on the same system where CREST2 is running.
+If you want to open it on another system in your network you have to replace localhost by the ip address of the system where CREST2 is running, e.g. 'http://192.168.0.5:8180/crest2/v1/api'
+ -->
+<p><button id="Request" onclick="RequestData('http://localhost:8180/crest2/v1/api');">Request (once)</button>
+<button id="RequestAuto" onclick="AutoReload('http://localhost:8180/crest2/v1/api',500);">Request (Auto Reload)</button></p>
+<p id="data"></p>
+</body>
+</html>

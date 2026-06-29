@@ -1,0 +1,13 @@
+2025-08-05 22:58:05,419 - INFO - Connected to database: RaceDB.db
+2025-08-05 22:59:40,584 - INFO - Connected to database: test_legacy_v16.db
+2025-08-05 22:59:50,710 - INFO - Database backed up to: test_legacy_v16.db.backup_20250805_225950
+2025-08-05 22:59:50,820 - ERROR - Migration failed: no such table: main.Sessions
+2025-08-05 22:59:50,820 - ERROR - Migration failed: no such table: main.Sessions
+2025-08-05 23:00:43,078 - INFO - Connected to database: test_legacy_v16.db
+2025-08-05 23:00:46,711 - INFO - Database backed up to: test_legacy_v16.db.backup_20250805_230046
+2025-08-05 23:00:46,792 - INFO - Migrated 1 existing sessions
+2025-08-05 23:00:46,807 - INFO - Migration completed successfully from v1.0.0 to v1.7.0
+2025-08-05 23:00:59,312 - INFO - Connected to database: test_legacy_v16.db
+2025-08-05 23:00:59,331 - INFO - Database backed up to: test_legacy_v16.db.backup_20250805_230059
+2025-08-05 23:00:59,455 - INFO - Migrated 1 existing sessions
+2025-08-05 23:00:59,469 - INFO - Migration completed successfully from v1.6.0 to v1.7.0

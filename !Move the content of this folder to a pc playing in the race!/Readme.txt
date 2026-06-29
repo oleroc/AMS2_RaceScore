@@ -1,0 +1,2 @@
+Run the executable CREST2.exe on the game computer, and enter the IP adress of this computer in config.ini.
+The computer must race in the game, since a computer only hosting the gameserver does not post anything to shared memory.

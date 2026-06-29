@@ -1,0 +1,257 @@
+{
+  "buildinfo": {
+    "mVersion": 14,
+    "mBuildVersionNumber": 2913
+  },
+  "gameStates": {
+    "mGameState": 2,
+    "mSessionState": 5,
+    "mRaceState": 2
+  },
+  "participants": {
+    "mViewedParticipantIndex": 0,
+    "mNumParticipants": 2,
+    "mParticipantInfo": [
+      {
+        "mIsActive": true,
+        "mName": "driver12",
+        "mWorldPosition": [
+          207.38811485938072,
+          22.50086630468692,
+          253.17316052581543
+        ],
+        "mCurrentLapDistance": 4508.882062164048,
+        "mRacePosition": 1,
+        "mLapsCompleted": 0,
+        "mCurrentLap": 1,
+        "mCurrentSector": 3,
+        "mRaceStates": 2,
+        "mPitModes": 0,
+        "mFastestLapTimes": -1,
+        "mLastLapTimes": -1,
+        "mFastestSector1Times": -1,
+        "mFastestSector2Times": -1,
+        "mFastestSector3Times": -1,
+        "mCurrentSector1Times": 30.977041469628503,
+        "mCurrentSector2Times": 38.535756080622434,
+        "mCurrentSector3Times": -1,
+        "mLapsInvalidated": 0,
+        "mOrientations": [
+          0.014656508314991962,
+          -0.2666101596996784,
+          0.058666329611705065
+        ],
+        "mSpeeds": 51.26212184797028,
+        "mCarNames": "Audi R8 LMS",
+        "mCarClassNames": "Realistic",
+        "mPitSchedules": 0,
+        "mHighestFlagColours": 0,
+        "mHighestFlagReasons": 0,
+        "mNationalities": 0
+      },
+      {
+        "mIsActive": true,
+        "mName": "driver10",
+        "mWorldPosition": [
+          -230.94321741757904,
+          12.483187505057614,
+          394.91122507856244
+        ],
+        "mCurrentLapDistance": 2527.8652386434364,
+        "mRacePosition": 2,
+        "mLapsCompleted": 0,
+        "mCurrentLap": 1,
+        "mCurrentSector": 1,
+        "mRaceStates": 2,
+        "mPitModes": 0,
+        "mFastestLapTimes": -1,
+        "mLastLapTimes": -1,
+        "mFastestSector1Times": -1,
+        "mFastestSector2Times": -1,
+        "mFastestSector3Times": -1,
+        "mCurrentSector1Times": 25.769236263278348,
+        "mCurrentSector2Times": 35.88500911906558,
+        "mCurrentSector3Times": -1,
+        "mLapsInvalidated": 0,
+        "mOrientations": [
+          0.03932136564179878,
+          -2.3832733686591694,
+          -0.09007441109407972
+        ],
+        "mSpeeds": 72.68129348738893,
+        "mCarNames": "Audi R8 LMS",
+        "mCarClassNames": "Realistic",
+        "mPitSchedules": 0,
+        "mHighestFlagColours": 0,
+        "mHighestFlagReasons": 0,
+        "mNationalities": 0
+      }
+    ]
+  },
+  "unfilteredInput": {
+    "mUnfilteredThrottle": 0.5584306375581463,
+    "mUnfilteredBrake": 0.1446114717544336,
+    "mUnfilteredSteering": -0.005034013707015422,
+    "mUnfilteredClutch": 0,
+    "mJoyPad0": 0,
+    "mDPad": 0
+  },
+  "vehicleInformation": {
+    "mCarName": "Audi R8 LMS",
+    "mCarClassName": "Realistic"
+  },
+  "eventInformation": {
+    "mLapsInEvent": 6,
+    "mSessionDuration": 0,
+    "mSessionAdditionalLaps": 1,
+    "mTrackLocation": "Sebring",
+    "mTrackVariation": "Sebring",
+    "mTrackLength": 5736.812442338527,
+    "mTranslatedTrackLocation": "Sebring",
+    "mTranslatedTrackVariation": "Sebring"
+  },
+  "timings": {
+    "mLapInvalidated": false,
+    "mBestLapTime": -1,
+    "mLastLapTime": -1,
+    "mCurrentTime": 20.799251078527227,
+    "mSplitTimeAhead": 14.028472001146206,
+    "mSplitTimeBehind": -1,
+    "mSplitTime": 26.223939537197175,
+    "mEventTimeRemaining": -1,
+    "mPersonalFastestLapTime": -1,
+    "mWorldFastestLapTime": -1,
+    "mCurrentSector1Time": 29.156015102935573,
+    "mCurrentSector2Time": 43.48344081530269,
+    "mCurrentSector3Time": -1,
+    "mFastestSector1Time": -1,
+    "mFastestSector2Time": -1,
+    "mFastestSector3Time": -1,
+    "mPersonalFastestSector1Time": -1,
+    "mPersonalFastestSector2Time": -1,
+    "mPersonalFastestSector3Time": -1,
+    "mWorldFastestSector1Time": -1,
+    "mWorldFastestSector2Time": -1,
+    "mWorldFastestSector3Time": -1
+  },
+  "flags": {
+    "mHighestFlagColour": 0,
+    "mHighestFlagReason": 0,
+    "mYellowFlagState": 0
+  },
+  "pitInfo": {
+    "mPitMode": 0,
+    "mPitSchedule": 0,
+    "mEnforcedPitStopLap": 0
+  },
+  "carState": {
+    "mCarFlags": 2,
+    "mOilTempCelsius": 122.1658928406051,
+    "mWaterTempCelsius": 111.09475033183482,
+    "mWaterPressureKPa": 63.27438778083437,
+    "mFuelPressureKPa": 58.5,
+    "mFuelLevel": 0.8986201876209567,
+    "mFuelCapacity": 77,
+    "mSpeed": 80.66556581109606,
+    "mRpm": 3977.805259057939,
+    "mMaxRPM": 8500,
+    "mBrake": 0.16917723294845705,
+    "mThrottle": 0.6506542193141867,
+    "mClutch": 0,
+    "mSteering": -0.18307234080572884,
+    "mGear": 2,
+    "mNumGears": 6,
+    "mOdometerKM": 328.60535534386105
+  },
+  "motionAndDeviceRelated": {
+    "mOrientation": [
+      0.02525210041760073,
+      -1.7841921754901022,
+      -0.02777899937785433
+    ],
+    "mLocalVelocity": [
+      0.0050292249327736,
+      -0.004311006052727007,
+      -0.005293634405562518
+    ],
+    "mWorldVelocity": [
+      0,
+      0,
+      0
+    ],
+    "mAngularVelocity": [
+      0.001163533744227372,
+      0.005836886993247551,
+      0.0011427335300258894
+    ],
+    "mLocalAcceleration": [
+      -0.03270362994073846,
+      0.014591746761841315,
+      0.08929048502370954
+    ],
+    "mWorldAcceleration": [
+      -0.03673745527059083,
+      0.0534531007792399,
+      -0.09335033332346435
+    ],
+    "mExtentsCentre": [
+      0,
+      1.20686,
+      0.119275
+    ]
+  },
+  "wheelsAndTyres": {
+    "mTyreFlags": [
+      7,
+      7,
+      7,
+      7
+    ],
+    "mTerrain": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "mTyreTemp": [
+      80.4444522575255,
+      85.64751153133244,
+      101.54686663210018,
+      93.67402238777137
+    ],
+    "mTyreGrip": [
+      0.9514869013325883,
+      0.9511129754614261,
+      0.9904107768795154,
+      0.967570568052615
+    ],
+    "mTyreCompound": [
+      "Soft",
+      "Soft",
+      "Soft",
+      "Soft"
+    ],
+    "mBrakeTempCelsius": [
+      227.14343890767506,
+      246.06580830691647,
+      323.18553528246906,
+      298.4700981282865
+    ]
+  },
+  "carDamage": {
+    "mCrashState": 0,
+    "mAeroDamage": 0,
+    "mEngineDamage": 0.0019842597944061792
+  },
+  "weather": {
+    "mAmbientTemperature": 20.26458960051937,
+    "mTrackTemperature": 29.006575643530613,
+    "mRainDensity": 0,
+    "mWindSpeed": 0.6343659135876628,
+    "mWindDirectionX": 0.8343588307257082,
+    "mWindDirectionY": -0.6661856223867337,
+    "mCloudBrightness": 2,
+    "mSnowDensity": 0
+  },
+  "timestamp": 1754485048759
+}

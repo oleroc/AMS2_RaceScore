@@ -1,0 +1,257 @@
+{
+  "buildinfo": {
+    "mVersion": 14,
+    "mBuildVersionNumber": 2913
+  },
+  "gameStates": {
+    "mGameState": 2,
+    "mSessionState": 5,
+    "mRaceState": 2
+  },
+  "participants": {
+    "mViewedParticipantIndex": 1,
+    "mNumParticipants": 2,
+    "mParticipantInfo": [
+      {
+        "mIsActive": true,
+        "mName": "driver12",
+        "mWorldPosition": [
+          21.315703131035434,
+          34.99645373015125,
+          -528.1726542056741
+        ],
+        "mCurrentLapDistance": 3776.8943735337357,
+        "mRacePosition": 1,
+        "mLapsCompleted": 0,
+        "mCurrentLap": 1,
+        "mCurrentSector": 2,
+        "mRaceStates": 2,
+        "mPitModes": 0,
+        "mFastestLapTimes": -1,
+        "mLastLapTimes": -1,
+        "mFastestSector1Times": -1,
+        "mFastestSector2Times": -1,
+        "mFastestSector3Times": -1,
+        "mCurrentSector1Times": 29.32588348874269,
+        "mCurrentSector2Times": 42.53297526484652,
+        "mCurrentSector3Times": -1,
+        "mLapsInvalidated": 0,
+        "mOrientations": [
+          -0.08132932610478807,
+          3.0527509174883236,
+          -0.07691959945422555
+        ],
+        "mSpeeds": 56.37512556077274,
+        "mCarNames": "LamborghiniHuracanLP6202SuperTrofeo",
+        "mCarClassNames": "Realistic",
+        "mPitSchedules": 0,
+        "mHighestFlagColours": 0,
+        "mHighestFlagReasons": 0,
+        "mNationalities": 0
+      },
+      {
+        "mIsActive": true,
+        "mName": "driver10",
+        "mWorldPosition": [
+          -90.31189041022196,
+          23.632363311320717,
+          296.8857561583899
+        ],
+        "mCurrentLapDistance": 1308.0824806286762,
+        "mRacePosition": 2,
+        "mLapsCompleted": 0,
+        "mCurrentLap": 1,
+        "mCurrentSector": 3,
+        "mRaceStates": 2,
+        "mPitModes": 0,
+        "mFastestLapTimes": -1,
+        "mLastLapTimes": -1,
+        "mFastestSector1Times": -1,
+        "mFastestSector2Times": -1,
+        "mFastestSector3Times": -1,
+        "mCurrentSector1Times": 29.865898630023274,
+        "mCurrentSector2Times": 41.37643572329631,
+        "mCurrentSector3Times": -1,
+        "mLapsInvalidated": 0,
+        "mOrientations": [
+          0.023806284130547598,
+          2.1743711672436485,
+          -0.04138898016451427
+        ],
+        "mSpeeds": 64.78046353391821,
+        "mCarNames": "LamborghiniHuracanLP6202SuperTrofeo",
+        "mCarClassNames": "Realistic",
+        "mPitSchedules": 0,
+        "mHighestFlagColours": 0,
+        "mHighestFlagReasons": 0,
+        "mNationalities": 0
+      }
+    ]
+  },
+  "unfilteredInput": {
+    "mUnfilteredThrottle": 0.8497805392447175,
+    "mUnfilteredBrake": 0.2396232196051967,
+    "mUnfilteredSteering": -0.07453267644971859,
+    "mUnfilteredClutch": 0,
+    "mJoyPad0": 0,
+    "mDPad": 0
+  },
+  "vehicleInformation": {
+    "mCarName": "LamborghiniHuracanLP6202SuperTrofeo",
+    "mCarClassName": "Realistic"
+  },
+  "eventInformation": {
+    "mLapsInEvent": 6,
+    "mSessionDuration": 0,
+    "mSessionAdditionalLaps": 1,
+    "mTrackLocation": "Bathurst",
+    "mTrackVariation": "Bathurst_2020",
+    "mTrackLength": 5287.606367229675,
+    "mTranslatedTrackLocation": "Bathurst",
+    "mTranslatedTrackVariation": "Bathurst 2020"
+  },
+  "timings": {
+    "mLapInvalidated": false,
+    "mBestLapTime": -1,
+    "mLastLapTime": -1,
+    "mCurrentTime": 34.056790077597114,
+    "mSplitTimeAhead": 19.734690726898812,
+    "mSplitTimeBehind": -1,
+    "mSplitTime": 29.64126114560422,
+    "mEventTimeRemaining": -1,
+    "mPersonalFastestLapTime": -1,
+    "mWorldFastestLapTime": -1,
+    "mCurrentSector1Time": 30.017841025092814,
+    "mCurrentSector2Time": 43.04888721610335,
+    "mCurrentSector3Time": -1,
+    "mFastestSector1Time": -1,
+    "mFastestSector2Time": -1,
+    "mFastestSector3Time": -1,
+    "mPersonalFastestSector1Time": -1,
+    "mPersonalFastestSector2Time": -1,
+    "mPersonalFastestSector3Time": -1,
+    "mWorldFastestSector1Time": -1,
+    "mWorldFastestSector2Time": -1,
+    "mWorldFastestSector3Time": -1
+  },
+  "flags": {
+    "mHighestFlagColour": 0,
+    "mHighestFlagReason": 0,
+    "mYellowFlagState": 0
+  },
+  "pitInfo": {
+    "mPitMode": 0,
+    "mPitSchedule": 0,
+    "mEnforcedPitStopLap": 0
+  },
+  "carState": {
+    "mCarFlags": 2,
+    "mOilTempCelsius": 112.26766451858063,
+    "mWaterTempCelsius": 117.67675008827919,
+    "mWaterPressureKPa": 64.86363215554104,
+    "mFuelPressureKPa": 58.5,
+    "mFuelLevel": 0.6533782506519049,
+    "mFuelCapacity": 77,
+    "mSpeed": 64.81225852257043,
+    "mRpm": 4458.921698036657,
+    "mMaxRPM": 8500,
+    "mBrake": 0.02567705347290885,
+    "mThrottle": 0.5371003037918228,
+    "mClutch": 0,
+    "mSteering": 0.05194596922754291,
+    "mGear": 3,
+    "mNumGears": 6,
+    "mOdometerKM": 370.31666240528045
+  },
+  "motionAndDeviceRelated": {
+    "mOrientation": [
+      0.02148302418615944,
+      2.821314900277532,
+      -0.053504695647168046
+    ],
+    "mLocalVelocity": [
+      -0.0065470871153078015,
+      0.001266070287414059,
+      0.002536527067813524
+    ],
+    "mWorldVelocity": [
+      0,
+      0,
+      0
+    ],
+    "mAngularVelocity": [
+      -0.004561385874810677,
+      -0.0017955325589610032,
+      0.0007479372476303162
+    ],
+    "mLocalAcceleration": [
+      -0.03427236447206408,
+      -0.0045137997101862,
+      0.00604228894684751
+    ],
+    "mWorldAcceleration": [
+      0.043031107287019255,
+      -0.09207963816148615,
+      0.058364475451294945
+    ],
+    "mExtentsCentre": [
+      0,
+      1.20686,
+      0.119275
+    ]
+  },
+  "wheelsAndTyres": {
+    "mTyreFlags": [
+      7,
+      7,
+      7,
+      7
+    ],
+    "mTerrain": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "mTyreTemp": [
+      91.29996915832824,
+      105.6681259752997,
+      100.60983187812042,
+      109.14262125490549
+    ],
+    "mTyreGrip": [
+      0.951401205569536,
+      0.9621203164438336,
+      0.9646150490410852,
+      0.9539243009787715
+    ],
+    "mTyreCompound": [
+      "Soft",
+      "Soft",
+      "Soft",
+      "Soft"
+    ],
+    "mBrakeTempCelsius": [
+      331.8290169793255,
+      215.00684083901905,
+      264.74641244058023,
+      248.03713622117576
+    ]
+  },
+  "carDamage": {
+    "mCrashState": 0,
+    "mAeroDamage": 0,
+    "mEngineDamage": 4.285509734406334e-05
+  },
+  "weather": {
+    "mAmbientTemperature": 23.87749890048913,
+    "mTrackTemperature": 28.528554234554672,
+    "mRainDensity": 0,
+    "mWindSpeed": 0.567234458185612,
+    "mWindDirectionX": -0.5780044085866816,
+    "mWindDirectionY": -0.10450437233301191,
+    "mCloudBrightness": 2,
+    "mSnowDensity": 0
+  },
+  "timestamp": 1754485048767
+}

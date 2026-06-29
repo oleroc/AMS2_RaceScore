@@ -1,0 +1,294 @@
+{
+  "buildinfo": {
+    "mVersion": 14,
+    "mBuildVersionNumber": 2913
+  },
+  "gameStates": {
+    "mGameState": 2,
+    "mSessionState": 5,
+    "mRaceState": 2
+  },
+  "participants": {
+    "mViewedParticipantIndex": 1,
+    "mNumParticipants": 3,
+    "mParticipantInfo": [
+      {
+        "mIsActive": true,
+        "mName": "driver1",
+        "mWorldPosition": [
+          31.78544047953568,
+          44.463557831382644,
+          37.432399097467965
+        ],
+        "mCurrentLapDistance": 4200.785127684971,
+        "mRacePosition": 1,
+        "mLapsCompleted": 0,
+        "mCurrentLap": 1,
+        "mCurrentSector": 3,
+        "mRaceStates": 2,
+        "mPitModes": 0,
+        "mFastestLapTimes": -1,
+        "mLastLapTimes": -1,
+        "mFastestSector1Times": -1,
+        "mFastestSector2Times": -1,
+        "mFastestSector3Times": -1,
+        "mCurrentSector1Times": 32.0217503981965,
+        "mCurrentSector2Times": 41.25714200517289,
+        "mCurrentSector3Times": -1,
+        "mLapsInvalidated": 0,
+        "mOrientations": [
+          -0.002848754090756772,
+          2.4935838922025613,
+          0.04717602235476806
+        ],
+        "mSpeeds": 77.7065432619005,
+        "mCarNames": "Formula Ultimate Gen2",
+        "mCarClassNames": "Realistic",
+        "mPitSchedules": 0,
+        "mHighestFlagColours": 0,
+        "mHighestFlagReasons": 0,
+        "mNationalities": 0
+      },
+      {
+        "mIsActive": true,
+        "mName": "driver2",
+        "mWorldPosition": [
+          370.2974218219641,
+          26.45525538616686,
+          444.19122938999317
+        ],
+        "mCurrentLapDistance": 3143.0262271522906,
+        "mRacePosition": 2,
+        "mLapsCompleted": 0,
+        "mCurrentLap": 1,
+        "mCurrentSector": 3,
+        "mRaceStates": 2,
+        "mPitModes": 0,
+        "mFastestLapTimes": -1,
+        "mLastLapTimes": -1,
+        "mFastestSector1Times": -1,
+        "mFastestSector2Times": -1,
+        "mFastestSector3Times": -1,
+        "mCurrentSector1Times": 34.777292996524466,
+        "mCurrentSector2Times": 36.331363029142544,
+        "mCurrentSector3Times": -1,
+        "mLapsInvalidated": 0,
+        "mOrientations": [
+          -0.061821798423043674,
+          -2.7672784142169036,
+          -0.044613722527300115
+        ],
+        "mSpeeds": 68.4215174963556,
+        "mCarNames": "Formula Ultimate Gen2",
+        "mCarClassNames": "Realistic",
+        "mPitSchedules": 0,
+        "mHighestFlagColours": 0,
+        "mHighestFlagReasons": 0,
+        "mNationalities": 0
+      },
+      {
+        "mIsActive": true,
+        "mName": "driver5",
+        "mWorldPosition": [
+          -381.34556839721176,
+          30.00773101378805,
+          83.04508113251745
+        ],
+        "mCurrentLapDistance": 780.490780549219,
+        "mRacePosition": 3,
+        "mLapsCompleted": 0,
+        "mCurrentLap": 1,
+        "mCurrentSector": 2,
+        "mRaceStates": 2,
+        "mPitModes": 0,
+        "mFastestLapTimes": -1,
+        "mLastLapTimes": -1,
+        "mFastestSector1Times": -1,
+        "mFastestSector2Times": -1,
+        "mFastestSector3Times": -1,
+        "mCurrentSector1Times": 26.341957240277463,
+        "mCurrentSector2Times": 41.06778626631461,
+        "mCurrentSector3Times": -1,
+        "mLapsInvalidated": 0,
+        "mOrientations": [
+          -0.09145555723669546,
+          0.655343655597906,
+          -0.023508615871428898
+        ],
+        "mSpeeds": 53.623338744077245,
+        "mCarNames": "Formula Ultimate Gen2",
+        "mCarClassNames": "Realistic",
+        "mPitSchedules": 0,
+        "mHighestFlagColours": 0,
+        "mHighestFlagReasons": 0,
+        "mNationalities": 0
+      }
+    ]
+  },
+  "unfilteredInput": {
+    "mUnfilteredThrottle": 0.3328207731910108,
+    "mUnfilteredBrake": 0.27808277934617853,
+    "mUnfilteredSteering": 0.05736537856241253,
+    "mUnfilteredClutch": 0,
+    "mJoyPad0": 0,
+    "mDPad": 0
+  },
+  "vehicleInformation": {
+    "mCarName": "Formula Ultimate Gen2",
+    "mCarClassName": "Realistic"
+  },
+  "eventInformation": {
+    "mLapsInEvent": 6,
+    "mSessionDuration": 0,
+    "mSessionAdditionalLaps": 1,
+    "mTrackLocation": "Imola",
+    "mTrackVariation": "Imola",
+    "mTrackLength": 4311.15937502476,
+    "mTranslatedTrackLocation": "Imola",
+    "mTranslatedTrackVariation": "Imola"
+  },
+  "timings": {
+    "mLapInvalidated": false,
+    "mBestLapTime": -1,
+    "mLastLapTime": -1,
+    "mCurrentTime": 44.945236722123425,
+    "mSplitTimeAhead": 16.81141811051486,
+    "mSplitTimeBehind": -1,
+    "mSplitTime": 32.849179779894826,
+    "mEventTimeRemaining": -1,
+    "mPersonalFastestLapTime": -1,
+    "mWorldFastestLapTime": -1,
+    "mCurrentSector1Time": 29.643986375025307,
+    "mCurrentSector2Time": 41.95382532460938,
+    "mCurrentSector3Time": -1,
+    "mFastestSector1Time": -1,
+    "mFastestSector2Time": -1,
+    "mFastestSector3Time": -1,
+    "mPersonalFastestSector1Time": -1,
+    "mPersonalFastestSector2Time": -1,
+    "mPersonalFastestSector3Time": -1,
+    "mWorldFastestSector1Time": -1,
+    "mWorldFastestSector2Time": -1,
+    "mWorldFastestSector3Time": -1
+  },
+  "flags": {
+    "mHighestFlagColour": 0,
+    "mHighestFlagReason": 0,
+    "mYellowFlagState": 0
+  },
+  "pitInfo": {
+    "mPitMode": 0,
+    "mPitSchedule": 0,
+    "mEnforcedPitStopLap": 0
+  },
+  "carState": {
+    "mCarFlags": 2,
+    "mOilTempCelsius": 112.63280558033486,
+    "mWaterTempCelsius": 114.34626414731031,
+    "mWaterPressureKPa": 59.17373025482626,
+    "mFuelPressureKPa": 58.5,
+    "mFuelLevel": 0.5464842368102437,
+    "mFuelCapacity": 77,
+    "mSpeed": 82.0930168913345,
+    "mRpm": 6769.072777792968,
+    "mMaxRPM": 8500,
+    "mBrake": 0.18856910255438072,
+    "mThrottle": 0.9194382380462529,
+    "mClutch": 0,
+    "mSteering": -0.13535512914988307,
+    "mGear": 3,
+    "mNumGears": 6,
+    "mOdometerKM": 357.6069415260656
+  },
+  "motionAndDeviceRelated": {
+    "mOrientation": [
+      0.05090095575229814,
+      1.5876262030479036,
+      0.025996771463758533
+    ],
+    "mLocalVelocity": [
+      0.0038862698889241855,
+      0.0067598745562982235,
+      -0.00479723879487945
+    ],
+    "mWorldVelocity": [
+      0,
+      0,
+      0
+    ],
+    "mAngularVelocity": [
+      0.009996049612799153,
+      -0.006860000746982504,
+      -0.002311899746875892
+    ],
+    "mLocalAcceleration": [
+      -0.08899406885087667,
+      0.08746127666097125,
+      0.0507302047015554
+    ],
+    "mWorldAcceleration": [
+      -0.001521745523956869,
+      0.028305613023362736,
+      -0.09572795205306439
+    ],
+    "mExtentsCentre": [
+      0,
+      1.20686,
+      0.119275
+    ]
+  },
+  "wheelsAndTyres": {
+    "mTyreFlags": [
+      7,
+      7,
+      7,
+      7
+    ],
+    "mTerrain": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "mTyreTemp": [
+      84.116484106626,
+      103.30932215737711,
+      89.10008634630174,
+      99.04762915221079
+    ],
+    "mTyreGrip": [
+      0.9959356594703108,
+      0.9985636451885713,
+      0.9701587532119716,
+      0.951267653401344
+    ],
+    "mTyreCompound": [
+      "Soft",
+      "Soft",
+      "Soft",
+      "Soft"
+    ],
+    "mBrakeTempCelsius": [
+      382.68323444041164,
+      314.03219913972725,
+      366.907274256683,
+      313.6404907423623
+    ]
+  },
+  "carDamage": {
+    "mCrashState": 0,
+    "mAeroDamage": 0,
+    "mEngineDamage": 0.007983192605347135
+  },
+  "weather": {
+    "mAmbientTemperature": 20.621407310685633,
+    "mTrackTemperature": 37.412690621749135,
+    "mRainDensity": 0,
+    "mWindSpeed": 2.278415533851565,
+    "mWindDirectionX": 0.17625715703186517,
+    "mWindDirectionY": -0.9453690108742592,
+    "mCloudBrightness": 2,
+    "mSnowDensity": 0
+  },
+  "timestamp": 1754485048735
+}

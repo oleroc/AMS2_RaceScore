@@ -1,0 +1,25 @@
+ 
+===================================================== 
+Building RaceManger Executable 
+===================================================== 
+ECHO is on.
+ECHO is on.
+===================================================== 
+BUILD SUCCESSFUL! 
+===================================================== 
+ECHO is on.
+Executable location: dist\BFF Repacker\BFF Repacker.exe 
+ECHO is on.
+File size: 
+  50037372 bytes 
+ECHO is on.
+Copying executable to script directory... 
+Overwriting existingAMS2 RaceMonitor_v1.6.0.exe... 
+Successfully copied BFF Repacker.exe to script directory. 
+ECHO is on.
+New executable location: AMS2 RaceMonitor_v1.6.0.exe 
+ECHO is on.
+You can also find the executable in the 'dist\' folder. 
+ECHO is on.
+ECHO is on.
+Build log saved to: build_exe.log 

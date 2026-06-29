@@ -1,0 +1,1044 @@
+from re import S
+import sys
+from timeit import Timer
+import requests
+import sqlite3
+import json
+import time
+import logging
+import os
+import configparser
+from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QSizePolicy, QVBoxLayout, QWidget, QPushButton, QComboBox, QHBoxLayout, QTabWidget, QSpacerItem
+from PyQt5.QtGui import QPixmap
+from PyQt5.QtCore import QThread, pyqtSignal, QMetaObject, Qt, Q_ARG, QTimer, QObject
+from datetime import datetime
+
+# Set up logging
+if os.path.exists('debug.log'):
+    os.remove('debug.log')
+
+logging.basicConfig(filename='debug.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+def create_database():
+    conn = sqlite3.connect('RaceDB.db')
+    cursor = conn.cursor()
+
+    # Create Races table with a RaceDate column
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS Races (
+            RaceID INTEGER PRIMARY KEY,
+            RaceIndex TEXT UNIQUE,
+            mTranslatedTrackVariation TEXT,
+            mLapsInEvent INTEGER,
+            RaceDate TEXT DEFAULT (date('now'))
+        )
+    ''')
+
+    # Create Participants table
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS Participants (
+            RaceID INTEGER,
+            mName TEXT,
+            mCarNames TEXT,
+            mRacePosition INTEGER,
+            mFastestLapTimes REAL,
+            mLastLapTimes REAL,
+            PRIMARY KEY (RaceID, mName),
+            FOREIGN KEY (RaceID) REFERENCES Races(RaceID) ON DELETE CASCADE
+        )
+    ''')
+
+    # Create Laps table
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS Laps (
+            LapID INTEGER PRIMARY KEY AUTOINCREMENT,
+            RaceID INTEGER,
+            mName TEXT,
+            LapNumber INTEGER,
+            LapTime REAL,
+            FOREIGN KEY (RaceID) REFERENCES Races(RaceID) ON DELETE CASCADE,
+            FOREIGN KEY (mName) REFERENCES Participants(mName) ON DELETE CASCADE
+        )
+    ''')
+
+    conn.commit()
+    conn.close()
+
+class MonitorThread(QThread):
+    data_updated = pyqtSignal(dict)
+    race_finished = pyqtSignal(dict)
+    race_id_updated = pyqtSignal(int)  # Signal to update the RaceID
+    error_occurred = pyqtSignal(str)   # New signal for errors
+    connection_restored = pyqtSignal(int)  # Signal with mGameState as parameter
+   
+    
+    def __init__(self, tab_widget, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.ip_address = self.read_ip_address()
+        self.tab_widget = tab_widget  # Store the reference to tab_widget
+        self.previous_race_state = None
+        self.running = True
+        self.first_time_run = True
+        self.session = requests.Session()
+        # Adjusting race_count based on existing data in the database
+        conn = sqlite3.connect('RaceDB.db')
+        cursor = conn.cursor()
+        Previous_ipaddress = "127.0.0.1"
+        # Get the latest RaceID and corresponding RaceIndex
+        cursor.execute('SELECT RaceIndex FROM Races ORDER BY RaceID DESC LIMIT 1')
+        last_race_index = cursor.fetchone()
+
+        if last_race_index is None:
+            self.race_count = 1  # Start with 1 if there are no races in the database
+        else:
+            # Extract the numeric part after "Race_" and convert to an integer, then increment by 1
+            last_race_number = int(last_race_index[0].split('_')[1])
+            self.race_count = last_race_number + 1
+            #logging.info(f"selfracecount {self.race_count} racecount {last_race_number}")
+
+        conn.close()
+
+        self.current_race_id = None
+        self.viewing_race_id = None  # New variable for viewing historical data
+        self.lap_times_dict = {}  # Dictionary to track lap times for each participant
+        
+        
+    def read_ip_address(self):
+        config_file = 'config.ini'
+        config = configparser.ConfigParser()
+
+        # Check if the config file exists
+        if not os.path.exists(config_file):
+            # Create a new config file with default settings
+            config['config'] = {
+                'ip_address': '127.0.0.1'
+            }
+
+            with open(config_file, 'w') as configfile:
+                config.write(configfile)
+
+            print(f"Config file created with default settings at {config_file}.")
+        else:
+            # Read the existing config file
+            config.read(config_file)
+
+        return config['config']['ip_address']     
+        
+    def insert_lap_data(self, cursor, race_id, participant_name, current_lap, lap_time):
+        cursor.execute('''
+            INSERT INTO Laps (RaceID, mName, LapNumber, LapTime)
+            VALUES (?, ?, ?, ?)
+        ''', (race_id, participant_name, current_lap, lap_time))
+        #logging.info(f"Lap {current_lap} for {participant_name} recorded with time {lap_time}")
+    def run(self):
+        while self.running:
+            try:
+                Previous_ipaddress=self.ip_address
+                #logging.info("Attempting to get data from the API.")
+                self.ip_address = self.read_ip_address()  # Read IP address before each API call
+                with self.session.get(f'http://{self.ip_address}:8180/crest2/v1/api') as response:
+                    data = response.json()
+
+                    #Ensure the response content is valid JSON
+                    if response.status_code == 200:
+                        try:
+                            data = response.json()
+                            if data is None:
+                                raise ValueError("Received None as data. Possible issue with API response.")
+                        except ValueError as ve:
+                            logging.error(f"Error parsing JSON response: {ve}")
+                            print(f"Error parsing JSON response: {ve}")
+                            continue  # Skip this loop iteration and try again
+                    else:
+                        logging.error(f"Unexpected status code {response.status_code} received from the API.")
+                        print(f"Unexpected status code {response.status_code} received from the API.")
+                        continue  # Skip this loop iteration and try again
+                # Fetch participants data
+                participants = data.get('participants', {}).get('mParticipantInfo', [])
+                if not participants and self.first_time_run:
+                    self.first_time_run = False
+                    logging.info("No participants found, Still waiting for race start.")
+                    print("No participants found, waiting for race start.")
+                    time.sleep(10) # Wait for some time before retrying
+                    continue  # Restart loop if participants list is empty
+                
+                # Proceed with processing the valid data                
+                data = response.json()
+                # Store the latest data         
+                #logging.info(f"Full API response: {json.dumps(data, indent=2)}")
+                if Previous_ipaddress != self.ip_address:
+                    print(f"Ipadress changed, new ipadress {self.ip_address}")
+                current_race_state = data['gameStates']['mGameState']
+
+                #logging.info(f"Current Race_State: {current_race_state}")              
+                # Emit signal for successful connection restoration with mGameState
+                self.connection_restored.emit(current_race_state)
+                #logging.info(f"Race_state emitted!")
+                if current_race_state != self.previous_race_state:
+                    print(f"Race state changed to {current_race_state}")  # Ensure console output remains
+                    #logging.info(f"Race state changed to {current_race_state}")
+                    self.previous_race_state = current_race_state
+
+                if participants:
+                    race_index = f"Race_{self.race_count}"
+                    logging.info(f"Race {self.race_count} has started, beginning data collection.")
+                    conn = sqlite3.connect('RaceDB.db')
+                    cursor = conn.cursor()
+                    logging.info(f"Connected to the database, processing race {race_index}.")
+                    last_lap_counts = {}
+                    QMetaObject.invokeMethod(self.tab_widget, "setCurrentIndex", Qt.QueuedConnection, Q_ARG(int, 0)) #Switch to Final View tab
+                    print("Race is STARTING!!!!!!.")
+                    self.first_time_run = True
+                    while self.running:
+                        try:
+                            Previous_ipaddress=self.ip_address
+                            previous_data = data
+                            logging.info("Attempting to get data from the API.")
+                            #print("Attempting to get data from the API.")
+                            self.ip_address = self.read_ip_address()  # Read IP address before each API call
+                            with self.session.get(f'http://{self.ip_address}:8180/crest2/v1/api') as response:
+                                data = response.json()
+                                # Ensure the response content is valid JSON
+                               
+                                if response.status_code == 200:
+                                    try:
+                                        data = response.json()
+                                        if data is None:
+                                            raise ValueError("Received None as data. Possible issue with API response.")
+                                    except ValueError as ve:
+                                        logging.error(f"Error parsing JSON response: {ve}")
+                                        print(f"Error parsing JSON response: {ve}")
+                                        continue  # Skip this loop iteration and try again
+                                else:
+                                    logging.error(f"Unexpected status code {response.status_code} received from the API.")
+                                    print(f"Unexpected status code {response.status_code} received from the API.")
+                                    data = previous_data  # Revert to the previous data if no participants are found
+                                    continue  # Skip this loop iteration and try again
+                               
+
+                            # Proceed with processing the valid data                             
+                            # participants = data['participants']['mParticipantInfo']
+                                
+                            participants = data.get('participants', {}).get('mParticipantInfo', [])
+                            if not participants:
+                                data = previous_data  # Revert to the previous data if no participants are found
+                                logging.info("No participants found, Race is over")
+                                print("No participants found, Race is over.")
+                                break # Race is over, break the loop
+                            
+                            logging.info(f"Processing data for {len(participants)} participants.")
+                            #print(f"Processing data for {len(participants)} participants. Current Race_ID {self.current_race_id}")
+                            cursor.execute('''
+                                INSERT OR IGNORE INTO Races (RaceIndex, mTranslatedTrackVariation, mLapsInEvent)
+                                VALUES (?, ?, ?)
+                            ''', (race_index, data['eventInformation']['mTranslatedTrackVariation'], data['eventInformation']['mLapsInEvent']))
+                            logging.info(f"Inserted race data for race {race_index} if not already present.")
+                            #print(f"Inserted race data for race {race_index} if not already present.")
+
+                            cursor.execute('SELECT RaceID FROM Races WHERE RaceIndex = ?', (race_index,))
+                            race_id = cursor.fetchone()[0]
+                            self.current_race_id = race_id  
+                            self.race_id_updated.emit(self.current_race_id)  # Emit signal with the updated RaceID                         
+                            self.connection_restored.emit(current_race_state) # Emit signal for successful connection restoration with mGameState
+                            logging.info(f"RaceID for {race_index} is {race_id}.")
+                            #print(f"RaceID for {race_index} is {race_id}.")
+
+                            for participant in participants:
+                                participant_name = participant['mName']
+                                current_lap = participant.get('mCurrentLap', 0)
+                                #logging.info(f"Participant {participant_name} is on lap {current_lap}.")
+                                #print(f"Participant {participant_name} is on lap {current_lap}.")
+                                if participant_name not in self.lap_times_dict:
+                                    self.lap_times_dict[participant_name] = []
+
+                                latest_lap_time = participant.get('mLastLapTimes', None)
+                                lap_times = self.lap_times_dict[participant_name]
+                                if latest_lap_time is not None and len(self.lap_times_dict[participant_name]) < current_lap - 1:
+                                    self.lap_times_dict[participant_name].append(latest_lap_time)
+                                    logging.info(f"Updated lap_times for {lap_times}  {participant_name} at lap {current_lap}: {self.lap_times_dict[participant_name]}")
+                                    #print(f"Updated lap_times for {lap_times}  {participant_name} at lap {current_lap}: {self.lap_times_dict[participant_name]}")
+                                    logging.info(f"Lap times list for {participant_name}: {lap_times}")
+                                    #print(f"Lap times list for {participant_name}: {lap_times}")
+
+
+                                if current_lap > last_lap_counts.get(participant_name, 1):
+                                    if current_lap - 1 <= len(lap_times):
+                                        lap_time = lap_times[current_lap - 2]
+                                        logging.info(f"Storing lap time for {participant_name}: Lap {current_lap}, Time {lap_time}")
+                                        #print(f"Storing lap time for {participant_name}: Lap {current_lap}, Time {lap_time}")
+                                        self.insert_lap_data(cursor, race_id, participant_name, current_lap - 1, lap_time) #insert lap into Table
+
+                                        last_lap_counts[participant_name] = current_lap
+
+                            conn.commit()
+                            #logging.debug(f"Committed lap data to the database for race {race_index}.")
+                            #print(f"Committed lap data to the database for race {race_index}.")
+                            self.data_updated.emit(data)
+                            #print(f"Data Sent to live view {race_index}.")
+                            time.sleep(2)
+
+                            current_race_state = data['gameStates']['mGameState']
+                            #print (f"Last line of the loop: Current_Race_State: {current_race_state} self.running: {self.running}")
+                            logging.info(f"Last line of the loop: Current_Race_State: {current_race_state} self.running: {self.running}")
+                        except Exception as e:
+                            logging.error(f"An error occurred while processing participant data: {e}")
+                            print(f"An error occurred while processing participant data: {e}")
+                            raise
+                        except requests.exceptions.ConnectionError:
+                            logging.error(f"Connection error: Unable to reach the server at {self.ip_address}. Retrying in 2 seconds.")
+                            print(f"Connection error: Unable to reach the server at {self.ip_address}. Retrying in 2 seconds.")
+                            self.error_occurred.emit('Connection Error: Unable to reach server')
+                            time.sleep(2)
+                            
+                        except requests.exceptions.Timeout:
+                            logging.error(f"Timeout error: The server at {self.ip_address} did not respond. Retrying in 2 seconds.")
+                            print(f"Timeout error: The server at {self.ip_address} did not respond. Retrying in 2 seconds.")
+                            self.error_occurred.emit('Timeout Error: Server did not respond')
+                            time.sleep(2)
+                            
+                        except requests.exceptions.RequestException as e:
+                            logging.error(f"Request error: An error occurred - {str(e)}. Retrying in 2 seconds.")
+                            print(f"Request error: An error occurred - {str(e)}. Retrying in 2 seconds.")
+                            self.error_occurred.emit(f'Request Error: {str(e)}')
+                            time.sleep(2)                            
+                    logging.info(f"Race {self.race_count} has ended. Current_Race_State: {current_race_state} self.running: {self.running}")
+                    print(f"Race Ended, Current_Race_State: {current_race_state} self.running: {self.running}")
+                    self.finalize_race(data)
+                    self.race_finished.emit(data)
+                    self.race_count += 1
+                    time.sleep(10)
+                        
+            except requests.exceptions.ConnectionError:
+                logging.error(f"Connection error: Unable to reach the server at {self.ip_address}. Retrying in 2 seconds.")
+                print(f"Connection error: Unable to reach the server at {self.ip_address}. Retrying in 2 seconds.")
+                self.error_occurred.emit('Connection Error: Unable to reach server')
+                time.sleep(2)
+                
+            except requests.exceptions.Timeout:
+                logging.error(f"Timeout error: The server at {self.ip_address} did not respond. Retrying in 2 seconds.")
+                print(f"Timeout error: The server at {self.ip_address} did not respond. Retrying in 2 seconds.")
+                self.error_occurred.emit('Timeout Error: Server did not respond')
+                time.sleep(2)
+                
+            except requests.exceptions.RequestException as e:
+                logging.error(f"Request error: An error occurred - {str(e)}. Retrying in 2 seconds.")
+                print(f"Request error: An error occurred - {str(e)}. Retrying in 2 seconds.")
+                self.error_occurred.emit(f'Request Error: {str(e)}')
+                time.sleep(2)
+
+            except Exception as e:
+                logging.error(f"An error occurred while monitoring race state: {e}")
+                print(f"An error occurred while monitoring race state: {e}")
+                time.sleep(5)
+
+    
+
+    def finalize_race(self, data):
+        participants = data['participants']['mParticipantInfo']
+        #for participant in participants:
+            #logging.debug(f"Participant data: {json.dumps(participant, indent=2)}") 
+        race_index = f"Race_{self.race_count}"
+        conn = sqlite3.connect('RaceDB.db')
+        cursor = conn.cursor()
+        
+      
+        # Get the RaceID for this race
+        cursor.execute('SELECT RaceID FROM Races WHERE RaceIndex = ?', (race_index,))
+        race_id = cursor.fetchone()[0]
+        self.current_race_id = race_id
+
+        for participant in participants[:data['participants']['mNumParticipants']]:
+            participant_name = participant['mName']
+            if participant['mFastestLapTimes'] == -123.0:
+                participant['mFastestLapTimes'] = None
+            if participant['mLastLapTimes'] == -123.0:
+                participant['mLastLapTimes'] = None
+
+            # Insert or update participant data
+            cursor.execute('''
+                INSERT OR REPLACE INTO Participants (
+                    RaceID, mName, mCarNames, mRacePosition, mFastestLapTimes, mLastLapTimes
+                )
+                VALUES (?, ?, ?, ?, ?, ?)
+            ''', (
+                race_id,
+                participant_name,
+                participant['mCarNames'],
+                participant['mRacePosition'],
+                participant['mFastestLapTimes'],
+                participant['mLastLapTimes']
+            ))
+
+            # Insert lap times into the Laps table based on mCurrentLap
+            current_lap = participant.get('mCurrentLap', 0)
+
+            # If mCurrentLap is valid, proceed with inserting the data
+            if current_lap > 1:  # Ensure only valid laps are processed
+                lap_times = self.lap_times_dict.get(participant_name, [])
+                #logging.info(f"current_lap: {current_lap}, lap_times length: {len(lap_times)}")
+                if 1 <= current_lap <= len(lap_times):  # Ensure valid indexing
+                    lap_time = lap_times[current_lap - 1]
+                else:
+                    lap_time = None
+
+                if lap_time is not None:
+                    cursor.execute('''
+                        INSERT INTO Laps (RaceID, mName, LapNumber, LapTime)
+                        VALUES (?, ?, ?, ?)
+                    ''', (race_id, participant_name, current_lap, lap_time))
+
+        conn.commit()
+        conn.close()
+        logging.info(f"Finalized race data for {race_index}")
+        print(f"Finalized race data for {race_index}")
+
+    def stop(self):
+        self.running = False
+        self.session.close() 
+        self.quit()
+        self.wait()
+
+class Worker(QObject):
+    switch_tab_signal = pyqtSignal(int)  # Define a signal to switch tabs
+
+class RaceMonitorApp(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("Live Race Data")
+        self.setGeometry(100, 100, 1080, 800)
+        # Set fixed size to prevent autoresizing
+        self.setFixedSize(1080, 800)
+        self.setStyleSheet("background-color: rgba(0, 0, 0, 0);")  # Fully transparent
+        
+        # Set the background color of the window
+        #self.setStyleSheet("background-color: #a32d2d;")
+        #self.current_view = 'results'  # Default view is results view
+        #self.tab_widget.setCurrentIndex(1)  # Set Results View as the default tab on startup
+        
+
+
+        self.labels = {}
+        self.current_race_id = None
+        self.current_bestlap_name = None
+        self.previous_best_lap_time = None
+        self.best_lap_time = None
+        self.first_time_run = True
+        
+        self.conn = sqlite3.connect('RaceDB.db')  # Create a database connection
+        self.cursor = self.conn.cursor()          # Create a cursor
+
+        self.central_widget = QWidget()
+        self.central_widget.setStyleSheet("background-color: transparent;")
+        self.setCentralWidget(self.central_widget)
+        self.central_widget.setStyleSheet("""
+        background-position: center;
+        background-repeat: no-repeat;
+        """)
+        
+        # Tabs addition start
+        # Create a QTabWidget to hold different views
+        self.tab_widget = QTabWidget(self.central_widget)
+
+        self.tab_widget_mapping = {
+            0: [],  # Widgets for Live View
+            1: ['dropdown', 'delete_button'],  # Widgets for Results View
+            2: [ ],  # Widgets for Final View
+        }
+        # Apply the translucent style to the tab buttons.
+        '''
+        self.tab_widget.setStyleSheet("""
+            QTabWidget::pane { 
+                background: transparent;  /* Transparent background for the pane */
+                border: 0px;
+            }
+            QTabBar::tab {
+                background: rgba(255, 255, 255, 50);  /* Slightly translucent tabs */
+                color: black;
+                padding: 5px;
+            }
+            QTabBar::tab:selected {
+                background: rgba(255, 255, 255, 100);  /* Less translucent when selected */
+            }
+         """)
+        '''
+        self.layout = QVBoxLayout(self.central_widget)
+        self.layout.addWidget(self.tab_widget)
+
+        # Apply the translucent style to the tab panes.
+        '''
+        self.tab_widget.setStyleSheet("""
+            QTabWidget::pane { 
+                background: rgba(0, 0, 0, 0);  /* Makes the pane itself fully transparent */
+                border: 0px;
+            }
+            QTabBar::tab {
+                background: rgba(255, 255, 255, 100);  /* Light translucent background for tabs */
+                color: black;  /* Text color */
+                padding: 5px;
+            }
+            QTabBar::tab:selected {
+                background: rgba(255, 255, 255, 150);  /* Slightly less transparent when selected */
+            }
+        """)
+         '''
+
+        # Create widgets for each tab
+        self.live_view_widget = QWidget()
+        self.results_view_widget = QWidget()
+        self.final_view_widget = QWidget()
+        # Set up layouts for each tab
+        self.live_view_layout = QVBoxLayout(self.live_view_widget)
+        self.results_view_layout = QVBoxLayout(self.results_view_widget)
+        self.final_view_layout = QVBoxLayout(self.final_view_widget)
+        #self.live_view_layout.setAlignment(Qt.AlignTop)
+        #self.live_view_widget.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+
+        # Add live view and results view to the tab widget and give the tabs a name
+        self.tab_widget.addTab(self.live_view_widget, "Live View")
+        self.tab_widget.addTab(self.results_view_widget, "Results View")
+        self.tab_widget.addTab(self.final_view_widget, "Final View")
+        
+        # Add your existing widgets and layout configurations to the appropriate tab layouts
+        self.setup_live_view() # Initialize the live view
+        self.setup_final_view() # Initialize the final view
+        self.setup_result_view() # Initialize the result view
+
+        #Set the Status view as the default tab
+        self.tab_widget.setCurrentIndex(1)
+        # Tabs addition end
+        # Connect tab change to background update
+        self.tab_widget.currentChanged.connect(self.on_tab_changed)
+        # Load the background image
+        #self.background_image = QPixmap("LiveRace.jpg")
+        self.status_background_image = QPixmap("Liverace_Status.jpg")  # Background for Status view
+        self.live_background_image = QPixmap("LiveRace_LiveView.jpg")  # Background for Live view
+
+        # Create a QLabel to display the background image
+        self.background_label = QLabel(self.central_widget)
+        self.background_label.setPixmap(self.status_background_image)
+        self.background_label.setGeometry(0, 0, 1080, 800)
+        self.background_label.setScaledContents(True)  # Adjusts the image size to the window
+        self.background_label.lower()  # Ensure the background stays behind other widgets
+        self.layout.setAlignment(Qt.AlignTop)
+        self.dropdown = QComboBox(self)
+        self.labels['dropdown'] = self.dropdown
+        self.dropdown.setStyleSheet("""
+            font-size: 14px;
+            color: black;
+            background-color: white;
+            border: 2px solid black;  /* Change the border color */
+            border-radius: 5px;  /* Optional: rounded corners */
+            padding: 2px 5px;  /* Optional: padding inside the dropdown */
+        """)        
+        self.dropdown.setFixedSize(400, 30)
+        self.dropdown.currentIndexChanged.connect(self.load_selected_race)
+        self.layout.addWidget(self.dropdown, alignment=Qt.AlignTop)
+        
+        # Add the Delete button
+        self.delete_button = QPushButton("Delete Selected Race", self)
+        self.labels['delete_button'] = self.delete_button
+        self.delete_button.setStyleSheet("""
+            font-size: 14px;
+            background-color: #a32d2d;
+            color: white;
+            margin-bottom: 5px;                             
+            border: 2px solid black;  /* Change the border color */
+            border-radius: 5px;  /* Optional: rounded corners */
+        """)        
+        
+        
+        self.delete_button.setFixedSize(150, 30)
+        self.delete_button.clicked.connect(self.delete_selected_race)
+        self.layout.addWidget(self.delete_button) 
+        
+        # Status label for connection issues
+        self.status_label = QLabel("", self)
+        self.status_label.setAlignment(Qt.AlignCenter)
+        self.status_label.setStyleSheet("font-size: 14px; color: red;")
+        self.layout.addWidget(self.status_label)  # Add the status label below the delete button
+        
+        self.load_race_data_on_start() # Load any existing race data
+
+        self.monitor_thread = MonitorThread(self.tab_widget)
+        self.monitor_thread.data_updated.connect(self.update_live_view)
+        self.monitor_thread.race_finished.connect(self.display_final_results)
+        self.monitor_thread.race_id_updated.connect(self.update_race_id)  # Connect the signal
+        self.monitor_thread.error_occurred.connect(self.show_error_message)  # Connect the error signal
+        self.monitor_thread.connection_restored.connect(self.handle_connection_restored)  # Connection restored
+        self.monitor_thread.start()
+        self.worker = Worker()
+        self.worker.switch_tab_signal.connect(self.tab_widget.setCurrentIndex)
+        self.status_label.setStyleSheet("font-size: 14px; color: red; background-color: rgba(0, 0, 0, 0);")
+        
+    def on_tab_changed(self, index):
+        # Hide all widgets first
+        for widget_list in self.tab_widget_mapping.values():
+            for widget_name in widget_list:
+                if widget_name in self.labels:  # Check if the widget exists in the labels dictionary
+                    self.labels[widget_name].hide()
+
+        # Show only the widgets associated with the active tab
+        for widget_name in self.tab_widget_mapping.get(index, []):
+            if widget_name in self.labels:
+                self.labels[widget_name].show()
+        # Handle other tab-specific logic, like background updates
+        if index == 0:
+            self.update_background('live')
+        elif index == 1:
+            self.update_background('status')
+
+    def update_background(self, view):
+        if view == 'status':
+            self.background_label.setPixmap(self.status_background_image)
+        elif view == 'live':
+            self.background_label.setPixmap(self.live_background_image)
+
+  
+    def clear_error_message(self):
+        if hasattr(self, 'error_label'):
+            self.error_label.deleteLater()
+            del self.error_label
+        
+        if hasattr(self, 'timer') and self.timer.isActive():
+            self.timer.stop()
+
+        
+    def handle_connection_restored(self, mGameState):
+        # Clear the error message immediately upon restoring the connection
+        self.clear_error_message()
+        
+    def update_status_message(self, message):
+        # Update the status label with the message
+        self.status_label.setText(message)
+
+    def blink_status_message(self):
+        self.timer = QTimer(self)
+        self.timer.timeout.connect(self.toggle_status_visibility)
+        self.timer.start(500)  # Blink every 500 ms
+
+    def toggle_status_visibility(self):
+        if self.status_label.isVisible():
+            self.status_label.setVisible(False)
+        else:
+            self.status_label.setVisible(True)
+ 
+    def show_error_message(self, message):
+        # Check if the error label already exists with the same message
+        if hasattr(self, 'error_label') and self.error_label.text() == message:
+            return  # Do not create a new label if the message is the same
+
+        if hasattr(self, 'error_label'):
+            self.error_label.deleteLater()  # Remove the existing error label
+        # Create the error label with the new message
+   
+        self.error_label = QLabel(message, self)
+        self.error_label.setAlignment(Qt.AlignCenter)
+        self.error_label.setFixedSize(1060, 35)
+        self.error_label.setStyleSheet("font-size: 18px; color: red; background-color: yellow; padding: 10px;")
+        self.blink_error_message()
+
+    def blink_error_message(self):
+        self.timer = QTimer(self)
+        self.timer.timeout.connect(self.toggle_error_visibility)
+        self.timer.start(500)  # Blink every 500 ms
+
+    def toggle_error_visibility(self):
+        if hasattr(self, 'error_label') and self.error_label is not None:
+            if self.error_label.isVisible():
+                self.error_label.setVisible(False)
+            else:
+                self.error_label.setVisible(True)
+           
+            
+
+    def load_race_data_on_start(self):
+        conn = sqlite3.connect('RaceDB.db')
+        cursor = conn.cursor()
+
+        cursor.execute('''
+            SELECT RaceID, RaceIndex, mTranslatedTrackVariation, mLapsInEvent, RaceDate
+            FROM Races
+            ORDER BY RaceID ASC
+        ''')
+        races = cursor.fetchall()
+
+        if races:
+            for race_id, race_index, track_variation, laps_in_event, race_date in races:
+                self.dropdown.addItem(f"{race_date} - {track_variation} - {race_index}")
+            # Load the latest race results by default
+            self.dropdown.setCurrentIndex(self.dropdown.count() - 1)
+            self.load_selected_race()
+
+
+        conn.close()
+        
+    def setup_live_view(self):
+        # Setup your live view widgets here
+        self.live_heading = QLabel("Waiting for a new race to start...", self.live_view_widget)
+        self.live_heading.setStyleSheet("font-size: 16px;font-weight:bold; color: black;")
+        self.live_view_layout.addWidget(self.live_heading, alignment=Qt.AlignTop)
+        self.live_heading.setMinimumSize(200, 50)  # Set this to a size that you believe should fit your text
+        self.live_heading.setStyleSheet("font-size: 16px;font-weight:bold; color: black; ")
+
+        # Add participant labels for live updates
+        #'''
+        self.participant_labels = {}
+        for i in range(20):  # Assuming 20 participants max
+            self.participant_labels[i] = QLabel("", self.live_view_widget)
+            self.participant_labels[i].setStyleSheet("font-size: 14px; color: white;")
+            self.live_view_layout.addWidget(self.participant_labels[i])
+            self.participant_labels[i].setStyleSheet("font-size: 14px; color: white; border: 1px solid blue; background-color: #333333;")  
+            self.participant_labels[i].hide()  # Hide labels initially
+        # '''
+        # You can add other live view specific components here as per the original design.
+
+
+    def setup_result_view(self):
+        # Setup your results view widgets here
+        # Content label for displaying loaded results
+        self.results_content = QLabel("No race data available", self.results_view_widget)
+        self.results_content.setStyleSheet("font-size: 14px;font-weight:bold; color: black;")
+        self.results_view_layout.addWidget(self.results_content)
+        self.results_view_layout.addStretch(1)
+        
+    def setup_final_view(self):
+        # Setup your final view widgets here
+        
+        # Content label for displaying Final results
+        self.final_content = QLabel("No race data available", self.final_view_widget)
+        self.final_content.setStyleSheet("font-size: 14px;font-weight:bold; color: black;")
+        self.final_view_layout.addWidget(self.final_content)
+        self.final_view_layout.addStretch(1)
+        
+    def update_live_view(self, data):
+        cursor = self.cursor  # Use the class-level cursor for database queries
+        background_color = "#333333"  # Default background color
+        top_background_color = "#A7DB8D"  # Default top background color
+
+        # Extract event information and participant details from the data
+        event_info = data['eventInformation']
+        participants = data['participants']['mParticipantInfo']
+    
+        # Sort participants by race position
+        sorted_participants = sorted(participants[:data['participants']['mNumParticipants']], key=lambda p: p['mRacePosition'])
+    
+        # Update the heading with track variation and car names
+        heading_text = f"{event_info['mTranslatedTrackVariation']} ({event_info['mLapsInEvent']}) - {participants[0]['mCarNames']}"
+        self.live_heading.setText(heading_text)
+        
+        # Hide all labels when new race start in case of changed number of participants
+        for i in range(20):  # Assuming 20 participants max
+            self.participant_labels[i].hide()
+            
+        # Find the valid Lap Times
+        valid_lap_times = [p['mFastestLapTimes'] for p in sorted_participants if p['mFastestLapTimes'] != -123]
+        if valid_lap_times:
+            self.previous_best_lap_time = self.best_lap_time
+            self.best_lap_time = min(valid_lap_times)
+            best_lap_time = min(valid_lap_times)
+            if self.previous_best_lap_time != self.best_lap_time:        
+                print(f"New best Lap Time: {self.format_lap_time(self.best_lap_time)}")
+
+        # Loop through each participant to update their corresponding label
+        for i, participant in enumerate(sorted_participants):
+            participant_name = participant['mName']
+            current_lap = participant.get('mCurrentLap', 0)
+            #print(f"Processing: {participant_name} Time: {self.format_lap_time(best_lap_time)}")
+
+            if current_lap < 3:
+                # Format last lap and fastest lap times using the provided utility functions
+                last_lap_str = self.format_lap_time(participant['mLastLapTimes'])
+                fastest_lap_str = self.format_lap_time(participant['mFastestLapTimes'])
+                # Create the participant text using the utility function
+                participant_text = self.create_participant_text(participant, last_lap_str, fastest_lap_str, last_lap_str)
+            else:
+                # Query the database for recorded laps if the current lap is 3 or beyond
+                cursor.execute('''
+                    SELECT LapNumber, LapTime 
+                    FROM Laps 
+                    WHERE mName = ? AND RaceID = ? 
+                    ORDER BY LapNumber ASC
+                ''', (participant_name, self.current_race_id))
+                recorded_laps = cursor.fetchall()
+
+                # Filter and format the laps to display only those prior to the current lap
+                last_lap_str = self.format_lap_time(participant['mLastLapTimes'])
+                laps_to_display = [lap for lap in recorded_laps if lap[0] < current_lap]
+                lap_times_str = ", ".join(f"{int(lap[1] // 60)}:{lap[1] % 60:05.2f}" for lap in laps_to_display)
+
+                # Format the fastest lap time
+                fastest_lap_str = self.format_lap_time(participant['mFastestLapTimes'])
+                # Create the participant text with the lap times string
+                participant_text = self.create_participant_text(participant, last_lap_str, fastest_lap_str, lap_times_str)
+
+
+
+            label = self.participant_labels[i]
+            
+            if valid_lap_times: #sets background color based on best lap time
+                if participant['mFastestLapTimes'] == best_lap_time:
+                        label.setStyleSheet(f"font-size: 14px; background-color: {top_background_color}; padding: 5px; margin-bottom: 2px; border-radius: 5px;")
+                        if self.previous_best_lap_time != self.best_lap_time: 
+                            print(f"Best time color assigned: {participant_name} Last Lap:{last_lap_str} Best Lap in race: {self.format_lap_time(best_lap_time)}")       
+                else: 
+                    label.setStyleSheet(f"font-size: 14px; background-color: {background_color}; padding: 5px; margin-bottom: 2px; border-radius: 5px;")
+            elif self.first_time_run: # Sets all labels to the default background color if no valid lap times are found and it is first run.
+                label.setStyleSheet(f"font-size: 14px; background-color: {background_color}; padding: 5px; margin-bottom: 2px; border-radius: 5px;")
+                print(f"No one has a valid lap time: {participant_name} Time:No valid lap")    
+            label.setText(participant_text) # Update the existing label with the new participant text and styling 
+            label.show()  # Make the label visible  
+            #self.live_view_layout.addWidget(label)  # Ensure the label is visible
+        self.first_time_run = False        
+    def format_lap_time(self, lap_time):
+       #Helper function to format lap time from seconds to 'MM:SS.ss' format.
+        if lap_time is None or lap_time == -123.0:
+            return "No Valid Lap!"
+        minutes = int(lap_time // 60)
+        seconds = lap_time % 60
+        return f"{minutes}:{seconds:05.2f}"
+    
+    def create_participant_text(self, participant, last_lap_str, fastest_lap_str, lap_times_str=""):
+        #Helper function to create participant text with custom styling.
+        return (
+        f"<span style='font-weight:bold; color:#FFFFFF;'>{participant['mRacePosition']}</span>: "
+        f"<span style='color:#FFFFFF;'>{participant['mName']}</span> - "
+        f"<span style='color:#FFFFA0;'>Last Lap: <span style='color:#00FF00;'>{last_lap_str}</span> - "
+        f"<span style='color:#FFFFA0;'>Best Lap: <span style='color:#FFD700;'>{fastest_lap_str}</span> - "
+        f"<span style='color:#FFFFA0;'>Laptimes: <span style='color:#FFFFFF;'>[{lap_times_str}]</span>"
+        )
+    def display_final_results(self, data):
+        logging.info(f"Display Final Result")
+        print(f"Display Final Result")
+        #self.current_view = 'final'
+        #self.update_background('status')
+        self.tab_widget.setCurrentIndex(2) #Switch to Final View tab
+        self.current_bestlap_name = None #Reset the best lap participant name
+        self.first_time_run = True
+        self.previous_best_lap_time = None
+        self.best_lap_time = None
+        # Clear any existing error message if the connection is successful
+        if hasattr(self, 'error_label'):
+            self.error_label.deleteLater()
+            del self.error_label
+        
+        if hasattr(self, 'timer') and self.timer.isActive():
+            self.timer.stop()
+    
+    
+        # Ensure that only the final results are shown
+        #self.hide_participant_labels()
+        self.current_view = 'final'  # Switch to final view
+
+        participants = data['participants']['mParticipantInfo']
+        final_results = "<span style='font-weight:bold;'>Final Standings:</span><br>"
+
+        sorted_participants = sorted(participants[:data['participants']['mNumParticipants']], key=lambda p: p['mRacePosition'])
+
+        conn = sqlite3.connect('RaceDB.db')
+        cursor = conn.cursor()
+        
+        cursor.execute('''
+            SELECT RaceID, RaceIndex, mTranslatedTrackVariation, mLapsInEvent, RaceDate
+            FROM Races
+            ORDER BY RaceID DESC
+            LIMIT 1
+        ''')
+        race = cursor.fetchone()
+        self.current_race_id, race_index, track_variation, laps_in_event, race_date = race
+
+        if self.dropdown.findText(f"{race_date} - {track_variation} - {race_index}") == -1:
+            self.dropdown.addItem(f"{race_date} - {track_variation} - {race_index}")
+            self.dropdown.setCurrentIndex(self.dropdown.count() - 1)
+
+        for participant in sorted_participants:
+            name = participant['mName']
+            race_position = participant['mRacePosition']
+            fastest_lap = participant['mFastestLapTimes']
+            #fastest_lap_str = f"{fastest_lap:.2f}" if fastest_lap is not None else "No valid lap!"
+            if fastest_lap is not None:
+                minutes = int(fastest_lap // 60)
+                seconds = fastest_lap % 60
+                fastest_lap_str = f"{minutes}:{seconds:05.2f}"
+            else:
+                fastest_lap_str = "No Valid Lap!" 
+            
+            cursor.execute('''
+                SELECT LapNumber, LapTime
+                FROM Laps
+                WHERE RaceID = ? AND mName = ?
+                ORDER BY LapNumber ASC
+            ''', (self.current_race_id, name))
+            
+            lap_times = cursor.fetchall()
+            # Ensure the list is not empty and the index is valid
+            valid_lap_times = [time for time in lap_times if time[1] != -123]
+            if valid_lap_times:
+                lap_times_str = ", ".join(f"{int(lap[1] // 60)}:{lap[1] % 60:05.2f}" for lap in valid_lap_times)
+            else:
+                lap_times_str = "No valid lap!"
+
+            final_results += (f"<span style='font-weight:normal; '>{race_position}: {name} - Fastest Lap: {fastest_lap_str} - Lap Times: [{lap_times_str}]</span><br>")
+        
+        self.final_content.setTextFormat(Qt.RichText)    
+        print(f"Display Final Result {final_results}")
+        self.final_content.setText(final_results)  # final_results can contain HTML-formatted text
+        # Set live view heading to wait for next race
+        self.live_heading.setText("Final Standing - Waiting for a new race to start...")
+
+        conn.close()
+
+    def load_selected_race(self):
+        self.update_background('status')
+        #logging.info(f"Load Selected Race, Race_State: {self.current_view}")
+        #print(f"Load Selected Race, Race_State: {self.current_view}")
+        selected_index = self.dropdown.currentIndex()
+        if selected_index >= 0:
+            race_text = self.dropdown.itemText(selected_index)
+            race_index = race_text.split(" - ")[-1]
+            self.viewing_race_id = None  # Reset viewing_race_id before loading
+
+            conn = sqlite3.connect('RaceDB.db')
+            cursor = conn.cursor()
+
+            cursor.execute('''
+                SELECT RaceID, mTranslatedTrackVariation, mLapsInEvent
+                FROM Races
+                WHERE RaceIndex = ?
+            ''', (race_index,))
+            race = cursor.fetchone()
+            if race:
+                race_id, track_variation, laps_in_event = race
+                self.viewing_race_id = race_id
+                logging.info(f"Load Selected Race, RaceID: { self.viewing_race_id}")
+                print(f"Load Selected Race, RaceID: { self.viewing_race_id}")
+                cursor.execute('''
+                    SELECT mName, mRacePosition, mFastestLapTimes, mLastLapTimes, mCarNames
+                    FROM Participants
+                    WHERE RaceID = ?
+                    ORDER BY mRacePosition ASC
+                ''', ( self.viewing_race_id,))
+                participants = cursor.fetchall()
+
+                
+                displayed_participants = set()
+                car_name = participants[0][4] if participants and participants[0][4] else "Unknown Car"
+                loaded_results = (f"<span style='font-weight:bold; '> Race No: {race_id} Track: {track_variation} Laps: {laps_in_event} Car: {car_name}:</span><br>")
+
+                for participant in participants:
+                    name, race_position, fastest_lap, last_lap, car = participant
+                    if fastest_lap is not None:
+                        minutes = int(fastest_lap // 60)
+                        seconds = fastest_lap % 60
+                        fastest_lap_str = f"{minutes}:{seconds:05.2f}"
+                    else:
+                        fastest_lap_str = "No Valid Lap!"                     
+                    if name in displayed_participants:
+                        continue
+
+                    cursor.execute('''
+                        SELECT LapNumber, LapTime
+                        FROM Laps
+                        WHERE RaceID = ? AND mName = ?
+                        ORDER BY LapNumber ASC
+                    ''', ( self.viewing_race_id, name))
+                    
+                    
+                    lap_times = cursor.fetchall()
+                    
+                    # Filter out any lap times with -123 placeholder
+                    valid_lap_times = [time for time in lap_times if time[1] != -123]
+
+                    # Ensure the list is not empty and the index is valid
+                    if valid_lap_times:
+                        lap_times_str = ", ".join(f"{int(lap[1] // 60)}:{lap[1] % 60:05.2f}" for lap in valid_lap_times)
+                    else:
+                        lap_times_str = "No valid lap!"
+                   
+                    
+                    loaded_results += (f"<span style='font-weight:normal;'>{race_position}: {name} - Fastest Lap: {fastest_lap_str} - Lap Times: [{lap_times_str}]</span><br>")
+                    
+                    displayed_participants.add(name)
+
+                self.results_content.setTextFormat(Qt.RichText)     
+                self.results_content.setText(loaded_results)
+
+            conn.close()
+
+    def delete_selected_race(self):
+        selected_index = self.dropdown.currentIndex()
+        if selected_index >= 0:
+            race_text = self.dropdown.itemText(selected_index)
+            race_index = race_text.split(" - ")[-1]
+
+            conn = sqlite3.connect('RaceDB.db')
+            cursor = conn.cursor()
+
+            # Get the RaceID for the selected race
+            cursor.execute('''
+                SELECT RaceID FROM Races WHERE RaceIndex = ?
+            ''', (race_index,))
+            race = cursor.fetchone()
+
+            if race:
+                race_id = race[0]
+
+                # Delete from Laps
+                cursor.execute('''
+                    DELETE FROM Laps WHERE RaceID = ?
+                ''', (race_id,))
+
+                # Delete from Participants
+                cursor.execute('''
+                    DELETE FROM Participants WHERE RaceID = ?
+                ''', (race_id,))
+
+                # Delete from Races
+                cursor.execute('''
+                    DELETE FROM Races WHERE RaceID = ?
+                ''', (race_id,))
+
+                conn.commit()
+
+                # Remove the race from the dropdown
+                self.dropdown.removeItem(selected_index)
+
+                # Clear the displayed race results if the deleted race was the current one
+                if  self.viewing_race_id == race_id:
+                    self.labels['results_heading'].setText("Race Deleted")
+                    self.labels['results_content'].setText("")
+                    self.viewing_race_id = None
+
+            conn.close()
+            
+    def update_race_id(self, race_id):
+        self.current_race_id = race_id
+        #print(f"Updated Race_ID from RUN current_race_id to {self.current_race_id}")
+        logging.info(f"Updated Race_ID from RUN current_race_id to {self.current_race_id}")
+
+    '''
+    def show_participant_labels(self):
+        for key in self.labels:
+            if key.startswith('participant_'):
+                self.labels[key].show()
+
+    def hide_participant_labels(self):
+        for key in self.labels:
+            if key.startswith('participant_'):
+                self.labels[key].hide()
+    '''
+    def closeEvent(self, event):
+        self.cursor.close()  # Close the cursor
+        self.conn.close()    # Close the connection
+        self.monitor_thread.stop()
+        event.accept()
+
+
+def main():
+    create_database()
+    app = QApplication(sys.argv)
+    ex = RaceMonitorApp()
+    ex.show()
+    sys.exit(app.exec_())
+
+if __name__ == "__main__":
+        main() # No need to pass an IP address

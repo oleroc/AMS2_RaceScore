@@ -1,0 +1,2128 @@
+2025-06-04 19:36:40,740 - WARNING - Live View should be active, mGamestate is 2
+2025-06-04 19:36:40,745 - INFO - Processing data for 21 participants.
+2025-06-04 19:36:40,746 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:36:40,746 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:36:40,746 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:36:40,746 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:36:40,756 - INFO - Updating live view Live view DEF:
+2025-06-04 19:36:40,756 - INFO - Cursor is valid
+2025-06-04 19:36:45,757 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:36:45,761 - INFO - Processing data for 21 participants.
+2025-06-04 19:36:45,761 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:36:45,761 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:36:45,762 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:36:45,762 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:36:45,762 - INFO - Updating live view Live view DEF:
+2025-06-04 19:36:45,762 - INFO - Cursor is valid
+2025-06-04 19:36:50,763 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:36:50,767 - INFO - Processing data for 21 participants.
+2025-06-04 19:36:50,767 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:36:50,773 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:36:50,774 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:36:50,774 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:36:50,775 - INFO - Updating live view Live view DEF:
+2025-06-04 19:36:50,775 - INFO - Cursor is valid
+2025-06-04 19:36:55,776 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:36:55,779 - INFO - Processing data for 21 participants.
+2025-06-04 19:36:55,779 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:36:55,779 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:36:55,780 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:36:55,780 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:36:55,780 - INFO - Updating live view Live view DEF:
+2025-06-04 19:36:55,780 - INFO - Cursor is valid
+2025-06-04 19:37:00,781 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:37:00,784 - INFO - Processing data for 21 participants.
+2025-06-04 19:37:00,785 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:37:00,785 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:37:00,786 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:37:00,786 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:37:00,786 - INFO - Updating live view Live view DEF:
+2025-06-04 19:37:00,786 - INFO - Cursor is valid
+2025-06-04 19:37:05,787 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:37:05,790 - INFO - Processing data for 21 participants.
+2025-06-04 19:37:05,791 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:37:05,791 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:37:05,792 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:37:05,792 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:37:05,792 - INFO - Updating live view Live view DEF:
+2025-06-04 19:37:05,792 - INFO - Cursor is valid
+2025-06-04 19:37:10,792 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:37:10,795 - INFO - Processing data for 21 participants.
+2025-06-04 19:37:10,795 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:37:10,796 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:37:10,797 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:37:10,797 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:37:10,797 - INFO - Updating live view Live view DEF:
+2025-06-04 19:37:10,797 - INFO - Cursor is valid
+2025-06-04 19:37:15,797 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:37:15,801 - INFO - Processing data for 21 participants.
+2025-06-04 19:37:15,801 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:37:15,801 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:37:15,802 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:37:15,802 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:37:15,802 - INFO - Updating live view Live view DEF:
+2025-06-04 19:37:15,802 - INFO - Cursor is valid
+2025-06-04 19:37:20,802 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:37:20,806 - INFO - Processing data for 21 participants.
+2025-06-04 19:37:20,807 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:37:20,807 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:37:20,807 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:37:20,807 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:37:20,807 - INFO - Updating live view Live view DEF:
+2025-06-04 19:37:20,807 - INFO - Cursor is valid
+2025-06-04 19:37:25,808 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:37:25,813 - INFO - Processing data for 21 participants.
+2025-06-04 19:37:25,813 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:37:25,813 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:37:25,814 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:37:25,814 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:37:25,814 - INFO - Updating live view Live view DEF:
+2025-06-04 19:37:25,814 - INFO - Cursor is valid
+2025-06-04 19:37:30,814 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:37:30,817 - INFO - Processing data for 21 participants.
+2025-06-04 19:37:30,817 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:37:30,817 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:37:30,818 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:37:30,818 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:37:30,819 - INFO - Updating live view Live view DEF:
+2025-06-04 19:37:30,819 - INFO - Cursor is valid
+2025-06-04 19:37:35,820 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:37:35,824 - INFO - Processing data for 21 participants.
+2025-06-04 19:37:35,824 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:37:35,824 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:37:35,825 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:37:35,826 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:37:35,826 - INFO - Updating live view Live view DEF:
+2025-06-04 19:37:35,826 - INFO - Cursor is valid
+2025-06-04 19:37:40,825 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:37:40,829 - INFO - Processing data for 21 participants.
+2025-06-04 19:37:40,829 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:37:40,829 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:37:40,829 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:37:40,829 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:37:40,830 - INFO - Updating live view Live view DEF:
+2025-06-04 19:37:40,830 - INFO - Cursor is valid
+2025-06-04 19:37:45,831 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:37:45,835 - INFO - Processing data for 21 participants.
+2025-06-04 19:37:45,835 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:37:45,835 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:37:45,836 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:37:45,836 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:37:45,836 - INFO - Updating live view Live view DEF:
+2025-06-04 19:37:45,836 - INFO - Cursor is valid
+2025-06-04 19:37:50,836 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:37:50,841 - INFO - Processing data for 21 participants.
+2025-06-04 19:37:50,842 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:37:50,842 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:37:50,842 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:37:50,842 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:37:50,844 - INFO - Updating live view Live view DEF:
+2025-06-04 19:37:50,844 - INFO - Cursor is valid
+2025-06-04 19:37:55,843 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:37:55,847 - INFO - Processing data for 21 participants.
+2025-06-04 19:37:55,847 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:37:55,847 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:37:55,848 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:37:55,848 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:37:55,848 - INFO - Updating live view Live view DEF:
+2025-06-04 19:37:55,848 - INFO - Cursor is valid
+2025-06-04 19:38:00,849 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:38:00,853 - INFO - Processing data for 21 participants.
+2025-06-04 19:38:00,853 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:38:00,853 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:38:00,854 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:38:00,854 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:38:00,854 - INFO - Updating live view Live view DEF:
+2025-06-04 19:38:00,855 - INFO - Cursor is valid
+2025-06-04 19:38:05,854 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:38:05,857 - INFO - Processing data for 21 participants.
+2025-06-04 19:38:05,858 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:38:05,858 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:38:05,858 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:38:05,858 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:38:05,859 - INFO - Updating live view Live view DEF:
+2025-06-04 19:38:05,859 - INFO - Cursor is valid
+2025-06-04 19:38:10,859 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:38:10,863 - INFO - Processing data for 21 participants.
+2025-06-04 19:38:10,864 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:38:10,864 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:38:10,865 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:38:10,865 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:38:10,865 - INFO - Updating live view Live view DEF:
+2025-06-04 19:38:10,866 - INFO - Cursor is valid
+2025-06-04 19:38:15,865 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:38:15,869 - INFO - Processing data for 21 participants.
+2025-06-04 19:38:15,869 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:38:15,870 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:38:15,870 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:38:15,871 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:38:15,871 - INFO - Updating live view Live view DEF:
+2025-06-04 19:38:15,871 - INFO - Cursor is valid
+2025-06-04 19:38:20,871 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:38:20,875 - INFO - Processing data for 21 participants.
+2025-06-04 19:38:20,875 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:38:20,876 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:38:20,877 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:38:20,877 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:38:20,889 - INFO - Updating live view Live view DEF:
+2025-06-04 19:38:20,889 - INFO - Cursor is valid
+2025-06-04 19:38:25,890 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:38:25,894 - INFO - Processing data for 21 participants.
+2025-06-04 19:38:25,894 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:38:25,894 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:38:25,895 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:38:25,895 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:38:25,905 - INFO - Updating live view Live view DEF:
+2025-06-04 19:38:25,905 - INFO - Cursor is valid
+2025-06-04 19:38:30,907 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:38:30,912 - INFO - Processing data for 21 participants.
+2025-06-04 19:38:30,912 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:38:30,912 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:38:30,913 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:38:30,913 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:38:30,913 - INFO - Updating live view Live view DEF:
+2025-06-04 19:38:30,913 - INFO - Cursor is valid
+2025-06-04 19:38:35,914 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:38:35,917 - INFO - Processing data for 21 participants.
+2025-06-04 19:38:35,918 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:38:35,918 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:38:35,919 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:38:35,919 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:38:35,919 - INFO - Updating live view Live view DEF:
+2025-06-04 19:38:35,919 - INFO - Cursor is valid
+2025-06-04 19:38:40,920 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:38:40,924 - INFO - Processing data for 21 participants.
+2025-06-04 19:38:40,924 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:38:40,924 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:38:40,925 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:38:40,925 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:38:40,926 - INFO - Updating live view Live view DEF:
+2025-06-04 19:38:40,926 - INFO - Cursor is valid
+2025-06-04 19:38:45,926 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:38:45,931 - INFO - Processing data for 21 participants.
+2025-06-04 19:38:45,931 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:38:45,931 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:38:45,931 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:38:45,931 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:38:45,933 - INFO - Updating live view Live view DEF:
+2025-06-04 19:38:45,933 - INFO - Cursor is valid
+2025-06-04 19:38:50,933 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:38:50,936 - INFO - Processing data for 21 participants.
+2025-06-04 19:38:50,937 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:38:50,937 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:38:50,937 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:38:50,939 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:38:50,939 - INFO - Updating live view Live view DEF:
+2025-06-04 19:38:50,939 - INFO - Cursor is valid
+2025-06-04 19:38:55,939 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:38:55,943 - INFO - Processing data for 21 participants.
+2025-06-04 19:38:55,943 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:38:55,944 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:38:55,945 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:38:55,945 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:38:55,945 - INFO - Updating live view Live view DEF:
+2025-06-04 19:38:55,945 - INFO - Cursor is valid
+2025-06-04 19:39:00,945 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:39:00,949 - INFO - Processing data for 21 participants.
+2025-06-04 19:39:00,950 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:39:00,950 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:39:00,950 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:39:00,950 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:39:00,951 - INFO - Updating live view Live view DEF:
+2025-06-04 19:39:00,951 - INFO - Cursor is valid
+2025-06-04 19:39:05,952 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:39:05,955 - INFO - Processing data for 21 participants.
+2025-06-04 19:39:05,955 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:39:05,956 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:39:05,956 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:39:05,957 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:39:05,957 - INFO - Updating live view Live view DEF:
+2025-06-04 19:39:05,957 - INFO - Cursor is valid
+2025-06-04 19:39:10,957 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:39:10,962 - INFO - Processing data for 21 participants.
+2025-06-04 19:39:10,962 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:39:10,962 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:39:10,964 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:39:10,964 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:39:10,964 - INFO - Updating live view Live view DEF:
+2025-06-04 19:39:10,964 - INFO - Cursor is valid
+2025-06-04 19:39:15,964 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:39:15,968 - INFO - Processing data for 21 participants.
+2025-06-04 19:39:15,968 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:39:15,968 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:39:15,969 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:39:15,969 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:39:15,969 - INFO - Updating live view Live view DEF:
+2025-06-04 19:39:15,969 - INFO - Cursor is valid
+2025-06-04 19:39:20,969 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:39:20,974 - INFO - Processing data for 21 participants.
+2025-06-04 19:39:20,974 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:39:20,975 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:39:20,975 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:39:20,975 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:39:20,977 - INFO - Updating live view Live view DEF:
+2025-06-04 19:39:20,977 - INFO - Cursor is valid
+2025-06-04 19:39:25,977 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:39:25,980 - INFO - Processing data for 21 participants.
+2025-06-04 19:39:25,981 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:39:25,981 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:39:25,982 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:39:25,982 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:39:25,982 - INFO - Updating live view Live view DEF:
+2025-06-04 19:39:25,982 - INFO - Cursor is valid
+2025-06-04 19:39:30,983 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:39:30,987 - INFO - Processing data for 21 participants.
+2025-06-04 19:39:30,987 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:39:30,987 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:39:30,987 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:39:30,989 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:39:30,989 - INFO - Updating live view Live view DEF:
+2025-06-04 19:39:30,990 - INFO - Cursor is valid
+2025-06-04 19:39:35,989 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:39:35,992 - INFO - Processing data for 21 participants.
+2025-06-04 19:39:35,993 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:39:35,993 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:39:35,995 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:39:35,995 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:39:35,995 - INFO - Updating live view Live view DEF:
+2025-06-04 19:39:35,995 - INFO - Cursor is valid
+2025-06-04 19:39:40,995 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:39:41,001 - INFO - Processing data for 21 participants.
+2025-06-04 19:39:41,001 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:39:41,003 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:39:41,003 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:39:41,004 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:39:41,014 - INFO - Updating live view Live view DEF:
+2025-06-04 19:39:41,014 - INFO - Cursor is valid
+2025-06-04 19:39:46,014 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:39:46,019 - INFO - Processing data for 21 participants.
+2025-06-04 19:39:46,019 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:39:46,019 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:39:46,020 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:39:46,020 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:39:46,030 - INFO - Updating live view Live view DEF:
+2025-06-04 19:39:46,031 - INFO - Cursor is valid
+2025-06-04 19:39:51,032 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:39:51,036 - INFO - Processing data for 21 participants.
+2025-06-04 19:39:51,036 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:39:51,036 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:39:51,037 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:39:51,038 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:39:51,047 - INFO - Updating live view Live view DEF:
+2025-06-04 19:39:51,047 - INFO - Cursor is valid
+2025-06-04 19:39:56,048 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:39:56,051 - INFO - Processing data for 21 participants.
+2025-06-04 19:39:56,052 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:39:56,052 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:39:56,052 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:39:56,052 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:39:56,052 - INFO - Updating live view Live view DEF:
+2025-06-04 19:39:56,052 - INFO - Cursor is valid
+2025-06-04 19:40:01,053 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:40:01,058 - INFO - Processing data for 21 participants.
+2025-06-04 19:40:01,058 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:40:01,058 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:40:01,060 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:40:01,060 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:40:01,060 - INFO - Updating live view Live view DEF:
+2025-06-04 19:40:01,060 - INFO - Cursor is valid
+2025-06-04 19:40:06,060 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:40:06,064 - INFO - Processing data for 21 participants.
+2025-06-04 19:40:06,065 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:40:06,065 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:40:06,066 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:40:06,066 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:40:06,066 - INFO - Updating live view Live view DEF:
+2025-06-04 19:40:06,066 - INFO - Cursor is valid
+2025-06-04 19:40:11,066 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:40:11,071 - INFO - Processing data for 21 participants.
+2025-06-04 19:40:11,071 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:40:11,071 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:40:11,072 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:40:11,072 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:40:11,072 - INFO - Updating live view Live view DEF:
+2025-06-04 19:40:11,072 - INFO - Cursor is valid
+2025-06-04 19:40:16,073 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:40:16,077 - INFO - Processing data for 21 participants.
+2025-06-04 19:40:16,077 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:40:16,077 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:40:16,078 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:40:16,078 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:40:16,078 - INFO - Updating live view Live view DEF:
+2025-06-04 19:40:16,078 - INFO - Cursor is valid
+2025-06-04 19:40:21,078 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:40:21,081 - INFO - Processing data for 21 participants.
+2025-06-04 19:40:21,082 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:40:21,082 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:40:21,083 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:40:21,083 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:40:21,083 - INFO - Updating live view Live view DEF:
+2025-06-04 19:40:21,083 - INFO - Cursor is valid
+2025-06-04 19:40:26,084 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:40:26,089 - INFO - Processing data for 21 participants.
+2025-06-04 19:40:26,089 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:40:26,089 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:40:26,091 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:40:26,091 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:40:26,091 - INFO - Updating live view Live view DEF:
+2025-06-04 19:40:26,091 - INFO - Cursor is valid
+2025-06-04 19:40:31,091 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:40:31,095 - INFO - Processing data for 21 participants.
+2025-06-04 19:40:31,096 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:40:31,096 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:40:31,096 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:40:31,096 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:40:31,097 - INFO - Updating live view Live view DEF:
+2025-06-04 19:40:31,097 - INFO - Cursor is valid
+2025-06-04 19:40:36,097 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:40:36,103 - INFO - Processing data for 21 participants.
+2025-06-04 19:40:36,103 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:40:36,103 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:40:36,105 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:40:36,105 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:40:36,105 - INFO - Updating live view Live view DEF:
+2025-06-04 19:40:36,105 - INFO - Cursor is valid
+2025-06-04 19:40:41,105 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:40:41,108 - INFO - Processing data for 21 participants.
+2025-06-04 19:40:41,108 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:40:41,109 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:40:41,109 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:40:41,110 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:40:41,110 - INFO - Updating live view Live view DEF:
+2025-06-04 19:40:41,110 - INFO - Cursor is valid
+2025-06-04 19:40:46,110 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:40:46,114 - INFO - Processing data for 21 participants.
+2025-06-04 19:40:46,114 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:40:46,114 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:40:46,116 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:40:46,116 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:40:46,116 - INFO - Updating live view Live view DEF:
+2025-06-04 19:40:46,116 - INFO - Cursor is valid
+2025-06-04 19:40:51,116 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:40:51,120 - INFO - Processing data for 21 participants.
+2025-06-04 19:40:51,120 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:40:51,120 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:40:51,121 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:40:51,121 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:40:51,121 - INFO - Updating live view Live view DEF:
+2025-06-04 19:40:51,121 - INFO - Cursor is valid
+2025-06-04 19:40:56,121 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:40:56,126 - INFO - Processing data for 21 participants.
+2025-06-04 19:40:56,126 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:40:56,126 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:40:56,127 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:40:56,127 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:40:56,127 - INFO - Updating live view Live view DEF:
+2025-06-04 19:40:56,127 - INFO - Cursor is valid
+2025-06-04 19:41:01,128 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:41:01,131 - INFO - Processing data for 21 participants.
+2025-06-04 19:41:01,132 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:41:01,132 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:41:01,132 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:41:01,133 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:41:01,133 - INFO - Updating live view Live view DEF:
+2025-06-04 19:41:01,133 - INFO - Cursor is valid
+2025-06-04 19:41:06,134 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:41:06,137 - INFO - Processing data for 21 participants.
+2025-06-04 19:41:06,137 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:41:06,138 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:41:06,138 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:41:06,138 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:41:06,149 - INFO - Updating live view Live view DEF:
+2025-06-04 19:41:06,150 - INFO - Cursor is valid
+2025-06-04 19:41:11,151 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:41:11,154 - INFO - Processing data for 21 participants.
+2025-06-04 19:41:11,154 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:41:11,154 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:41:11,156 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:41:11,156 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:41:11,165 - INFO - Updating live view Live view DEF:
+2025-06-04 19:41:11,166 - INFO - Cursor is valid
+2025-06-04 19:41:16,166 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:41:16,169 - INFO - Processing data for 21 participants.
+2025-06-04 19:41:16,169 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:41:16,171 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:41:16,171 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:41:16,171 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:41:16,181 - INFO - Updating live view Live view DEF:
+2025-06-04 19:41:16,181 - INFO - Cursor is valid
+2025-06-04 19:41:21,182 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:41:21,187 - INFO - Processing data for 21 participants.
+2025-06-04 19:41:21,187 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:41:21,189 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:41:21,190 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:41:21,190 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:41:21,190 - INFO - Updating live view Live view DEF:
+2025-06-04 19:41:21,190 - INFO - Cursor is valid
+2025-06-04 19:41:26,190 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:41:26,194 - INFO - Processing data for 21 participants.
+2025-06-04 19:41:26,194 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:41:26,194 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:41:26,194 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:41:26,195 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:41:26,195 - INFO - Updating live view Live view DEF:
+2025-06-04 19:41:26,195 - INFO - Cursor is valid
+2025-06-04 19:41:31,195 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:41:31,200 - INFO - Processing data for 21 participants.
+2025-06-04 19:41:31,200 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:41:31,200 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:41:31,201 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:41:31,201 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:41:31,201 - INFO - Updating live view Live view DEF:
+2025-06-04 19:41:31,201 - INFO - Cursor is valid
+2025-06-04 19:41:36,202 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:41:36,205 - INFO - Processing data for 21 participants.
+2025-06-04 19:41:36,207 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:41:36,207 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:41:36,207 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:41:36,207 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:41:36,208 - INFO - Updating live view Live view DEF:
+2025-06-04 19:41:36,208 - INFO - Cursor is valid
+2025-06-04 19:41:41,209 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:41:41,215 - INFO - Processing data for 21 participants.
+2025-06-04 19:41:41,215 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:41:41,216 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:41:41,217 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:41:41,217 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:41:41,217 - INFO - Updating live view Live view DEF:
+2025-06-04 19:41:41,217 - INFO - Cursor is valid
+2025-06-04 19:41:46,217 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:41:46,221 - INFO - Processing data for 21 participants.
+2025-06-04 19:41:46,221 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:41:46,222 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:41:46,222 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:41:46,222 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:41:46,222 - INFO - Updating live view Live view DEF:
+2025-06-04 19:41:46,222 - INFO - Cursor is valid
+2025-06-04 19:41:51,222 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:41:51,226 - INFO - Processing data for 21 participants.
+2025-06-04 19:41:51,226 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:41:51,226 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:41:51,227 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:41:51,227 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:41:51,228 - INFO - Updating live view Live view DEF:
+2025-06-04 19:41:51,228 - INFO - Cursor is valid
+2025-06-04 19:41:56,228 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:41:56,233 - INFO - Processing data for 21 participants.
+2025-06-04 19:41:56,233 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:41:56,233 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:41:56,233 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:41:56,233 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:41:56,234 - INFO - Updating live view Live view DEF:
+2025-06-04 19:41:56,234 - INFO - Cursor is valid
+2025-06-04 19:42:01,235 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:42:01,239 - INFO - Processing data for 21 participants.
+2025-06-04 19:42:01,239 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:42:01,239 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:42:01,239 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:42:01,241 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:42:01,241 - INFO - Updating live view Live view DEF:
+2025-06-04 19:42:01,241 - INFO - Cursor is valid
+2025-06-04 19:42:06,241 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:42:06,244 - INFO - Processing data for 21 participants.
+2025-06-04 19:42:06,244 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:42:06,245 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:42:06,245 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:42:06,245 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:42:06,245 - INFO - Updating live view Live view DEF:
+2025-06-04 19:42:06,245 - INFO - Cursor is valid
+2025-06-04 19:42:11,246 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:42:11,251 - INFO - Processing data for 21 participants.
+2025-06-04 19:42:11,251 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:42:11,252 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:42:11,252 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:42:11,252 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:42:11,252 - INFO - Updating live view Live view DEF:
+2025-06-04 19:42:11,252 - INFO - Cursor is valid
+2025-06-04 19:42:16,253 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:42:16,256 - INFO - Processing data for 21 participants.
+2025-06-04 19:42:16,258 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:42:16,258 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:42:16,258 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:42:16,258 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:42:16,259 - INFO - Updating live view Live view DEF:
+2025-06-04 19:42:16,259 - INFO - Cursor is valid
+2025-06-04 19:42:21,259 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:42:21,263 - INFO - Processing data for 21 participants.
+2025-06-04 19:42:21,263 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:42:21,263 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:42:21,264 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:42:21,264 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:42:21,264 - INFO - Updating live view Live view DEF:
+2025-06-04 19:42:21,264 - INFO - Cursor is valid
+2025-06-04 19:42:26,265 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:42:26,269 - INFO - Processing data for 21 participants.
+2025-06-04 19:42:26,269 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:42:26,269 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:42:26,269 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:42:26,269 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:42:26,279 - INFO - Updating live view Live view DEF:
+2025-06-04 19:42:26,280 - INFO - Cursor is valid
+2025-06-04 19:42:31,281 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:42:31,285 - INFO - Processing data for 21 participants.
+2025-06-04 19:42:31,285 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:42:31,285 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:42:31,285 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:42:31,285 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:42:31,297 - INFO - Updating live view Live view DEF:
+2025-06-04 19:42:31,298 - INFO - Cursor is valid
+2025-06-04 19:42:36,298 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:42:36,301 - INFO - Processing data for 21 participants.
+2025-06-04 19:42:36,302 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:42:36,302 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:42:36,302 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:42:36,302 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:42:36,314 - INFO - Updating live view Live view DEF:
+2025-06-04 19:42:36,314 - INFO - Cursor is valid
+2025-06-04 19:42:41,315 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:42:41,320 - INFO - Processing data for 21 participants.
+2025-06-04 19:42:41,321 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:42:41,321 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:42:41,321 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:42:41,321 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:42:41,332 - INFO - Updating live view Live view DEF:
+2025-06-04 19:42:41,333 - INFO - Cursor is valid
+2025-06-04 19:42:46,334 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:42:46,337 - INFO - Processing data for 21 participants.
+2025-06-04 19:42:46,337 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:42:46,337 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:42:46,338 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:42:46,338 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:42:46,338 - INFO - Updating live view Live view DEF:
+2025-06-04 19:42:46,338 - INFO - Cursor is valid
+2025-06-04 19:42:51,339 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:42:51,343 - INFO - Processing data for 21 participants.
+2025-06-04 19:42:51,344 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:42:51,344 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:42:51,344 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:42:51,344 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:42:51,345 - INFO - Updating live view Live view DEF:
+2025-06-04 19:42:51,345 - INFO - Cursor is valid
+2025-06-04 19:42:56,346 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:42:56,352 - INFO - Processing data for 21 participants.
+2025-06-04 19:42:56,352 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:42:56,352 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:42:56,352 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:42:56,352 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:42:56,353 - INFO - Updating live view Live view DEF:
+2025-06-04 19:42:56,353 - INFO - Cursor is valid
+2025-06-04 19:43:01,353 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:43:01,356 - INFO - Processing data for 21 participants.
+2025-06-04 19:43:01,358 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:43:01,358 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:43:01,359 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:43:01,359 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:43:01,359 - INFO - Updating live view Live view DEF:
+2025-06-04 19:43:01,359 - INFO - Cursor is valid
+2025-06-04 19:43:06,359 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:43:06,363 - INFO - Processing data for 21 participants.
+2025-06-04 19:43:06,363 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:43:06,364 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:43:06,364 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:43:06,364 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:43:06,365 - INFO - Updating live view Live view DEF:
+2025-06-04 19:43:06,365 - INFO - Cursor is valid
+2025-06-04 19:43:11,365 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:43:11,369 - INFO - Processing data for 21 participants.
+2025-06-04 19:43:11,369 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:43:11,369 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:43:11,370 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:43:11,370 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:43:11,370 - INFO - Updating live view Live view DEF:
+2025-06-04 19:43:11,370 - INFO - Cursor is valid
+2025-06-04 19:43:16,371 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:43:16,375 - INFO - Processing data for 21 participants.
+2025-06-04 19:43:16,375 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:43:16,375 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:43:16,376 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:43:16,377 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:43:16,377 - INFO - Updating live view Live view DEF:
+2025-06-04 19:43:16,377 - INFO - Cursor is valid
+2025-06-04 19:43:21,380 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:43:21,384 - INFO - Processing data for 21 participants.
+2025-06-04 19:43:21,384 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:43:21,384 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:43:21,384 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:43:21,384 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:43:21,385 - INFO - Updating live view Live view DEF:
+2025-06-04 19:43:21,385 - INFO - Cursor is valid
+2025-06-04 19:43:26,385 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:43:26,391 - INFO - Processing data for 21 participants.
+2025-06-04 19:43:26,391 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:43:26,391 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:43:26,391 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:43:26,392 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:43:26,392 - INFO - Updating live view Live view DEF:
+2025-06-04 19:43:26,392 - INFO - Cursor is valid
+2025-06-04 19:43:31,392 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:43:31,396 - INFO - Processing data for 21 participants.
+2025-06-04 19:43:31,396 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:43:31,397 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:43:31,397 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:43:31,397 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:43:31,398 - INFO - Updating live view Live view DEF:
+2025-06-04 19:43:31,398 - INFO - Cursor is valid
+2025-06-04 19:43:36,399 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:43:36,402 - INFO - Processing data for 21 participants.
+2025-06-04 19:43:36,403 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:43:36,403 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:43:36,403 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:43:36,404 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:43:36,404 - INFO - Updating live view Live view DEF:
+2025-06-04 19:43:36,404 - INFO - Cursor is valid
+2025-06-04 19:43:41,404 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:43:41,408 - INFO - Processing data for 21 participants.
+2025-06-04 19:43:41,409 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:43:41,409 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:43:41,409 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:43:41,409 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:43:41,409 - INFO - Updating live view Live view DEF:
+2025-06-04 19:43:41,409 - INFO - Cursor is valid
+2025-06-04 19:43:46,410 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:43:46,412 - INFO - Processing data for 21 participants.
+2025-06-04 19:43:46,414 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:43:46,414 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:43:46,414 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:43:46,414 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:43:46,415 - INFO - Updating live view Live view DEF:
+2025-06-04 19:43:46,415 - INFO - Cursor is valid
+2025-06-04 19:43:51,415 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:43:51,419 - INFO - Processing data for 21 participants.
+2025-06-04 19:43:51,419 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:43:51,419 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:43:51,420 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:43:51,420 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:43:51,431 - INFO - Updating live view Live view DEF:
+2025-06-04 19:43:51,431 - INFO - Cursor is valid
+2025-06-04 19:43:56,432 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:43:56,437 - INFO - Processing data for 21 participants.
+2025-06-04 19:43:56,438 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:43:56,438 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:43:56,438 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:43:56,439 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:43:56,450 - INFO - Updating live view Live view DEF:
+2025-06-04 19:43:56,450 - INFO - Cursor is valid
+2025-06-04 19:44:01,453 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:44:01,458 - INFO - Processing data for 21 participants.
+2025-06-04 19:44:01,458 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:44:01,459 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:44:01,460 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:44:01,460 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:44:01,476 - INFO - Updating live view Live view DEF:
+2025-06-04 19:44:01,476 - INFO - Cursor is valid
+2025-06-04 19:44:06,478 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:44:06,482 - INFO - Processing data for 21 participants.
+2025-06-04 19:44:06,485 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:44:06,486 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:44:06,489 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:44:06,490 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:44:06,502 - INFO - Updating live view Live view DEF:
+2025-06-04 19:44:06,503 - INFO - Cursor is valid
+2025-06-04 19:44:11,500 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:44:11,504 - INFO - Processing data for 21 participants.
+2025-06-04 19:44:11,505 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:44:11,506 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:44:11,508 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:44:11,509 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:44:11,509 - INFO - Updating live view Live view DEF:
+2025-06-04 19:44:11,509 - INFO - Cursor is valid
+2025-06-04 19:44:16,509 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:44:16,514 - INFO - Processing data for 21 participants.
+2025-06-04 19:44:16,515 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:44:16,515 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:44:16,515 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:44:16,515 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:44:16,516 - INFO - Updating live view Live view DEF:
+2025-06-04 19:44:16,516 - INFO - Cursor is valid
+2025-06-04 19:44:21,516 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:44:21,522 - INFO - Processing data for 21 participants.
+2025-06-04 19:44:21,522 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:44:21,525 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:44:21,527 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:44:21,527 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:44:21,527 - INFO - Updating live view Live view DEF:
+2025-06-04 19:44:21,527 - INFO - Cursor is valid
+2025-06-04 19:44:26,528 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:44:26,533 - INFO - Processing data for 21 participants.
+2025-06-04 19:44:26,533 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:44:26,536 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:44:26,538 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:44:26,538 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:44:26,539 - INFO - Updating live view Live view DEF:
+2025-06-04 19:44:26,539 - INFO - Cursor is valid
+2025-06-04 19:44:31,539 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:44:31,545 - INFO - Processing data for 21 participants.
+2025-06-04 19:44:31,546 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:44:31,548 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:44:31,549 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:44:31,549 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:44:31,549 - INFO - Updating live view Live view DEF:
+2025-06-04 19:44:31,549 - INFO - Cursor is valid
+2025-06-04 19:44:36,549 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:44:36,553 - INFO - Processing data for 21 participants.
+2025-06-04 19:44:36,554 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:44:36,554 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:44:36,554 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:44:36,554 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:44:36,554 - INFO - Updating live view Live view DEF:
+2025-06-04 19:44:36,554 - INFO - Cursor is valid
+2025-06-04 19:44:41,556 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:44:41,561 - INFO - Processing data for 21 participants.
+2025-06-04 19:44:41,565 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:44:41,572 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:44:41,573 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:44:41,574 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:44:41,574 - INFO - Updating live view Live view DEF:
+2025-06-04 19:44:41,574 - INFO - Cursor is valid
+2025-06-04 19:44:46,573 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:44:46,578 - INFO - Processing data for 21 participants.
+2025-06-04 19:44:46,580 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:44:46,580 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:44:46,580 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:44:46,580 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:44:46,581 - INFO - Updating live view Live view DEF:
+2025-06-04 19:44:46,581 - INFO - Cursor is valid
+2025-06-04 19:44:51,581 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:44:51,588 - INFO - Processing data for 21 participants.
+2025-06-04 19:44:51,589 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:44:51,589 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:44:51,590 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:44:51,590 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:44:51,591 - INFO - Updating live view Live view DEF:
+2025-06-04 19:44:51,591 - INFO - Cursor is valid
+2025-06-04 19:44:56,591 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:44:56,596 - INFO - Processing data for 21 participants.
+2025-06-04 19:44:56,596 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:44:56,596 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:44:56,597 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:44:56,597 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:44:56,597 - INFO - Updating live view Live view DEF:
+2025-06-04 19:44:56,597 - INFO - Cursor is valid
+2025-06-04 19:45:01,597 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:45:01,602 - INFO - Processing data for 21 participants.
+2025-06-04 19:45:01,604 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:45:01,605 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:45:01,605 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:45:01,606 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:45:01,606 - INFO - Updating live view Live view DEF:
+2025-06-04 19:45:01,606 - INFO - Cursor is valid
+2025-06-04 19:45:06,607 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:45:06,614 - INFO - Processing data for 21 participants.
+2025-06-04 19:45:06,614 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:45:06,614 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:45:06,615 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:45:06,615 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:45:06,615 - INFO - Updating live view Live view DEF:
+2025-06-04 19:45:06,615 - INFO - Cursor is valid
+2025-06-04 19:45:11,615 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:45:11,835 - INFO - Processing data for 21 participants.
+2025-06-04 19:45:11,836 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:45:11,836 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:45:11,836 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:45:11,837 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:45:11,846 - INFO - Updating live view Live view DEF:
+2025-06-04 19:45:11,846 - INFO - Cursor is valid
+2025-06-04 19:45:16,848 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:45:16,852 - INFO - Processing data for 21 participants.
+2025-06-04 19:45:16,852 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:45:16,852 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:45:16,852 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:45:16,852 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:45:16,862 - INFO - Updating live view Live view DEF:
+2025-06-04 19:45:16,862 - INFO - Cursor is valid
+2025-06-04 19:45:21,863 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:45:21,866 - INFO - Processing data for 21 participants.
+2025-06-04 19:45:21,868 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:45:21,868 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:45:21,869 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:45:21,869 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:45:21,879 - INFO - Updating live view Live view DEF:
+2025-06-04 19:45:21,879 - INFO - Cursor is valid
+2025-06-04 19:45:26,880 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:45:26,884 - INFO - Processing data for 21 participants.
+2025-06-04 19:45:26,884 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:45:26,885 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:45:26,885 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:45:26,885 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:45:26,894 - INFO - Updating live view Live view DEF:
+2025-06-04 19:45:26,894 - INFO - Cursor is valid
+2025-06-04 19:45:31,896 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:45:31,900 - INFO - Processing data for 21 participants.
+2025-06-04 19:45:31,901 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:45:31,901 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:45:31,901 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:45:31,901 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:45:31,911 - INFO - Updating live view Live view DEF:
+2025-06-04 19:45:31,911 - INFO - Cursor is valid
+2025-06-04 19:45:36,912 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:45:36,917 - INFO - Processing data for 21 participants.
+2025-06-04 19:45:36,917 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:45:36,917 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:45:36,917 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:45:36,917 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:45:36,918 - INFO - Updating live view Live view DEF:
+2025-06-04 19:45:36,918 - INFO - Cursor is valid
+2025-06-04 19:45:41,918 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:45:41,922 - INFO - Processing data for 21 participants.
+2025-06-04 19:45:41,922 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:45:41,923 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:45:41,923 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:45:41,923 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:45:41,923 - INFO - Updating live view Live view DEF:
+2025-06-04 19:45:41,923 - INFO - Cursor is valid
+2025-06-04 19:45:46,924 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:45:46,930 - INFO - Processing data for 21 participants.
+2025-06-04 19:45:46,930 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:45:46,930 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:45:46,931 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:45:46,931 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:45:46,931 - INFO - Updating live view Live view DEF:
+2025-06-04 19:45:46,932 - INFO - Cursor is valid
+2025-06-04 19:45:51,931 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:45:51,935 - INFO - Processing data for 21 participants.
+2025-06-04 19:45:51,935 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:45:51,935 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:45:51,936 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:45:51,936 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:45:51,936 - INFO - Updating live view Live view DEF:
+2025-06-04 19:45:51,936 - INFO - Cursor is valid
+2025-06-04 19:45:56,936 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:45:56,939 - INFO - Processing data for 21 participants.
+2025-06-04 19:45:56,939 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:45:56,939 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:45:56,939 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:45:56,939 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:45:56,941 - INFO - Updating live view Live view DEF:
+2025-06-04 19:45:56,941 - INFO - Cursor is valid
+2025-06-04 19:46:01,941 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:46:01,945 - INFO - Processing data for 21 participants.
+2025-06-04 19:46:01,945 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:46:01,945 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:46:01,945 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:46:01,945 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:46:01,946 - INFO - Updating live view Live view DEF:
+2025-06-04 19:46:01,946 - INFO - Cursor is valid
+2025-06-04 19:46:06,946 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:46:06,950 - INFO - Processing data for 21 participants.
+2025-06-04 19:46:06,951 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:46:06,951 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:46:06,952 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:46:06,952 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:46:06,952 - INFO - Updating live view Live view DEF:
+2025-06-04 19:46:06,952 - INFO - Cursor is valid
+2025-06-04 19:46:11,952 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:46:11,956 - INFO - Processing data for 21 participants.
+2025-06-04 19:46:11,956 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:46:11,956 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:46:11,956 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:46:11,956 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:46:11,957 - INFO - Updating live view Live view DEF:
+2025-06-04 19:46:11,957 - INFO - Cursor is valid
+2025-06-04 19:46:16,958 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:46:16,961 - INFO - Processing data for 21 participants.
+2025-06-04 19:46:16,961 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:46:16,962 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:46:16,962 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:46:16,962 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:46:16,962 - INFO - Updating live view Live view DEF:
+2025-06-04 19:46:16,963 - INFO - Cursor is valid
+2025-06-04 19:46:21,963 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:46:21,967 - INFO - Processing data for 21 participants.
+2025-06-04 19:46:21,967 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:46:21,968 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:46:21,968 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:46:21,968 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:46:21,968 - INFO - Updating live view Live view DEF:
+2025-06-04 19:46:21,968 - INFO - Cursor is valid
+2025-06-04 19:46:26,969 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:46:26,972 - INFO - Processing data for 21 participants.
+2025-06-04 19:46:26,972 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:46:26,972 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:46:26,972 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:46:26,973 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:46:26,973 - INFO - Updating live view Live view DEF:
+2025-06-04 19:46:26,973 - INFO - Cursor is valid
+2025-06-04 19:46:31,974 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:46:31,976 - INFO - Processing data for 21 participants.
+2025-06-04 19:46:31,979 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:46:31,979 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:46:31,979 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:46:31,979 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:46:31,979 - INFO - Updating live view Live view DEF:
+2025-06-04 19:46:31,979 - INFO - Cursor is valid
+2025-06-04 19:46:36,979 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:46:36,985 - INFO - Processing data for 21 participants.
+2025-06-04 19:46:36,986 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:46:36,986 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:46:36,986 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:46:36,986 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:46:36,998 - INFO - Updating live view Live view DEF:
+2025-06-04 19:46:36,998 - INFO - Cursor is valid
+2025-06-04 19:46:42,000 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:46:42,004 - INFO - Processing data for 21 participants.
+2025-06-04 19:46:42,004 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:46:42,004 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:46:42,004 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:46:42,006 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:46:42,016 - INFO - Updating live view Live view DEF:
+2025-06-04 19:46:42,016 - INFO - Cursor is valid
+2025-06-04 19:46:47,016 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:46:47,021 - INFO - Processing data for 21 participants.
+2025-06-04 19:46:47,022 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:46:47,022 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:46:47,022 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:46:47,022 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:46:47,033 - INFO - Updating live view Live view DEF:
+2025-06-04 19:46:47,035 - INFO - Cursor is valid
+2025-06-04 19:46:52,035 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:46:52,039 - INFO - Processing data for 21 participants.
+2025-06-04 19:46:52,039 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:46:52,039 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:46:52,039 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:46:52,039 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:46:52,050 - INFO - Updating live view Live view DEF:
+2025-06-04 19:46:52,050 - INFO - Cursor is valid
+2025-06-04 19:46:57,051 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:46:57,059 - INFO - Processing data for 21 participants.
+2025-06-04 19:46:57,060 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:46:57,060 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:46:57,060 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:46:57,060 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:46:57,070 - INFO - Updating live view Live view DEF:
+2025-06-04 19:46:57,071 - INFO - Cursor is valid
+2025-06-04 19:47:02,072 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:47:02,076 - INFO - Processing data for 21 participants.
+2025-06-04 19:47:02,076 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:47:02,076 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:47:02,077 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:47:02,077 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:47:02,086 - INFO - Updating live view Live view DEF:
+2025-06-04 19:47:02,088 - INFO - Cursor is valid
+2025-06-04 19:47:07,088 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:47:07,093 - INFO - Processing data for 21 participants.
+2025-06-04 19:47:07,093 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:47:07,094 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:47:07,094 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:47:07,094 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:47:07,094 - INFO - Updating live view Live view DEF:
+2025-06-04 19:47:07,094 - INFO - Cursor is valid
+2025-06-04 19:47:12,095 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:47:12,099 - INFO - Processing data for 21 participants.
+2025-06-04 19:47:12,099 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:47:12,100 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:47:12,100 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:47:12,100 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:47:12,101 - INFO - Updating live view Live view DEF:
+2025-06-04 19:47:12,101 - INFO - Cursor is valid
+2025-06-04 19:47:17,101 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:47:17,105 - INFO - Processing data for 21 participants.
+2025-06-04 19:47:17,106 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:47:17,106 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:47:17,108 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:47:17,108 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:47:17,108 - INFO - Updating live view Live view DEF:
+2025-06-04 19:47:17,108 - INFO - Cursor is valid
+2025-06-04 19:47:22,107 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:47:22,112 - INFO - Processing data for 21 participants.
+2025-06-04 19:47:22,112 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:47:22,112 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:47:22,113 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:47:22,113 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:47:22,113 - INFO - Updating live view Live view DEF:
+2025-06-04 19:47:22,113 - INFO - Cursor is valid
+2025-06-04 19:47:27,114 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:47:27,117 - INFO - Processing data for 21 participants.
+2025-06-04 19:47:27,118 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:47:27,118 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:47:27,118 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:47:27,118 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:47:27,119 - INFO - Updating live view Live view DEF:
+2025-06-04 19:47:27,119 - INFO - Cursor is valid
+2025-06-04 19:47:32,119 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:47:32,127 - INFO - Processing data for 21 participants.
+2025-06-04 19:47:32,127 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:47:32,127 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:47:32,127 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:47:32,127 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:47:32,127 - INFO - Updating live view Live view DEF:
+2025-06-04 19:47:32,127 - INFO - Cursor is valid
+2025-06-04 19:47:37,128 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:47:37,132 - INFO - Processing data for 21 participants.
+2025-06-04 19:47:37,132 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:47:37,132 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:47:37,133 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:47:37,133 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:47:37,133 - INFO - Updating live view Live view DEF:
+2025-06-04 19:47:37,133 - INFO - Cursor is valid
+2025-06-04 19:47:42,134 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:47:42,138 - INFO - Processing data for 21 participants.
+2025-06-04 19:47:42,139 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:47:42,139 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:47:42,140 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:47:42,140 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:47:42,140 - INFO - Updating live view Live view DEF:
+2025-06-04 19:47:42,140 - INFO - Cursor is valid
+2025-06-04 19:47:47,140 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:47:47,144 - INFO - Processing data for 21 participants.
+2025-06-04 19:47:47,144 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:47:47,144 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:47:47,144 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:47:47,144 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:47:47,146 - INFO - Updating live view Live view DEF:
+2025-06-04 19:47:47,146 - INFO - Cursor is valid
+2025-06-04 19:47:52,147 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:47:52,150 - INFO - Processing data for 21 participants.
+2025-06-04 19:47:52,150 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:47:52,152 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:47:52,152 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:47:52,152 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:47:52,152 - INFO - Updating live view Live view DEF:
+2025-06-04 19:47:52,152 - INFO - Cursor is valid
+2025-06-04 19:47:57,152 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:47:57,157 - INFO - Processing data for 21 participants.
+2025-06-04 19:47:57,158 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:47:57,158 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:47:57,158 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:47:57,158 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:47:57,159 - INFO - Updating live view Live view DEF:
+2025-06-04 19:47:57,159 - INFO - Cursor is valid
+2025-06-04 19:48:02,161 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:48:02,164 - INFO - Processing data for 21 participants.
+2025-06-04 19:48:02,164 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:48:02,165 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:48:02,165 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:48:02,165 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:48:02,175 - INFO - Updating live view Live view DEF:
+2025-06-04 19:48:02,176 - INFO - Cursor is valid
+2025-06-04 19:48:07,177 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:48:07,181 - INFO - Processing data for 21 participants.
+2025-06-04 19:48:07,181 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:48:07,182 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:48:07,182 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:48:07,182 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:48:07,194 - INFO - Updating live view Live view DEF:
+2025-06-04 19:48:07,194 - INFO - Cursor is valid
+2025-06-04 19:48:12,195 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:48:12,197 - INFO - Processing data for 21 participants.
+2025-06-04 19:48:12,199 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:48:12,199 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:48:12,199 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:48:12,199 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:48:12,209 - INFO - Updating live view Live view DEF:
+2025-06-04 19:48:12,210 - INFO - Cursor is valid
+2025-06-04 19:48:17,210 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:48:17,212 - ERROR - An error occurred while processing participant data: 'mParticipantInfo'
+2025-06-04 19:48:17,212 - ERROR - An error occurred while monitoring race state: 'mParticipantInfo'
+2025-06-04 19:48:22,216 - WARNING - Result view should be active, mGamestate is 1
+2025-06-04 19:48:22,218 - INFO - Load Selected Race, Race_State: results
+2025-06-04 19:52:02,252 - WARNING - Live View should be active, mGamestate is 2
+2025-06-04 19:52:02,298 - INFO - Processing data for 1 participants.
+2025-06-04 19:52:02,299 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:52:02,300 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:52:02,300 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:52:02,300 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:52:02,300 - INFO - Updating live view Live view DEF:
+2025-06-04 19:52:02,300 - INFO - Cursor is valid
+2025-06-04 19:52:07,301 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:52:07,348 - INFO - Processing data for 1 participants.
+2025-06-04 19:52:07,348 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:52:07,349 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:52:07,349 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:52:07,349 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:52:07,350 - INFO - Updating live view Live view DEF:
+2025-06-04 19:52:07,350 - INFO - Cursor is valid
+2025-06-04 19:52:12,350 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:52:12,402 - INFO - Processing data for 1 participants.
+2025-06-04 19:52:12,402 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:52:12,403 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:52:12,404 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:52:12,404 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:52:12,404 - INFO - Updating live view Live view DEF:
+2025-06-04 19:52:12,405 - INFO - Cursor is valid
+2025-06-04 19:52:17,404 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:52:17,462 - INFO - Processing data for 1 participants.
+2025-06-04 19:52:17,463 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:52:17,463 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:52:17,463 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:52:17,465 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:52:17,465 - INFO - Updating live view Live view DEF:
+2025-06-04 19:52:17,465 - INFO - Cursor is valid
+2025-06-04 19:52:22,465 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:52:22,509 - INFO - Processing data for 1 participants.
+2025-06-04 19:52:22,509 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:52:22,510 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:52:22,511 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:52:22,511 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:52:22,511 - INFO - Updating live view Live view DEF:
+2025-06-04 19:52:22,511 - INFO - Cursor is valid
+2025-06-04 19:52:27,511 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:52:27,564 - INFO - Processing data for 1 participants.
+2025-06-04 19:52:27,564 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:52:27,566 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:52:27,566 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:52:27,567 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:52:27,567 - INFO - Updating live view Live view DEF:
+2025-06-04 19:52:27,568 - INFO - Cursor is valid
+2025-06-04 19:52:32,567 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:52:32,612 - INFO - Processing data for 1 participants.
+2025-06-04 19:52:32,612 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:52:32,613 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:52:32,613 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:52:32,613 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:52:32,614 - INFO - Updating live view Live view DEF:
+2025-06-04 19:52:32,614 - INFO - Cursor is valid
+2025-06-04 19:52:37,614 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:52:37,665 - INFO - Processing data for 1 participants.
+2025-06-04 19:52:37,666 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:52:37,666 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:52:37,667 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:52:37,667 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:52:37,667 - INFO - Updating live view Live view DEF:
+2025-06-04 19:52:37,667 - INFO - Cursor is valid
+2025-06-04 19:52:42,668 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:52:42,713 - INFO - Processing data for 1 participants.
+2025-06-04 19:52:42,713 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:52:42,715 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:52:42,716 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:52:42,716 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:52:42,716 - INFO - Updating live view Live view DEF:
+2025-06-04 19:52:42,716 - INFO - Cursor is valid
+2025-06-04 19:52:47,716 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:52:47,765 - INFO - Processing data for 1 participants.
+2025-06-04 19:52:47,765 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:52:47,767 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:52:47,767 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:52:47,767 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:52:47,768 - INFO - Updating live view Live view DEF:
+2025-06-04 19:52:47,768 - INFO - Cursor is valid
+2025-06-04 19:52:52,768 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:52:52,823 - INFO - Processing data for 1 participants.
+2025-06-04 19:52:52,823 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:52:52,824 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:52:52,825 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:52:52,825 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:52:52,825 - INFO - Updating live view Live view DEF:
+2025-06-04 19:52:52,825 - INFO - Cursor is valid
+2025-06-04 19:52:57,826 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:52:57,877 - INFO - Processing data for 1 participants.
+2025-06-04 19:52:57,878 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:52:57,878 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:52:57,879 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:52:57,879 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:52:57,880 - INFO - Updating live view Live view DEF:
+2025-06-04 19:52:57,880 - INFO - Cursor is valid
+2025-06-04 19:53:02,880 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:53:02,932 - INFO - Processing data for 1 participants.
+2025-06-04 19:53:02,933 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:53:02,934 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:53:02,934 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:53:02,935 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:53:02,935 - INFO - Updating live view Live view DEF:
+2025-06-04 19:53:02,935 - INFO - Cursor is valid
+2025-06-04 19:53:07,935 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:53:07,983 - INFO - Processing data for 1 participants.
+2025-06-04 19:53:07,983 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:53:07,984 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:53:07,985 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:53:07,985 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:53:07,985 - INFO - Updating live view Live view DEF:
+2025-06-04 19:53:07,985 - INFO - Cursor is valid
+2025-06-04 19:53:12,985 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:53:13,033 - INFO - Processing data for 1 participants.
+2025-06-04 19:53:13,033 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:53:13,034 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:53:13,035 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:53:13,035 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:53:13,035 - INFO - Updating live view Live view DEF:
+2025-06-04 19:53:13,035 - INFO - Cursor is valid
+2025-06-04 19:53:18,035 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:53:18,083 - INFO - Processing data for 1 participants.
+2025-06-04 19:53:18,084 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:53:18,085 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:53:18,086 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:53:18,086 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:53:18,086 - INFO - Updating live view Live view DEF:
+2025-06-04 19:53:18,086 - INFO - Cursor is valid
+2025-06-04 19:53:23,087 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:53:23,132 - INFO - Processing data for 1 participants.
+2025-06-04 19:53:23,133 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:53:23,134 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:53:23,134 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:53:23,134 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:53:23,135 - INFO - Updating live view Live view DEF:
+2025-06-04 19:53:23,135 - INFO - Cursor is valid
+2025-06-04 19:53:28,135 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:53:28,188 - INFO - Processing data for 1 participants.
+2025-06-04 19:53:28,189 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:53:28,190 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:53:28,190 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:53:28,190 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:53:28,190 - INFO - Updating live view Live view DEF:
+2025-06-04 19:53:28,190 - INFO - Cursor is valid
+2025-06-04 19:53:33,191 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:53:33,236 - INFO - Processing data for 1 participants.
+2025-06-04 19:53:33,236 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:53:33,237 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:53:33,237 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:53:33,237 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:53:33,238 - INFO - Updating live view Live view DEF:
+2025-06-04 19:53:33,238 - INFO - Cursor is valid
+2025-06-04 19:53:38,238 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:53:38,287 - INFO - Processing data for 1 participants.
+2025-06-04 19:53:38,287 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:53:38,289 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:53:38,290 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:53:38,290 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:53:38,290 - INFO - Updating live view Live view DEF:
+2025-06-04 19:53:38,290 - INFO - Cursor is valid
+2025-06-04 19:53:43,291 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:53:43,345 - INFO - Processing data for 1 participants.
+2025-06-04 19:53:43,345 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:53:43,346 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:53:43,347 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:53:43,347 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:53:43,347 - INFO - Updating live view Live view DEF:
+2025-06-04 19:53:43,347 - INFO - Cursor is valid
+2025-06-04 19:53:48,347 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:53:48,405 - INFO - Processing data for 1 participants.
+2025-06-04 19:53:48,405 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:53:48,406 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:53:48,407 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:53:48,407 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:53:48,407 - INFO - Updating live view Live view DEF:
+2025-06-04 19:53:48,407 - INFO - Cursor is valid
+2025-06-04 19:53:53,407 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:53:53,452 - INFO - Processing data for 1 participants.
+2025-06-04 19:53:53,452 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:53:53,453 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:53:53,453 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:53:53,453 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:53:53,454 - INFO - Updating live view Live view DEF:
+2025-06-04 19:53:53,454 - INFO - Cursor is valid
+2025-06-04 19:53:58,454 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:53:58,509 - INFO - Processing data for 1 participants.
+2025-06-04 19:53:58,509 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:53:58,510 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:53:58,510 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:53:58,510 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:53:58,512 - INFO - Updating live view Live view DEF:
+2025-06-04 19:53:58,512 - INFO - Cursor is valid
+2025-06-04 19:54:03,511 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:54:03,563 - INFO - Processing data for 1 participants.
+2025-06-04 19:54:03,563 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:54:03,564 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:54:03,565 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:54:03,565 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:54:03,565 - INFO - Updating live view Live view DEF:
+2025-06-04 19:54:03,565 - INFO - Cursor is valid
+2025-06-04 19:54:08,565 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:54:08,613 - INFO - Processing data for 1 participants.
+2025-06-04 19:54:08,613 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:54:08,614 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:54:08,615 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:54:08,615 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:54:08,615 - INFO - Updating live view Live view DEF:
+2025-06-04 19:54:08,615 - INFO - Cursor is valid
+2025-06-04 19:54:13,615 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:54:13,667 - INFO - Processing data for 1 participants.
+2025-06-04 19:54:13,669 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:54:13,670 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:54:13,670 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:54:13,670 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:54:13,670 - INFO - Updating live view Live view DEF:
+2025-06-04 19:54:13,670 - INFO - Cursor is valid
+2025-06-04 19:54:18,671 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:54:18,729 - INFO - Processing data for 1 participants.
+2025-06-04 19:54:18,729 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:54:18,730 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:54:18,731 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:54:18,731 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:54:18,731 - INFO - Updating live view Live view DEF:
+2025-06-04 19:54:18,731 - INFO - Cursor is valid
+2025-06-04 19:54:23,732 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:54:23,780 - INFO - Processing data for 1 participants.
+2025-06-04 19:54:23,780 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:54:23,782 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:54:23,782 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:54:23,782 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:54:23,782 - INFO - Updating live view Live view DEF:
+2025-06-04 19:54:23,782 - INFO - Cursor is valid
+2025-06-04 19:54:28,783 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:54:28,832 - INFO - Processing data for 1 participants.
+2025-06-04 19:54:28,832 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:54:28,832 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:54:28,834 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:54:28,834 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:54:28,834 - INFO - Updating live view Live view DEF:
+2025-06-04 19:54:28,834 - INFO - Cursor is valid
+2025-06-04 19:54:33,834 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:54:33,883 - INFO - Processing data for 1 participants.
+2025-06-04 19:54:33,884 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:54:33,884 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:54:33,885 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:54:33,885 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:54:33,886 - INFO - Updating live view Live view DEF:
+2025-06-04 19:54:33,886 - INFO - Cursor is valid
+2025-06-04 19:54:38,885 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:54:38,943 - INFO - Processing data for 1 participants.
+2025-06-04 19:54:38,944 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:54:38,944 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:54:38,945 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:54:38,945 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:54:38,945 - INFO - Updating live view Live view DEF:
+2025-06-04 19:54:38,945 - INFO - Cursor is valid
+2025-06-04 19:54:43,945 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:54:43,993 - INFO - Processing data for 1 participants.
+2025-06-04 19:54:43,994 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:54:43,996 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:54:43,997 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:54:43,997 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:54:43,999 - INFO - Updating live view Live view DEF:
+2025-06-04 19:54:43,999 - INFO - Cursor is valid
+2025-06-04 19:54:48,998 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:54:49,041 - INFO - Processing data for 1 participants.
+2025-06-04 19:54:49,041 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:54:49,041 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:54:49,042 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:54:49,042 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:54:49,042 - INFO - Updating live view Live view DEF:
+2025-06-04 19:54:49,043 - INFO - Cursor is valid
+2025-06-04 19:54:54,043 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:54:54,097 - INFO - Processing data for 1 participants.
+2025-06-04 19:54:54,097 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:54:54,099 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:54:54,099 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:54:54,099 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:54:54,099 - INFO - Updating live view Live view DEF:
+2025-06-04 19:54:54,099 - INFO - Cursor is valid
+2025-06-04 19:54:59,100 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:54:59,147 - INFO - Processing data for 1 participants.
+2025-06-04 19:54:59,147 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:54:59,149 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:54:59,149 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:54:59,149 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:54:59,150 - INFO - Updating live view Live view DEF:
+2025-06-04 19:54:59,150 - INFO - Cursor is valid
+2025-06-04 19:55:04,150 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:55:04,193 - INFO - Processing data for 1 participants.
+2025-06-04 19:55:04,193 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:55:04,194 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:55:04,195 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:55:04,195 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:55:04,195 - INFO - Updating live view Live view DEF:
+2025-06-04 19:55:04,195 - INFO - Cursor is valid
+2025-06-04 19:55:09,195 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:55:09,243 - INFO - Processing data for 1 participants.
+2025-06-04 19:55:09,243 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:55:09,244 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:55:09,244 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:55:09,244 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:55:09,244 - INFO - Updating live view Live view DEF:
+2025-06-04 19:55:09,244 - INFO - Cursor is valid
+2025-06-04 19:55:14,245 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:55:14,296 - INFO - Processing data for 1 participants.
+2025-06-04 19:55:14,296 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:55:14,297 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:55:14,297 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:55:14,297 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:55:14,297 - INFO - Updating live view Live view DEF:
+2025-06-04 19:55:14,298 - INFO - Cursor is valid
+2025-06-04 19:55:19,298 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:55:19,349 - INFO - Processing data for 1 participants.
+2025-06-04 19:55:19,349 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:55:19,350 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:55:19,351 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:55:19,351 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:55:19,351 - INFO - Updating live view Live view DEF:
+2025-06-04 19:55:19,351 - INFO - Cursor is valid
+2025-06-04 19:55:24,351 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:55:24,400 - INFO - Processing data for 1 participants.
+2025-06-04 19:55:24,401 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:55:24,401 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:55:24,402 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:55:24,402 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:55:24,402 - INFO - Updating live view Live view DEF:
+2025-06-04 19:55:24,402 - INFO - Cursor is valid
+2025-06-04 19:55:29,402 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:55:29,460 - INFO - Processing data for 1 participants.
+2025-06-04 19:55:29,461 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:55:29,461 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:55:29,462 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:55:29,462 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:55:29,462 - INFO - Updating live view Live view DEF:
+2025-06-04 19:55:29,462 - INFO - Cursor is valid
+2025-06-04 19:55:34,463 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:55:34,508 - INFO - Processing data for 1 participants.
+2025-06-04 19:55:34,509 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:55:34,510 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:55:34,510 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:55:34,510 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:55:34,510 - INFO - Updating live view Live view DEF:
+2025-06-04 19:55:34,510 - INFO - Cursor is valid
+2025-06-04 19:55:39,511 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:55:39,554 - INFO - Processing data for 1 participants.
+2025-06-04 19:55:39,555 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:55:39,555 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:55:39,556 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:55:39,556 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:55:39,556 - INFO - Updating live view Live view DEF:
+2025-06-04 19:55:39,556 - INFO - Cursor is valid
+2025-06-04 19:55:44,562 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:55:44,613 - INFO - Processing data for 1 participants.
+2025-06-04 19:55:44,617 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:55:44,618 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:55:44,618 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:55:44,618 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:55:44,618 - INFO - Updating live view Live view DEF:
+2025-06-04 19:55:44,618 - INFO - Cursor is valid
+2025-06-04 19:55:49,620 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:55:49,667 - INFO - Processing data for 1 participants.
+2025-06-04 19:55:49,668 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:55:49,669 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:55:49,670 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:55:49,670 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:55:49,670 - INFO - Updating live view Live view DEF:
+2025-06-04 19:55:49,671 - INFO - Cursor is valid
+2025-06-04 19:55:54,670 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:55:54,722 - INFO - Processing data for 1 participants.
+2025-06-04 19:55:54,722 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:55:54,723 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:55:54,723 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:55:54,723 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:55:54,723 - INFO - Updating live view Live view DEF:
+2025-06-04 19:55:54,723 - INFO - Cursor is valid
+2025-06-04 19:55:59,724 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:55:59,778 - INFO - Processing data for 1 participants.
+2025-06-04 19:55:59,779 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:55:59,780 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:55:59,780 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:55:59,780 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:55:59,780 - INFO - Updating live view Live view DEF:
+2025-06-04 19:55:59,780 - INFO - Cursor is valid
+2025-06-04 19:56:04,781 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:56:04,837 - INFO - Processing data for 1 participants.
+2025-06-04 19:56:04,837 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:56:04,838 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:56:04,838 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:56:04,839 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:56:04,839 - INFO - Updating live view Live view DEF:
+2025-06-04 19:56:04,839 - INFO - Cursor is valid
+2025-06-04 19:56:09,839 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:56:09,885 - INFO - Processing data for 1 participants.
+2025-06-04 19:56:09,886 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:56:09,886 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:56:09,888 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:56:09,888 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:56:09,888 - INFO - Updating live view Live view DEF:
+2025-06-04 19:56:09,889 - INFO - Cursor is valid
+2025-06-04 19:56:14,888 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:56:14,937 - INFO - Processing data for 1 participants.
+2025-06-04 19:56:14,937 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:56:14,939 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:56:14,940 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:56:14,940 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:56:14,940 - INFO - Updating live view Live view DEF:
+2025-06-04 19:56:14,940 - INFO - Cursor is valid
+2025-06-04 19:56:19,940 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:56:19,997 - INFO - Processing data for 1 participants.
+2025-06-04 19:56:19,998 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:56:19,999 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:56:19,999 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:56:19,999 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:56:20,000 - INFO - Updating live view Live view DEF:
+2025-06-04 19:56:20,000 - INFO - Cursor is valid
+2025-06-04 19:56:25,000 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:56:25,055 - INFO - Processing data for 1 participants.
+2025-06-04 19:56:25,056 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:56:25,056 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:56:25,056 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:56:25,056 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:56:25,056 - INFO - Updating live view Live view DEF:
+2025-06-04 19:56:25,056 - INFO - Cursor is valid
+2025-06-04 19:56:30,058 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:56:30,108 - INFO - Processing data for 1 participants.
+2025-06-04 19:56:30,109 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:56:30,110 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:56:30,111 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:56:30,111 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:56:30,111 - INFO - Updating live view Live view DEF:
+2025-06-04 19:56:30,111 - INFO - Cursor is valid
+2025-06-04 19:56:35,111 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:56:35,164 - INFO - Processing data for 1 participants.
+2025-06-04 19:56:35,164 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:56:35,165 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:56:35,165 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:56:35,165 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:56:35,165 - INFO - Updating live view Live view DEF:
+2025-06-04 19:56:35,165 - INFO - Cursor is valid
+2025-06-04 19:56:40,166 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:56:40,211 - INFO - Processing data for 1 participants.
+2025-06-04 19:56:40,211 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:56:40,213 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:56:40,213 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:56:40,214 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:56:40,214 - INFO - Updating live view Live view DEF:
+2025-06-04 19:56:40,214 - INFO - Cursor is valid
+2025-06-04 19:56:45,213 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:56:45,271 - INFO - Processing data for 1 participants.
+2025-06-04 19:56:45,272 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:56:45,272 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:56:45,273 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:56:45,273 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:56:45,273 - INFO - Updating live view Live view DEF:
+2025-06-04 19:56:45,273 - INFO - Cursor is valid
+2025-06-04 19:56:50,274 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:56:50,328 - INFO - Processing data for 1 participants.
+2025-06-04 19:56:50,329 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:56:50,329 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:56:50,330 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:56:50,330 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:56:50,331 - INFO - Updating live view Live view DEF:
+2025-06-04 19:56:50,331 - INFO - Cursor is valid
+2025-06-04 19:56:55,332 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:56:55,387 - INFO - Processing data for 1 participants.
+2025-06-04 19:56:55,387 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:56:55,388 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:56:55,389 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:56:55,389 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:56:55,389 - INFO - Updating live view Live view DEF:
+2025-06-04 19:56:55,389 - INFO - Cursor is valid
+2025-06-04 19:57:00,389 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:57:00,431 - INFO - Processing data for 1 participants.
+2025-06-04 19:57:00,433 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:57:00,434 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:57:00,436 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:57:00,436 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:57:00,436 - INFO - Updating live view Live view DEF:
+2025-06-04 19:57:00,436 - INFO - Cursor is valid
+2025-06-04 19:57:05,436 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:57:05,484 - INFO - Processing data for 1 participants.
+2025-06-04 19:57:05,484 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:57:05,486 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:57:05,487 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:57:05,487 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:57:05,487 - INFO - Updating live view Live view DEF:
+2025-06-04 19:57:05,487 - INFO - Cursor is valid
+2025-06-04 19:57:10,487 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:57:10,541 - INFO - Processing data for 1 participants.
+2025-06-04 19:57:10,541 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:57:10,543 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:57:10,543 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:57:10,543 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:57:10,544 - INFO - Updating live view Live view DEF:
+2025-06-04 19:57:10,544 - INFO - Cursor is valid
+2025-06-04 19:57:15,544 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:57:15,594 - INFO - Processing data for 1 participants.
+2025-06-04 19:57:15,594 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:57:15,596 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:57:15,596 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:57:15,597 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:57:15,597 - INFO - Updating live view Live view DEF:
+2025-06-04 19:57:15,597 - INFO - Cursor is valid
+2025-06-04 19:57:20,597 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:57:20,652 - INFO - Processing data for 1 participants.
+2025-06-04 19:57:20,654 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:57:20,654 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:57:20,654 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:57:20,654 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:57:20,655 - INFO - Updating live view Live view DEF:
+2025-06-04 19:57:20,655 - INFO - Cursor is valid
+2025-06-04 19:57:25,655 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:57:25,712 - INFO - Processing data for 1 participants.
+2025-06-04 19:57:25,712 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:57:25,714 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:57:25,714 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:57:25,714 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:57:25,714 - INFO - Updating live view Live view DEF:
+2025-06-04 19:57:25,714 - INFO - Cursor is valid
+2025-06-04 19:57:30,715 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:57:30,768 - INFO - Processing data for 1 participants.
+2025-06-04 19:57:30,768 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:57:30,770 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:57:30,771 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:57:30,771 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:57:30,771 - INFO - Updating live view Live view DEF:
+2025-06-04 19:57:30,771 - INFO - Cursor is valid
+2025-06-04 19:57:35,771 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:57:35,828 - INFO - Processing data for 1 participants.
+2025-06-04 19:57:35,828 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:57:35,830 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:57:35,830 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:57:35,830 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:57:35,830 - INFO - Updating live view Live view DEF:
+2025-06-04 19:57:35,830 - INFO - Cursor is valid
+2025-06-04 19:57:40,830 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:57:40,878 - INFO - Processing data for 1 participants.
+2025-06-04 19:57:40,878 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:57:40,880 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:57:40,880 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:57:40,880 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:57:40,880 - INFO - Updating live view Live view DEF:
+2025-06-04 19:57:40,880 - INFO - Cursor is valid
+2025-06-04 19:57:45,881 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:57:45,935 - INFO - Processing data for 1 participants.
+2025-06-04 19:57:45,935 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:57:45,937 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:57:45,938 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:57:45,938 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:57:45,938 - INFO - Updating live view Live view DEF:
+2025-06-04 19:57:45,938 - INFO - Cursor is valid
+2025-06-04 19:57:50,938 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:57:50,992 - INFO - Processing data for 1 participants.
+2025-06-04 19:57:50,992 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:57:50,994 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:57:50,995 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:57:50,995 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:57:50,995 - INFO - Updating live view Live view DEF:
+2025-06-04 19:57:50,995 - INFO - Cursor is valid
+2025-06-04 19:57:55,995 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:57:56,050 - INFO - Processing data for 1 participants.
+2025-06-04 19:57:56,050 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:57:56,051 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:57:56,051 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:57:56,051 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:57:56,052 - INFO - Updating live view Live view DEF:
+2025-06-04 19:57:56,052 - INFO - Cursor is valid
+2025-06-04 19:58:01,053 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:58:01,105 - INFO - Processing data for 1 participants.
+2025-06-04 19:58:01,106 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:58:01,106 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:58:01,108 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:58:01,108 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:58:01,108 - INFO - Updating live view Live view DEF:
+2025-06-04 19:58:01,108 - INFO - Cursor is valid
+2025-06-04 19:58:06,108 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:58:06,157 - INFO - Processing data for 1 participants.
+2025-06-04 19:58:06,157 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:58:06,158 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:58:06,159 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:58:06,159 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:58:06,159 - INFO - Updating live view Live view DEF:
+2025-06-04 19:58:06,159 - INFO - Cursor is valid
+2025-06-04 19:58:11,159 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:58:11,205 - INFO - Processing data for 1 participants.
+2025-06-04 19:58:11,205 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:58:11,205 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:58:11,208 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:58:11,208 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:58:11,208 - INFO - Updating live view Live view DEF:
+2025-06-04 19:58:11,208 - INFO - Cursor is valid
+2025-06-04 19:58:16,208 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:58:16,259 - INFO - Processing data for 1 participants.
+2025-06-04 19:58:16,261 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:58:16,261 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:58:16,262 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:58:16,262 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:58:16,262 - INFO - Updating live view Live view DEF:
+2025-06-04 19:58:16,262 - INFO - Cursor is valid
+2025-06-04 19:58:21,263 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:58:21,310 - INFO - Processing data for 1 participants.
+2025-06-04 19:58:21,310 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:58:21,312 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:58:21,312 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:58:21,312 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:58:21,313 - INFO - Updating live view Live view DEF:
+2025-06-04 19:58:21,313 - INFO - Cursor is valid
+2025-06-04 19:58:26,313 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:58:26,358 - INFO - Processing data for 1 participants.
+2025-06-04 19:58:26,358 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:58:26,360 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:58:26,360 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:58:26,360 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:58:26,360 - INFO - Updating live view Live view DEF:
+2025-06-04 19:58:26,360 - INFO - Cursor is valid
+2025-06-04 19:58:31,361 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:58:31,410 - INFO - Processing data for 1 participants.
+2025-06-04 19:58:31,410 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:58:31,411 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:58:31,411 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:58:31,411 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:58:31,412 - INFO - Updating live view Live view DEF:
+2025-06-04 19:58:31,412 - INFO - Cursor is valid
+2025-06-04 19:58:36,412 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:58:36,456 - INFO - Processing data for 1 participants.
+2025-06-04 19:58:36,456 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:58:36,458 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:58:36,459 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:58:36,459 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:58:36,459 - INFO - Updating live view Live view DEF:
+2025-06-04 19:58:36,459 - INFO - Cursor is valid
+2025-06-04 19:58:41,459 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:58:41,505 - INFO - Processing data for 1 participants.
+2025-06-04 19:58:41,505 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:58:41,507 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:58:41,507 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:58:41,507 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:58:41,507 - INFO - Updating live view Live view DEF:
+2025-06-04 19:58:41,507 - INFO - Cursor is valid
+2025-06-04 19:58:46,508 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:58:46,559 - INFO - Processing data for 1 participants.
+2025-06-04 19:58:46,560 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:58:46,560 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:58:46,561 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:58:46,561 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:58:46,561 - INFO - Updating live view Live view DEF:
+2025-06-04 19:58:46,561 - INFO - Cursor is valid
+2025-06-04 19:58:51,562 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:58:51,620 - INFO - Processing data for 1 participants.
+2025-06-04 19:58:51,620 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:58:51,621 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:58:51,621 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:58:51,621 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:58:51,622 - INFO - Updating live view Live view DEF:
+2025-06-04 19:58:51,622 - INFO - Cursor is valid
+2025-06-04 19:58:56,622 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:58:56,667 - INFO - Processing data for 1 participants.
+2025-06-04 19:58:56,667 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:58:56,668 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:58:56,669 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:58:56,669 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:58:56,669 - INFO - Updating live view Live view DEF:
+2025-06-04 19:58:56,669 - INFO - Cursor is valid
+2025-06-04 19:59:01,669 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:59:01,715 - INFO - Processing data for 1 participants.
+2025-06-04 19:59:01,715 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:59:01,716 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:59:01,717 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:59:01,717 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:59:01,717 - INFO - Updating live view Live view DEF:
+2025-06-04 19:59:01,717 - INFO - Cursor is valid
+2025-06-04 19:59:06,717 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:59:06,766 - INFO - Processing data for 1 participants.
+2025-06-04 19:59:06,766 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:59:06,767 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:59:06,767 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:59:06,767 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:59:06,767 - INFO - Updating live view Live view DEF:
+2025-06-04 19:59:06,768 - INFO - Cursor is valid
+2025-06-04 19:59:11,768 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:59:11,819 - INFO - Processing data for 1 participants.
+2025-06-04 19:59:11,819 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:59:11,819 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:59:11,819 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:59:11,819 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:59:11,821 - INFO - Updating live view Live view DEF:
+2025-06-04 19:59:11,821 - INFO - Cursor is valid
+2025-06-04 19:59:16,821 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:59:16,872 - INFO - Processing data for 1 participants.
+2025-06-04 19:59:16,874 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:59:16,874 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:59:16,874 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:59:16,875 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:59:16,875 - INFO - Updating live view Live view DEF:
+2025-06-04 19:59:16,875 - INFO - Cursor is valid
+2025-06-04 19:59:21,876 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:59:21,933 - INFO - Processing data for 1 participants.
+2025-06-04 19:59:21,934 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:59:21,936 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:59:21,937 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:59:21,938 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:59:21,938 - INFO - Updating live view Live view DEF:
+2025-06-04 19:59:21,938 - INFO - Cursor is valid
+2025-06-04 19:59:26,937 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:59:26,988 - INFO - Processing data for 1 participants.
+2025-06-04 19:59:26,988 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:59:26,989 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:59:26,989 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:59:26,989 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:59:26,991 - INFO - Updating live view Live view DEF:
+2025-06-04 19:59:26,991 - INFO - Cursor is valid
+2025-06-04 19:59:31,990 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:59:32,047 - INFO - Processing data for 1 participants.
+2025-06-04 19:59:32,047 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:59:32,049 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:59:32,049 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:59:32,049 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:59:32,049 - INFO - Updating live view Live view DEF:
+2025-06-04 19:59:32,050 - INFO - Cursor is valid
+2025-06-04 19:59:37,050 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:59:37,094 - INFO - Processing data for 1 participants.
+2025-06-04 19:59:37,096 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:59:37,096 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:59:37,097 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:59:37,097 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:59:37,097 - INFO - Updating live view Live view DEF:
+2025-06-04 19:59:37,097 - INFO - Cursor is valid
+2025-06-04 19:59:42,098 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:59:42,145 - INFO - Processing data for 1 participants.
+2025-06-04 19:59:42,145 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:59:42,146 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:59:42,146 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:59:42,146 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:59:42,146 - INFO - Updating live view Live view DEF:
+2025-06-04 19:59:42,147 - INFO - Cursor is valid
+2025-06-04 19:59:47,147 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:59:47,200 - INFO - Processing data for 1 participants.
+2025-06-04 19:59:47,201 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:59:47,201 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:59:47,202 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:59:47,202 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:59:47,202 - INFO - Updating live view Live view DEF:
+2025-06-04 19:59:47,202 - INFO - Cursor is valid
+2025-06-04 19:59:52,203 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:59:52,250 - INFO - Processing data for 1 participants.
+2025-06-04 19:59:52,251 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:59:52,252 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:59:52,254 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:59:52,254 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:59:52,254 - INFO - Updating live view Live view DEF:
+2025-06-04 19:59:52,254 - INFO - Cursor is valid
+2025-06-04 19:59:57,254 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 19:59:57,299 - INFO - Processing data for 1 participants.
+2025-06-04 19:59:57,300 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 19:59:57,300 - INFO - RaceID for Race_1 is 1.
+2025-06-04 19:59:57,301 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 19:59:57,301 - WARNING - View is live, mGamestate is 2
+2025-06-04 19:59:57,301 - INFO - Updating live view Live view DEF:
+2025-06-04 19:59:57,301 - INFO - Cursor is valid
+2025-06-04 20:00:02,301 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 20:00:02,354 - INFO - Processing data for 1 participants.
+2025-06-04 20:00:02,355 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 20:00:02,355 - INFO - RaceID for Race_1 is 1.
+2025-06-04 20:00:02,357 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 20:00:02,357 - WARNING - View is live, mGamestate is 2
+2025-06-04 20:00:02,357 - INFO - Updating live view Live view DEF:
+2025-06-04 20:00:02,357 - INFO - Cursor is valid
+2025-06-04 20:00:07,357 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 20:00:07,404 - INFO - Processing data for 1 participants.
+2025-06-04 20:00:07,404 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 20:00:07,406 - INFO - RaceID for Race_1 is 1.
+2025-06-04 20:00:07,407 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 20:00:07,407 - WARNING - View is live, mGamestate is 2
+2025-06-04 20:00:07,407 - INFO - Updating live view Live view DEF:
+2025-06-04 20:00:07,407 - INFO - Cursor is valid
+2025-06-04 20:00:12,407 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 20:00:12,462 - INFO - Processing data for 1 participants.
+2025-06-04 20:00:12,462 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 20:00:12,464 - INFO - RaceID for Race_1 is 1.
+2025-06-04 20:00:12,464 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 20:00:12,464 - WARNING - View is live, mGamestate is 2
+2025-06-04 20:00:12,464 - INFO - Updating live view Live view DEF:
+2025-06-04 20:00:12,464 - INFO - Cursor is valid
+2025-06-04 20:00:17,464 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 20:00:17,509 - INFO - Processing data for 1 participants.
+2025-06-04 20:00:17,510 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 20:00:17,511 - INFO - RaceID for Race_1 is 1.
+2025-06-04 20:00:17,512 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 20:00:17,512 - WARNING - View is live, mGamestate is 2
+2025-06-04 20:00:17,512 - INFO - Updating live view Live view DEF:
+2025-06-04 20:00:17,512 - INFO - Cursor is valid
+2025-06-04 20:00:22,512 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 20:00:22,556 - INFO - Processing data for 1 participants.
+2025-06-04 20:00:22,556 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 20:00:22,558 - INFO - RaceID for Race_1 is 1.
+2025-06-04 20:00:22,558 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 20:00:22,559 - WARNING - View is live, mGamestate is 2
+2025-06-04 20:00:22,559 - INFO - Updating live view Live view DEF:
+2025-06-04 20:00:22,559 - INFO - Cursor is valid
+2025-06-04 20:00:27,559 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 20:00:27,601 - INFO - Processing data for 1 participants.
+2025-06-04 20:00:27,601 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 20:00:27,603 - INFO - RaceID for Race_1 is 1.
+2025-06-04 20:00:27,603 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 20:00:27,603 - WARNING - View is live, mGamestate is 2
+2025-06-04 20:00:27,604 - INFO - Updating live view Live view DEF:
+2025-06-04 20:00:27,604 - INFO - Cursor is valid
+2025-06-04 20:00:32,604 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 20:00:32,655 - INFO - Processing data for 1 participants.
+2025-06-04 20:00:32,655 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 20:00:32,655 - INFO - RaceID for Race_1 is 1.
+2025-06-04 20:00:32,655 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 20:00:32,655 - WARNING - View is live, mGamestate is 2
+2025-06-04 20:00:32,655 - INFO - Updating live view Live view DEF:
+2025-06-04 20:00:32,655 - INFO - Cursor is valid
+2025-06-04 20:00:37,658 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 20:00:37,708 - INFO - Processing data for 1 participants.
+2025-06-04 20:00:37,708 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 20:00:37,709 - INFO - RaceID for Race_1 is 1.
+2025-06-04 20:00:37,710 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 20:00:37,710 - WARNING - View is live, mGamestate is 2
+2025-06-04 20:00:37,711 - INFO - Updating live view Live view DEF:
+2025-06-04 20:00:37,711 - INFO - Cursor is valid
+2025-06-04 20:00:42,711 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 20:00:42,762 - INFO - Processing data for 1 participants.
+2025-06-04 20:00:42,763 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 20:00:42,763 - INFO - RaceID for Race_1 is 1.
+2025-06-04 20:00:42,764 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 20:00:42,764 - WARNING - View is live, mGamestate is 2
+2025-06-04 20:00:42,764 - INFO - Updating live view Live view DEF:
+2025-06-04 20:00:42,764 - INFO - Cursor is valid
+2025-06-04 20:00:47,765 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 20:00:47,823 - INFO - Processing data for 1 participants.
+2025-06-04 20:00:47,824 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 20:00:47,825 - INFO - RaceID for Race_1 is 1.
+2025-06-04 20:00:47,825 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 20:00:47,825 - WARNING - View is live, mGamestate is 2
+2025-06-04 20:00:47,826 - INFO - Updating live view Live view DEF:
+2025-06-04 20:00:47,826 - INFO - Cursor is valid
+2025-06-04 20:00:52,826 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 20:00:52,877 - INFO - Processing data for 1 participants.
+2025-06-04 20:00:52,878 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 20:00:52,878 - INFO - RaceID for Race_1 is 1.
+2025-06-04 20:00:52,878 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 20:00:52,878 - WARNING - View is live, mGamestate is 2
+2025-06-04 20:00:52,879 - INFO - Updating live view Live view DEF:
+2025-06-04 20:00:52,879 - INFO - Cursor is valid
+2025-06-04 20:00:57,880 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 20:00:57,931 - INFO - Processing data for 1 participants.
+2025-06-04 20:00:57,931 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 20:00:57,932 - INFO - RaceID for Race_1 is 1.
+2025-06-04 20:00:57,933 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 20:00:57,933 - WARNING - View is live, mGamestate is 2
+2025-06-04 20:00:57,933 - INFO - Updating live view Live view DEF:
+2025-06-04 20:00:57,933 - INFO - Cursor is valid
+2025-06-04 20:01:02,934 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 20:01:02,986 - INFO - Processing data for 1 participants.
+2025-06-04 20:01:02,987 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 20:01:02,988 - INFO - RaceID for Race_1 is 1.
+2025-06-04 20:01:02,989 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 20:01:02,989 - WARNING - View is live, mGamestate is 2
+2025-06-04 20:01:02,989 - INFO - Updating live view Live view DEF:
+2025-06-04 20:01:02,989 - INFO - Cursor is valid
+2025-06-04 20:01:07,989 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 20:01:08,041 - INFO - Processing data for 1 participants.
+2025-06-04 20:01:08,041 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 20:01:08,042 - INFO - RaceID for Race_1 is 1.
+2025-06-04 20:01:08,043 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 20:01:08,043 - WARNING - View is live, mGamestate is 2
+2025-06-04 20:01:08,043 - INFO - Updating live view Live view DEF:
+2025-06-04 20:01:08,043 - INFO - Cursor is valid
+2025-06-04 20:01:13,044 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 20:01:13,090 - INFO - Processing data for 1 participants.
+2025-06-04 20:01:13,091 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 20:01:13,094 - INFO - RaceID for Race_1 is 1.
+2025-06-04 20:01:13,095 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 20:01:13,095 - WARNING - View is live, mGamestate is 2
+2025-06-04 20:01:13,095 - INFO - Updating live view Live view DEF:
+2025-06-04 20:01:13,095 - INFO - Cursor is valid
+2025-06-04 20:01:18,095 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 20:01:18,142 - INFO - Processing data for 1 participants.
+2025-06-04 20:01:18,142 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 20:01:18,144 - INFO - RaceID for Race_1 is 1.
+2025-06-04 20:01:18,145 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 20:01:18,145 - WARNING - View is live, mGamestate is 2
+2025-06-04 20:01:18,145 - INFO - Updating live view Live view DEF:
+2025-06-04 20:01:18,145 - INFO - Cursor is valid
+2025-06-04 20:01:23,145 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 20:01:23,198 - INFO - Processing data for 1 participants.
+2025-06-04 20:01:23,198 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 20:01:23,199 - INFO - RaceID for Race_1 is 1.
+2025-06-04 20:01:23,199 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 20:01:23,199 - WARNING - View is live, mGamestate is 2
+2025-06-04 20:01:23,199 - INFO - Updating live view Live view DEF:
+2025-06-04 20:01:23,200 - INFO - Cursor is valid
+2025-06-04 20:01:28,200 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 20:01:28,251 - INFO - Processing data for 1 participants.
+2025-06-04 20:01:28,252 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 20:01:28,253 - INFO - RaceID for Race_1 is 1.
+2025-06-04 20:01:28,254 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 20:01:28,254 - WARNING - View is live, mGamestate is 2
+2025-06-04 20:01:28,254 - INFO - Updating live view Live view DEF:
+2025-06-04 20:01:28,254 - INFO - Cursor is valid
+2025-06-04 20:01:33,254 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 20:01:33,303 - INFO - Processing data for 1 participants.
+2025-06-04 20:01:33,303 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 20:01:33,304 - INFO - RaceID for Race_1 is 1.
+2025-06-04 20:01:33,304 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 20:01:33,304 - WARNING - View is live, mGamestate is 2
+2025-06-04 20:01:33,306 - INFO - Updating live view Live view DEF:
+2025-06-04 20:01:33,306 - INFO - Cursor is valid
+2025-06-04 20:01:38,306 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 20:01:38,357 - INFO - Processing data for 1 participants.
+2025-06-04 20:01:38,357 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 20:01:38,358 - INFO - RaceID for Race_1 is 1.
+2025-06-04 20:01:38,358 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 20:01:38,358 - WARNING - View is live, mGamestate is 2
+2025-06-04 20:01:38,359 - INFO - Updating live view Live view DEF:
+2025-06-04 20:01:38,359 - INFO - Cursor is valid
+2025-06-04 20:01:43,360 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 20:01:43,415 - INFO - Processing data for 1 participants.
+2025-06-04 20:01:43,416 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 20:01:43,416 - INFO - RaceID for Race_1 is 1.
+2025-06-04 20:01:43,417 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 20:01:43,417 - WARNING - View is live, mGamestate is 2
+2025-06-04 20:01:43,417 - INFO - Updating live view Live view DEF:
+2025-06-04 20:01:43,417 - INFO - Cursor is valid
+2025-06-04 20:01:48,418 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 20:01:48,469 - INFO - Processing data for 1 participants.
+2025-06-04 20:01:48,469 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 20:01:48,470 - INFO - RaceID for Race_1 is 1.
+2025-06-04 20:01:48,471 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 20:01:48,471 - WARNING - View is live, mGamestate is 2
+2025-06-04 20:01:48,471 - INFO - Updating live view Live view DEF:
+2025-06-04 20:01:48,471 - INFO - Cursor is valid
+2025-06-04 20:01:53,471 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 20:01:53,525 - INFO - Processing data for 1 participants.
+2025-06-04 20:01:53,525 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 20:01:53,525 - INFO - RaceID for Race_1 is 1.
+2025-06-04 20:01:53,527 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 20:01:53,528 - WARNING - View is live, mGamestate is 2
+2025-06-04 20:01:53,528 - INFO - Updating live view Live view DEF:
+2025-06-04 20:01:53,528 - INFO - Cursor is valid
+2025-06-04 20:01:58,528 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 20:01:58,576 - INFO - Processing data for 1 participants.
+2025-06-04 20:01:58,578 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 20:01:58,579 - INFO - RaceID for Race_1 is 1.
+2025-06-04 20:01:58,580 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 20:01:58,580 - WARNING - View is live, mGamestate is 2
+2025-06-04 20:01:58,581 - INFO - Updating live view Live view DEF:
+2025-06-04 20:01:58,581 - INFO - Cursor is valid
+2025-06-04 20:02:03,581 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 20:02:03,630 - INFO - Processing data for 1 participants.
+2025-06-04 20:02:03,631 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 20:02:03,631 - INFO - RaceID for Race_1 is 1.
+2025-06-04 20:02:03,632 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 20:02:03,632 - WARNING - View is live, mGamestate is 2
+2025-06-04 20:02:03,632 - INFO - Updating live view Live view DEF:
+2025-06-04 20:02:03,632 - INFO - Cursor is valid
+2025-06-04 20:02:08,633 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 20:02:08,678 - INFO - Processing data for 1 participants.
+2025-06-04 20:02:08,679 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 20:02:08,679 - INFO - RaceID for Race_1 is 1.
+2025-06-04 20:02:08,680 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 20:02:08,681 - WARNING - View is live, mGamestate is 2
+2025-06-04 20:02:08,681 - INFO - Updating live view Live view DEF:
+2025-06-04 20:02:08,681 - INFO - Cursor is valid
+2025-06-04 20:02:13,682 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 20:02:13,730 - INFO - Processing data for 1 participants.
+2025-06-04 20:02:13,741 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 20:02:13,742 - INFO - RaceID for Race_1 is 1.
+2025-06-04 20:02:13,742 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 20:02:13,743 - WARNING - View is live, mGamestate is 2
+2025-06-04 20:02:13,743 - INFO - Updating live view Live view DEF:
+2025-06-04 20:02:13,743 - INFO - Cursor is valid
+2025-06-04 20:02:18,744 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 20:02:18,799 - INFO - Processing data for 1 participants.
+2025-06-04 20:02:18,799 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 20:02:18,800 - INFO - RaceID for Race_1 is 1.
+2025-06-04 20:02:18,801 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 20:02:18,801 - WARNING - View is live, mGamestate is 2
+2025-06-04 20:02:18,801 - INFO - Updating live view Live view DEF:
+2025-06-04 20:02:18,801 - INFO - Cursor is valid
+2025-06-04 20:02:23,802 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 20:02:23,849 - INFO - Processing data for 1 participants.
+2025-06-04 20:02:23,849 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 20:02:23,851 - INFO - RaceID for Race_1 is 1.
+2025-06-04 20:02:23,851 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 20:02:23,851 - WARNING - View is live, mGamestate is 2
+2025-06-04 20:02:23,851 - INFO - Updating live view Live view DEF:
+2025-06-04 20:02:23,851 - INFO - Cursor is valid
+2025-06-04 20:02:28,852 - INFO - Last line of the loop: Current_Race_State: 2 self.running: True
+2025-06-04 20:02:28,906 - INFO - Processing data for 1 participants.
+2025-06-04 20:02:28,906 - INFO - Inserted race data for race Race_1 if not already present.
+2025-06-04 20:02:28,907 - INFO - RaceID for Race_1 is 1.
+2025-06-04 20:02:28,908 - INFO - Updated Race_ID from RUN current_race_id to 1
+2025-06-04 20:02:28,908 - WARNING - View is live, mGamestate is 2
+2025-06-04 20:02:28,919 - INFO - Updating live view Live view DEF:
+2025-06-04 20:02:28,919 - INFO - Cursor is valid
+2025-06-04 20:02:33,921 - INFO - Last line of the loop: Current_Race_State: 4 self.running: True
+2025-06-04 20:02:33,921 - INFO - Race 1 has ended. Current_Race_State: 4 self.running: True
+2025-06-04 20:02:33,939 - INFO - Display Final Result
+2025-06-04 20:02:33,941 - INFO - Load Selected Race, Race_State: results
+2025-06-04 20:02:33,941 - INFO - Load Selected Race, RaceID: 1
+2025-06-04 20:02:48,143 - WARNING - Live View should be active, mGamestate is 3
+2025-06-04 20:02:48,146 - ERROR - An error occurred while processing participant data: 'mParticipantInfo'
+2025-06-04 20:02:48,146 - ERROR - An error occurred while monitoring race state: 'mParticipantInfo'
+2025-06-04 20:02:53,149 - WARNING - Result view should be active, mGamestate is 1
+2025-06-04 20:02:53,149 - INFO - Load Selected Race, Race_State: results
+2025-06-04 20:02:53,150 - INFO - Load Selected Race, RaceID: 1
