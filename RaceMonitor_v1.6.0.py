@@ -5,11 +5,23 @@ from PyQt5.QtCore import QThread, pyqtSignal, QMetaObject, Qt, Q_ARG, QTimer, QO
 from PyQt5.QtChart import QChart, QChartView, QLineSeries, QValueAxis, QBarSet, QBarSeries, QBarCategoryAxis
 from datetime import datetime
 from ping3 import ping
+import html as html_lib  # 'html' is used as a variable name further down
 import socket
 from file_base64_strings import (wheels_bg_img_base64, remaining_bg_img_base64, delta_local_record_bg_img_base64, delta_world_record_bg_img_base64, bestlap_bg_img_base64, wheel_bg_img_base64, pedal_raw_bg_img_base64, pedal_bg_img_base64, lap_bg_img_base64, pos_bg_img_base64,laptime_bg_img_base64, speedometer_bg_img_base64,tachometer_bg_img_base64,needle_bg_img_base64, driver_statistics_background_img_base64, high_scores_background_img_base64, race_results_background_img_base64, race_scores_background_img_base64, liverace_liveview_img_base64, liverace_status_img_base64, rockytm_icon_base64, sui_generis_rg_font_base64, ds_digib_font_base64)
+# Work from the folder RM.exe (or this script) lives in, so config.ini, RaceDB.db and debug.log are always
+# the ones next to it, even when the app is started from a shortcut with another "Start in" folder.
+os.chdir(os.path.dirname(os.path.abspath(sys.executable if getattr(sys, 'frozen', False) else __file__)))
 if os.path.exists('debug.log'): # Set up logging
     os.remove('debug.log')
-logging.basicConfig(filename='debug.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s') 
+logging.basicConfig(filename='debug.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+def log_uncaught_exception(exc_type, exc_value, exc_tb):
+    # PyQt5 aborts the whole app on an exception in a slot unless sys.excepthook is replaced.
+    # Log it and keep running, so one bad frame in the live view does not close RaceMonitor mid-race.
+    text = "".join(traceback.format_exception(exc_type, exc_value, exc_tb))
+    logging.error(f"Uncaught exception (app kept running):\n{text}")
+    print(f"Uncaught exception (app kept running):\n{text}")
+sys.excepthook = log_uncaught_exception
 
 class ConfigManager:
     _instance = None  # Singleton instance for global access
@@ -219,6 +231,8 @@ class DatabaseThread(QThread):
                 print(f"DB Line {inspect.currentframe().f_lineno}  Queue Called: {operation} ")
                 if operation == 'stop':
                     self.running = False
+                    try: self.conn.commit()  # Nothing left half-written
+                    except Exception as e: logging.error(f"DB Line {inspect.currentframe().f_lineno} Commit on stop failed: {e}")
                     self.conn.close()  # Close the connection after the race ends
                     self.conn = None
                     break
@@ -437,6 +451,7 @@ class DatabaseThread(QThread):
     def delete_driver(self, driver_name, callback):
         try:
             self.cursor.execute('DELETE FROM Drivers WHERE Name = ?', (driver_name,))
+            self.cursor.execute('DELETE FROM HighScore WHERE Name = ?', (driver_name,))  # The driver list is built from HighScore
             self.conn.commit()
             if callback:
                 callback(driver_name)  # Pass the deleted driver name back to the main thread
@@ -1050,13 +1065,12 @@ class DatabaseThread(QThread):
         logging.info(f"DB Line {inspect.currentframe().f_lineno} ip_name_flag updated with {len(human_drivers)} human drivers: {human_drivers}")
 
     def stop(self):
-        self.running = False
+        # Only queue the marker. Setting running = False here made the loop exit before the
+        # laps and results already in the queue were written.
         self.task_queue.put(('stop', None))
-        if hasattr(self, 'session') and self.session:
-            self.session.close()  # Safely close the session
-        self.quit()  # Stop the event loop if it's running
-        self.wait()  # Wait until the thread has fully exited        
-        
+        if not self.wait(15000):  # Wait until the queue is drained and the thread has exited
+            logging.error("DatabaseThread did not stop within 15 s")
+
 class ControlPanel(QObject):
     #driver_sims_updated = pyqtSignal(dict)  # Signal to update driver sims
 
@@ -1168,6 +1182,7 @@ class ControlPanel(QObject):
 
     def process_signal(self, ranked_drivers, lap_times_dict):
         best_lap_time = float('inf') #find the best lap driver
+        best_driver = None  # Stays None when nobody set a lap
         for driver, lap_times in lap_times_dict.items(): # Iterate over the dictionary to find the best lap time
             if lap_times:  # Ensure the driver has lap times
                 min_lap_time = min(lap_times)  # Find the best lap time for this driver
@@ -1215,11 +1230,8 @@ class ControlPanel(QObject):
             print(f"CP Line {inspect.currentframe().f_lineno} Best lap driver written to file.")
             logging.info(f"CP Line {inspect.currentframe().f_lineno} Best lap driver written to file.")
     def stop(self):
-        self.running = False
-        self.session.close()
-        self.quit()
-        self.wait()        
-        
+        self.running = False  # ControlPanel is a plain QObject: no session, quit() or wait() to call
+
 class MonitorThread(QThread):
     data_updated = pyqtSignal(dict)
     race_finished = pyqtSignal(object, object)
@@ -2093,6 +2105,7 @@ class GuiMainApp(QMainWindow):
     tab_changed = pyqtSignal(int)
     delete_flag = pyqtSignal(str)  # Signal to delete a flag for a driver
     update_session_id_from_button = pyqtSignal(str)  # Signal to update session ID from buttons
+    run_in_gui = pyqtSignal(object)  # DB-thread callbacks emit a function here; it runs on the GUI thread
     #active_computers_signal = pyqtSignal(list)  # Signal to update the list of active computers
     _instance = None
 
@@ -2105,6 +2118,7 @@ class GuiMainApp(QMainWindow):
             raise RuntimeError("GuiMainApp er allerede opprettet! Bruk get_instance().")
         super().__init__()
         GuiMainApp._instance = self
+        self.run_in_gui.connect(lambda fn: fn())  # Queued across threads, so fn runs on the GUI thread
         self.available_ips = [ConfigManager.get_config_value(f'sim-{i}', 'simsettings', '').strip() for i in range(1, 25) if ConfigManager.get_config_value(f'sim-{i}', 'simsettings', '')]
         self.initUI()
         self.init_threads_and_managers()
@@ -2859,8 +2873,15 @@ class GuiMainApp(QMainWindow):
         self.set_delete_db_mode(True)
         QTimer.singleShot(5000, lambda: self.set_delete_db_mode(False))
 
+    def confirm(self, title, text):
+        return QMessageBox.question(self, title, text, QMessageBox.Yes | QMessageBox.No, QMessageBox.No) == QMessageBox.Yes
+
     def delete_all_races(self):
         logging.info(f"GA Line {inspect.currentframe().f_lineno} Delete all races def entered")
+        if not self.confirm("Delete All Races", "Delete ALL races, laps and results?\n\nThis cannot be undone."):
+            return
+        if not self.confirm("Delete All Races", "Are you really sure? Every race in the database will be gone."):
+            return
         #print(f"GA Line {inspect.currentframe().f_lineno} Delete DB def entered
         self.task_queue.put(('delete_all_races', ()))
         self.set_delete_all_races_mode(True)
@@ -3155,6 +3176,7 @@ class GuiMainApp(QMainWindow):
     def on_race_loaded(self, race, participants, laps):
         logging.info(f"GA Line on race loaded def entered")
         race_id, track_variation, laps_in_event, session_id = race # Function to be called when the data is loaded
+        self.selected_race_id = race_id  # Delete Selected Race acts on the race shown, however it was opened
         #print(f"Signal received")
         logging.info(f"GA Line {inspect.currentframe().f_lineno} Load selected race Signal received")
         loaded_names = ''
@@ -3196,7 +3218,8 @@ class GuiMainApp(QMainWindow):
                 return  # Exit if no participants are found
             score_table = {int(k.split('_')[0]): int(v) for k, v in self.config['Score Table'].items() if k != 'best_lap'}
             best_lap_points = int(self.config['Score Table'].get('best_lap', 0)) 
-            best_lap_participant = min(participants, key=lambda p: p[3] if p[3] not in (None, 0) else float('inf'))
+            valid_best = [p for p in participants if p[3] is not None and p[3] > 0]
+            best_lap_participant = min(valid_best, key=lambda p: p[3]) if valid_best else (None, None)
             print(f"GA Line {inspect.currentframe().f_lineno} Best Lap Participant: {best_lap_participant[0]} with time: {best_lap_participant[3]}")
 
             place = 1
@@ -3340,7 +3363,9 @@ class GuiMainApp(QMainWindow):
         else:
             self.update_background('status')
         if index == 4:
-            if self.all_driver_dropdown_items: # Check if the driver dropdown items have been loaded 
+            if self.all_driver_dropdown_items: # Check if the driver dropdown items have been loaded
+                while self.driver_dropdown.count() > 1:  # Keep the placeholder, drop the old list
+                    self.driver_dropdown.removeItem(1)
                 for item in self.all_driver_dropdown_items:
                     self.driver_dropdown.addItem(item)
                 self.driver_dropdown.setItemText(0, "Select a driver or type a driver name...")
@@ -4132,9 +4157,9 @@ class GuiMainApp(QMainWindow):
     
     def format_lap_time(self, lap_time): # Helper function to format lap time from seconds to 'MM:SS.ss' format.
         if lap_time is None or lap_time == -123.0: return "N/A"
-        minutes = int(lap_time // 60)
-        seconds = lap_time % 60
-        return f"{minutes}:{seconds:05.2f}"        
+        hundredths = int(round(abs(lap_time) * 100))  # Round first, so 59.996 becomes 1:00.00, not 0:60.00
+        minutes, rest = divmod(hundredths, 6000)
+        return f"{'-' if lap_time < 0 else ''}{minutes}:{rest / 100:05.2f}"
     
     def calculate_score(self, races, participants, laps):
         logging.info(f"GA Line {inspect.currentframe().f_lineno} Def calculate_score entered")
@@ -4182,7 +4207,7 @@ class GuiMainApp(QMainWindow):
                     best_lap = participant[4]  # Best lap time in the participants table
                     # Store the flag  for each driver
                     driver_flags[mName] = flag if flag else "No Flag"
-                    best_lap_times[mName] = best_lap if best_lap else float('inf') 
+                    best_lap_times[mName] = best_lap if best_lap and best_lap > 0 else float('inf')
                     driver_laps_completed[mName] = participant[6]
                     driver_race_positions[mName] = participant[3]
                 # Custom flag priority function
@@ -4263,7 +4288,9 @@ class GuiMainApp(QMainWindow):
         loaded_silver = ''
         loaded_bronze = ''
         loaded_points = ''
-        sorted_scores = sorted(total_scores.items(), key=lambda x: x[1], reverse=True) # Sort the drivers by their total score, highest to lowest
+        sorted_scores = sorted(total_scores.items(), key=lambda x: (  # Points, then gold, silver, bronze, then last race position
+            -x[1], -medal_counts['gold'].get(x[0], 0), -medal_counts['silver'].get(x[0], 0),
+            -medal_counts['bronze'].get(x[0], 0), last_positions.get(x[0], 999)))
         race_ids =  [race[0] for race in races]
         race_ids_str = f"({', '.join(map(str, race_ids))})"
         print(f"GA Line {inspect.currentframe().f_lineno} Self session id dropdown: {self.session_id_dropdown}")
@@ -4311,20 +4338,25 @@ class GuiMainApp(QMainWindow):
         print(f"GA Line {inspect.currentframe().f_lineno} Delete selected race def entered")
         # selected_index = self.dropdown_races.currentIndex()
         if self.selected_race_id > 0:
+            race_to_delete = self.selected_race_id
+            if not self.confirm("Delete Race", f"Delete Race_{race_to_delete} with all its laps and results?\n\nThis cannot be undone."):
+                return
 
-            def on_race_deleted(race_id):
-                print(f"GA Line {inspect.currentframe().f_lineno} Should only see this once")
-                logging.info(f"GA Line {inspect.currentframe().f_lineno} Should only see this once")
+            def on_race_deleted_gui(race_id):
+                self.set_delete_mode(False)
                 if race_id is not None:
+                    self.selected_race_id = 0
                     self.initialize_dropdown()
+                    self.after_timer_race_deleted()
                 else:
-                    print(f"GA Line {inspect.currentframe().f_lineno} on_race_deleted:Race_id is None:{race_id}")
-                    logging.info(f"GA Line {inspect.currentframe().f_lineno} on_race_deleted:Race_id is None:{race_id}")
+                    self.results_message_label.setText(f"Race_{race_to_delete} could NOT be deleted, see the log")
+                    logging.info(f"GA Line {inspect.currentframe().f_lineno} on_race_deleted: delete of {race_to_delete} failed")
+
+            def on_race_deleted(race_id):  # Runs on the DB thread: hand the GUI work to the GUI thread
+                self.run_in_gui.emit(lambda: on_race_deleted_gui(race_id))
  
             self.set_delete_mode(True)  # Activates delete mode
-            self.task_queue.put(('delete_race', (self.selected_race_id, on_race_deleted))) #Send request to DatabaseThread
-            QTimer.singleShot(1000,lambda: self.set_delete_mode(False))
-            QTimer.singleShot(1000, self.after_timer_race_deleted)
+            self.task_queue.put(('delete_race', (race_to_delete, on_race_deleted))) #Send request to DatabaseThread
         else:
             print(f"GA Line {inspect.currentframe().f_lineno} NO valid race selected.")
 
@@ -4344,18 +4376,21 @@ class GuiMainApp(QMainWindow):
         selected_index = self.driver_dropdown.currentIndex()
         if selected_index > 0:
             driver_text = self.driver_dropdown.itemText(selected_index)
+            if not self.confirm("Delete Driver", f"Delete {driver_text} and all their best-lap records?\n\nRace results are kept. This cannot be undone."):
+                return
 
-            def on_driver_deleted(driver_text):
-                print(f"GA Line {inspect.currentframe().f_lineno} Should only see this once")
-                logging.info(f"GA Line Should only see this once")
-                if driver_text is not None:
+            def on_driver_deleted_gui(deleted):
+                if deleted is not None:
                     self.initialize_dropdown()
+                    self.after_timer_driver_deleted()
                 else:
-                    print(f"GA Line {inspect.currentframe().f_lineno} on_driver_deleted:Driver_text is None:{driver_text}")
-                    logging.info(f"GA Line {inspect.currentframe().f_lineno} on_driver_deleted:Driver_text is None:{driver_text}")
+                    self.driver_statistics_heading.setText("\n" f"{driver_text} could NOT be deleted")
+                    logging.info(f"GA Line {inspect.currentframe().f_lineno} on_driver_deleted: delete of {driver_text} failed")
+
+            def on_driver_deleted(deleted):  # Runs on the DB thread: hand the GUI work to the GUI thread
+                self.run_in_gui.emit(lambda: on_driver_deleted_gui(deleted))
 
             self.task_queue.put(('delete_driver', (driver_text, on_driver_deleted))) #Send request to DatabaseThread
-            QTimer.singleShot(1000, self.after_timer_driver_deleted)
 
     def after_timer_driver_deleted(self):
         new_text= "\n" "Driver Deleted"
@@ -4408,12 +4443,8 @@ class GuiMainApp(QMainWindow):
         
     def stop(self):
         print(f"GA Line {inspect.currentframe().f_lineno} Closing the application...")
-        app.quit() # Quit the application immediately.
-        if hasattr(self, 'db_thread') and self.db_thread.isRunning(): # Stop the database thread if it exists and is running
-            logging.info("Stopping DatabaseThread...")
-            self.db_thread.stop()
-            self.db_thread.wait()  # Wait for the thread to finish
-            print(f"GA Line {inspect.currentframe().f_lineno} Database thread stopped.")
+        # Order matters: stop the monitor first (it queues laps and results), then let the
+        # database thread write everything already queued, then quit.
         logging.info("Stopping MonitorThread...")
         print(f"GA Line {inspect.currentframe().f_lineno} Stopping MonitorThread...")
         if hasattr(self, 'monitor_thread'):
@@ -4425,9 +4456,14 @@ class GuiMainApp(QMainWindow):
         if hasattr(self, 'monitor_thread') and self.monitor_thread.isRunning(): # Stop the monitor thread if it exists and is running
                 self.monitor_thread.running = False
                 print(f"GA Line {inspect.currentframe().f_lineno} Running self monitor thread stop")
-                self.monitor_thread.wait()  # Wait for the thread to finish
+                if not self.monitor_thread.wait(10000):  # A poll can take up to ~8 s (3 s timeout + 5 s error pause)
+                    logging.error("MonitorThread did not stop within 10 s")
                 print(f"GA Line {inspect.currentframe().f_lineno} Monitor thread stopped.")
-                pass  # Signals might already be disconnected or not connected
+        if hasattr(self, 'db_thread') and self.db_thread.isRunning(): # Stop the database thread if it exists and is running
+            logging.info("Stopping DatabaseThread...")
+            self.db_thread.stop()  # Writes what is queued, then exits
+            print(f"GA Line {inspect.currentframe().f_lineno} Database thread stopped.")
+        app.quit()
         logging.info(f"GA Line {inspect.currentframe().f_lineno} Application stopped successfully.") # Log completion of stopping sequence
 
 class RaceApp(QThread):
@@ -4801,13 +4837,13 @@ class RaceApp(QThread):
                 self.previous_current_lap[name] = 1        
 
             if self.driver_finished.get(name, False):
-                self.total_time_seconds[name] = sum(float(t.split(':')[0]) * 60 + float(t.split(':')[1]) for t in self.lap_list.get(name, []))
+                self.total_time_seconds[name] = sum(float(t.split(':')[0]) * 60 + float(t.split(':')[1]) for t in self.lap_list.get(name, []) if ':' in t)
                 continue  # Skip further processing for this driver
             else:
                 datadriver = self.get_full_api_data_by_driver_name(name)
                 current_lap_time = datadriver.get('timings', {}).get('mCurrentTime') if datadriver else 0
-                self.total_time_seconds[name] = current_lap_time + sum(float(t.split(':')[0]) * 60 + float(t.split(':')[1]) for t in self.lap_list.get(name, []))
-                if participant['mRacePosition'] == 1:
+                self.total_time_seconds[name] = current_lap_time + sum(float(t.split(':')[0]) * 60 + float(t.split(':')[1]) for t in self.lap_list.get(name, []) if ':' in t)
+                if participant is leader:  # First in the sorted list, so a false-started driver is never the leader
                     self.leader_name = name
                     self.leader_current_lap = self.current_lap[name]
                     self.leader_total_time = self.total_time_seconds[name]
@@ -5089,6 +5125,7 @@ class RaceApp(QThread):
             return "Leader", "0.0m"
 
         gap_sec, gap_dist = self._gap_details(participant)
+        gap_sec, gap_dist = max(0.0, gap_sec), max(0.0, gap_dist)
         gap_str = f"+{gap_sec:.0f}"
         gap_distance_str = f"{gap_dist/1000:.1f} km" if gap_dist >= 1000 else f"{gap_dist:.0f}m"
         return gap_str, gap_distance_str
@@ -5163,9 +5200,9 @@ class RaceApp(QThread):
     
     def format_lap_time(self, lap_time): # Helper function to format lap time from seconds to 'MM:SS.ss' format.
         if lap_time is None or lap_time == -123.0: return "N/A"
-        minutes = int(lap_time // 60)
-        seconds = lap_time % 60
-        return f"{minutes}:{seconds:05.2f}"
+        hundredths = int(round(abs(lap_time) * 100))  # Round first, so 59.996 becomes 1:00.00, not 0:60.00
+        minutes, rest = divmod(hundredths, 6000)
+        return f"{'-' if lap_time < 0 else ''}{minutes}:{rest / 100:05.2f}"
     
     def create_participant_text(self, participant, flag, last_lap_str, lap_times_str, sessionstate,
                             total_time_str="", gap_str="", gap_distance_str="", gap_to_ahead_str="", gap_to_ahead_distance_str="" ):
@@ -5202,7 +5239,7 @@ class RaceApp(QThread):
         # Construct output
         output = (
             f"<span style='font-weight:bold; color:#FFFFFF;'>{participant['mRacePosition']}</span>: "
-            f"<span style='color:#FFFFFF;font-weight:bold'>{name} {race_status} {flag_text} {pit_status} {pit_stop_str}</span> "
+            f"<span style='color:#FFFFFF;font-weight:bold'>{html_lib.escape(name)} {race_status} {flag_text} {pit_status} {pit_stop_str}</span> "
         )
 
         if sim:
