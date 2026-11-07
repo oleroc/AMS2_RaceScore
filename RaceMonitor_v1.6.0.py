@@ -1795,6 +1795,7 @@ class MonitorThread(QThread):
         lap_times_dict = {} # Clear the lap times dictionary ready for next race.
         last_lap_counts = {} # Clear the last lap counts dictionary
         driver_total_times = {} # Clear the driver total times dictionary
+        last_seen_participants = {} # Last API record per driver, so a driver whose sim leaves before the race ends still gets a result row
         self.driver_flags ={} # Clear the driver flags dictionary
         #QMetaObject.invokeMethod(self.tab_widget, "setCurrentIndex", Qt.QueuedConnection, Q_ARG(int, 0)) #Switch to Score View tab
         print(f"MT Line {inspect.currentframe().f_lineno} Race is STARTING!!!!!!.")
@@ -1925,8 +1926,9 @@ class MonitorThread(QThread):
                     self.data_updated.emit(data) #Send the data to Live view
                     #self.data_updated_newclass.emit(data)
                 for participant in participants:
+                    last_seen_participants[participant['mName']] = dict(participant) # Remember the latest record for this driver
                     if participant['mName'] not in lap_times_dict: lap_times_dict[participant['mName']] = [] # Initialize the key with an empty list
-                    if participant['mName'] not in driver_total_times: driver_total_times[participant['mName']] = 0  # Initialize the key with a value of 0   
+                    if participant['mName'] not in driver_total_times: driver_total_times[participant['mName']] = 0  # Initialize the key with a value of 0
                     if (participant.get('mCurrentLap', 0) > last_lap_counts.get(participant['mName'], 1)) and (participant.get('mLastLapTimes') != -123):
                         if participant['mName'] not in lap_times_dict: lap_times_dict[participant['mName']] = [] # Initialize the key with an empty list
                         if participant['mName'] not in driver_total_times: driver_total_times[participant['mName']] = 0  # Initialize the key with a value of 0                                    
@@ -1963,6 +1965,16 @@ class MonitorThread(QThread):
         print(f"MT Line {inspect.currentframe().f_lineno} Race Ended Finalizing Race for: Race_{self.race_id} with Driver Total times: {driver_total_times}")
         logging.info(f"MT Line {inspect.currentframe().f_lineno} Race Ended Finalizing Race for: Race_{self.race_id} with Driver Total times: {driver_total_times}")
         if data is not None: participants = data.get('participants', {}).get('mParticipantInfo', [])
+        # A driver with recorded laps whose sim left the server before the race ended (e.g. did not follow the
+        # server back to the lobby) is missing from the final participant list. Without this, finalize_race writes
+        # no Participants row for them and ranks them as flagged, leaving their position empty (Race 2426, 2026-11-07).
+        if data is not None:
+            present_names = {p.get('mName') for p in participants}
+            for name, laps in lap_times_dict.items():
+                if laps and name not in present_names and name in last_seen_participants:
+                    participants.append(dict(last_seen_participants[name]))
+                    print(f"MT Line {inspect.currentframe().f_lineno} {name} left before the race ended, keeping last known record ({len(laps)} laps)")
+                    logging.info(f"MT Line {inspect.currentframe().f_lineno} {name} left before the race ended, keeping last known record ({len(laps)} laps)")
         if not driver_total_times:
             print(f"MT Line {inspect.currentframe().f_lineno} No reason to write race, no one finished, no driver_total_times.")
             logging.info(f"MT Line {inspect.currentframe().f_lineno} No reason to write race, no one finished, no driver_total_times.")
