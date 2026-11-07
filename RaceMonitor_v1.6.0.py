@@ -4753,17 +4753,26 @@ class RaceApp(QThread):
                     self.leader_total_time = self.total_time_seconds[name]
                     self.leader_participant = participant
                     self.leader_progress = participant.get('mCurrentLapDistance', 0.0)
-        updates = [] 
-        if self.best_lap_time < self.previous_best_lap_time or self.live_first_time_run:
-            for j in range(min(24, len(sorted_participants))):
-                p = sorted_participants[j]
-                bg_color = (self.top_background_color
-                            if p['mFastestLapTimes'] <= self.best_lap_time and p['mCurrentLap'] > 1
-                            else self.background_color)
+        updates = []
+        # Purple row = the driver(s) holding the fastest valid lap among the cars on screen.
+        # Worked out fresh every tick, because the rows are re-sorted by position each tick
+        # and a coloured row must follow its driver, not stay on the old row number.
+        if not hasattr(self, 'row_bg_color') or self.live_first_time_run:
+            self.row_bg_color = {}
+        valid_laps = [p['mFastestLapTimes'] for p in sorted_participants
+                      if p.get('mCurrentLap', 0) > 1 and p.get('mFastestLapTimes', -123) > 0]
+        fastest = min(valid_laps) if valid_laps else None
+        for j in range(min(24, len(sorted_participants))):
+            p = sorted_participants[j]
+            is_best = (fastest is not None and p.get('mCurrentLap', 0) > 1
+                       and p.get('mFastestLapTimes', -123) == fastest)
+            bg_color = self.top_background_color if is_best else self.background_color
+            if self.row_bg_color.get(j) != bg_color:   # Only restyle rows whose colour changed
+                self.row_bg_color[j] = bg_color
                 updates.append((self.gui.participant_labels[j].setStyleSheet,
                                 (f"font-size:14px; background-color:{bg_color}; "
                                 f"padding:5px; margin-bottom:2px; border-radius:5px;",)))
-            self.previous_best_lap_time = self.best_lap_time
+        self.previous_best_lap_time = self.best_lap_time
 
         # --------------- Skip if Live Tab is Hidden ----------
         if self.active_tab != 0 and not self.live_first_time_run:
