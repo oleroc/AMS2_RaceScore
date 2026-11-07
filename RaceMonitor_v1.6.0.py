@@ -323,14 +323,14 @@ class DatabaseThread(QThread):
         self.cursor.execute('DELETE FROM Participants')
         self.cursor.execute('DELETE FROM races')
         # Commit the transaction to close it before running VACUUM
-        self.connection.commit()
+        self.conn.commit()
         # Optionally, reset auto-increment counters for the tables
         self.cursor.execute('DELETE FROM sqlite_sequence WHERE name="Laps"')
         self.cursor.execute('DELETE FROM sqlite_sequence WHERE name="Participants"')
         self.cursor.execute('DELETE FROM sqlite_sequence WHERE name="races"')
-        self.connection.commit()
+        self.conn.commit()
         self.cursor.execute('VACUUM')  # Optional: to reclaim space after deleting rows
-        self.connection.commit()
+        self.conn.commit()
 
     def delete_db(self):
         # Close the current database connection
@@ -557,7 +557,10 @@ class DatabaseThread(QThread):
                     
                     self.cursor.execute('SELECT COUNT(*) FROM Participants WHERE RaceID = ?', (race_id,)) # check if there are any participants in the race
                     rows_in_participants = self.cursor.fetchone()[0]  # This will give the count of participants
-                    if rows_in_race == 0 or rows_in_participants == 0: # delete race if there are not laps or participants
+                    if rows_in_participants == 0 and rows_in_race > 0:
+                        # Laps but no result rows = RaceMonitor stopped before the race was finalised. Keep the laps.
+                        logging.warning(f"DB Line {inspect.currentframe().f_lineno} Race {race_id} has {rows_in_race} laps but no participants (not finalised), kept")
+                    if rows_in_race == 0: # delete race only if no laps were recorded
                         race_deleted = True
                         print(f"DB Line {inspect.currentframe().f_lineno} Raceid to delete: {race_id}")
                         logging.info(f"DB Line {inspect.currentframe().f_lineno} No Rows or participants, DB Race id to delete: {race_id}")
@@ -697,13 +700,15 @@ class DatabaseThread(QThread):
                     return last_race_id  # Return the race ID if no valid callback is provided
 
             else:
+                if callback and callable(callback): callback(None)  # Empty table: answer the caller instead of leaving it waiting
                 return None  # Return None if no race ID was found
         except Exception as e:
             logging.error(f"DB Line {inspect.currentframe().f_lineno} operation failed: {e}")
             print(f"DB Line {inspect.currentframe().f_lineno} operation failed: {e}")
             if callback and callable(callback):callback(None) 
 
-    def write_race(self, data, session_id):
+    def write_race(self, data, session_id, callback=None):
+        new_race_id = None
         try:
             track_info = f"{data['eventInformation']['mTranslatedTrackLocation']} - {data['eventInformation']['mTranslatedTrackVariation']}" # Concatenate mTranslatedTrackLocation and mTranslatedTrackVariation
             logging.info(f"DB Line {inspect.currentframe().f_lineno} track_info to write:{track_info}")
@@ -712,6 +717,8 @@ class DatabaseThread(QThread):
                 INSERT OR IGNORE INTO Races (mTranslatedTrackVariation, mLapsInEvent, SessionID)
                 VALUES (?, ?, ?)
             ''', (track_info, data['eventInformation']['mLapsInEvent'], session_id,))
+            # The id of THIS race row. Asking for MAX(RaceID) afterwards would hand back the previous race if the insert was ignored.
+            if self.cursor.rowcount == 1: new_race_id = self.cursor.lastrowid
             # write drivers
             for participant in data['participants']['mParticipantInfo']:
                 if participant['mName'].endswith("(AI)"):
@@ -750,17 +757,23 @@ class DatabaseThread(QThread):
                         INSERT INTO Drivers (Name, Phone, RaceDate)
                         VALUES (?, ?, date('now'))
                     ''', (participant['mName'], new_phone))       
-            logging.info(f"DB Line {inspect.currentframe().f_lineno} Race Written to DB")
-            print(f"DB Line {inspect.currentframe().f_lineno} Race Written to DB")
+            logging.info(f"DB Line {inspect.currentframe().f_lineno} Race Written to DB, RaceID: {new_race_id}")
+            print(f"DB Line {inspect.currentframe().f_lineno} Race Written to DB, RaceID: {new_race_id}")
             self.conn.commit()
         except Exception as e:
-            print(f"DB Line {inspect.currentframe().f_lineno} Failed to write race data to the database: Program Crash! {e}")
+            # Log and carry on. Closing the connection and quitting here killed RaceMonitor mid-race.
+            print(f"DB Line {inspect.currentframe().f_lineno} Failed to write race data to the database: {e}")
             logging.error(traceback.format_exc())  # Log the full traceback for debugging
-            self.conn.close()  # Ensure the connection is closed
-            if app is not None:
-                app.quit()  # Properly quit the application if an error occurs  
-                raise ValueError("An error occurred")
-            
+            self.safe_rollback()
+            new_race_id = None
+        if callback and callable(callback): callback(new_race_id)
+
+    def safe_rollback(self):
+        try:
+            self.conn.rollback()
+        except Exception as e:
+            logging.error(f"DB Line {inspect.currentframe().f_lineno} Rollback failed: {e}")
+
     def insert_lap_data(self, race_id, name, current_lap, lap_time, track, car):
         print(f"DB Line {inspect.currentframe().f_lineno}  Insert Lap DATA entered")
         try:
@@ -846,19 +859,17 @@ class DatabaseThread(QThread):
                 self.conn.commit()
 
         except Exception as e:
-            print(f"DB Line {inspect.currentframe().f_lineno} Failed to write Lap data to the database: Program Crash! {e}")
+            # Log and carry on. Closing the connection and quitting here killed RaceMonitor mid-race.
+            print(f"DB Line {inspect.currentframe().f_lineno} Failed to write Lap data to the database: {e}")
             logging.error(traceback.format_exc())  # Log the full traceback for debugging
-            self.conn.close()  # Ensure the connection is closed
-            if app is not None:
-                app.quit()  # Properly quit the application if an error occurs  
-                raise ValueError("An error occurred")
-            
-    def finalize_race(self, data, lap_times_dict, flags_dict, pit_stops_dict):
+            self.safe_rollback()
+
+    def finalize_race(self, data, lap_times_dict, flags_dict, pit_stops_dict, race_id=None):
         try:
             logging.info(f"DB Line {inspect.currentframe().f_lineno} Def finalize entered")
             participants = data['participants']['mParticipantInfo']
-            logging.info(f"DB Line {inspect.currentframe().f_lineno} Finalizing DB, Lap times dict:{lap_times_dict} flags: {flags_dict}")    
-            race_id = self.get_latest_race_id() # Get the RaceID for the last
+            logging.info(f"DB Line {inspect.currentframe().f_lineno} Finalizing DB, Lap times dict:{lap_times_dict} flags: {flags_dict}")
+            if not race_id: race_id = self.get_latest_race_id() # The monitor passes the race it recorded; the latest race is only a fallback
             print(f"DB Line {inspect.currentframe().f_lineno} Finalizing Race with Race ID: {race_id}")
             self.cursor.execute('SELECT COUNT(*) FROM Laps WHERE RaceID = ?', (race_id,)) # Check if there are any laps recorded for the last RaceID
             rows_in_race = self.cursor.fetchone()[0]  # This will give the count of laps
@@ -914,12 +925,10 @@ class DatabaseThread(QThread):
                 self.write_cp_signal.emit(ranked_drivers, lap_times_dict)
             '''
         except Exception as e:
+            # Log and carry on. Closing the connection and quitting here killed RaceMonitor.
             print(f"DB Line {inspect.currentframe().f_lineno} Failed to Finalize race data to the database: {e}")
             logging.error(traceback.format_exc())  # Log the full traceback for debugging
-            self.conn.close()  # Ensure the connection is closed
-            if app is not None:
-                app.quit()  # Properly quit the application if an error occurs  
-                raise ValueError("DB An error occurred")
+            self.safe_rollback()
 
     def calculate_score(self, participants, flags, driver_total_times):
             config = configparser.ConfigParser() # Load the score table from the config file
@@ -1035,7 +1044,7 @@ class DatabaseThread(QThread):
 
     def update_ip_name_flag(self, ip_name_flag):
         """Update the stored ip_name_flag for human driver detection"""
-        self.ip_name_flag = ip_name_flag
+        self.ip_name_flag = {ip: list(entry) for ip, entry in ip_name_flag.items()}  # Own copy; the monitor thread keeps editing its dict
         human_drivers = [name for ip, (name, in_race) in ip_name_flag.items() if in_race == 1]
         print(f"DB Line {inspect.currentframe().f_lineno} Updated ip_name_flag: {len(human_drivers)} human drivers detected: {human_drivers}")
         logging.info(f"DB Line {inspect.currentframe().f_lineno} ip_name_flag updated with {len(human_drivers)} human drivers: {human_drivers}")
@@ -1249,6 +1258,10 @@ class MonitorThread(QThread):
         self.pit_stops_dict = {}
         self.previous_ipaddress = None
         self.connecton_restored_message_shown = False
+        self.driver_flags = {}          # Used by delete_flag before the first race
+        self.race_in_session = False
+        self.ip_adress_changed = False
+        self._fetch_failures = {}
 
         self.init_signals()
 
@@ -1386,11 +1399,11 @@ class MonitorThread(QThread):
 
         participant_names = {p['mName'] for p in participants if p.get('mName')}
 
-        async def fetch_data(ip):
+        async def fetch_data(ip, timeout=1.5):
             url = f"http://{ip}:8180/crest2/v1/api"
             try:
                 async with aiohttp.ClientSession() as session:
-                    async with session.get(url, timeout=1) as response:
+                    async with session.get(url, timeout=timeout) as response:
                         if response.status == 200:
                             return ip, await response.json()
             except Exception as e:
@@ -1399,6 +1412,15 @@ class MonitorThread(QThread):
 
         tasks = [fetch_data(ip) for ip in sim_ips]
         results = await asyncio.gather(*tasks)
+        # A sim that does not answer here is treated as AI for the whole race and its laps are not saved,
+        # so give the ones that missed a second, longer try.
+        missed = [ip for ip, data in results if data is None]
+        if missed:
+            print(f"MT Line {inspect.currentframe().f_lineno} No answer from {missed}, retrying")
+            logging.warning(f"MT Line {inspect.currentframe().f_lineno} No answer from {missed} at race start, retrying")
+            retried = dict(await asyncio.gather(*[fetch_data(ip, 3) for ip in missed]))
+            results = [(ip, data if data is not None else retried.get(ip)) for ip, data in results]
+        self._fetch_failures = {}  # Fresh failure counts for this race
 
         for sim_index, (ip, data) in enumerate(results):
             name = f"S-{sim_index+1}"
@@ -1457,10 +1479,11 @@ class MonitorThread(QThread):
                 print(f"MT Line {inspect.currentframe().f_lineno} Error fetching detailed race data from {ip}: {e}")
 
             failed_attempts[ip] = failed_attempts.get(ip, 0) + 1
-            if failed_attempts[ip] >= 3:
-                print(f"MT Line {inspect.currentframe().f_lineno} Marking {ip} as not in race after 3 failed attempts")
-                if ip in self.ip_name_flag:
-                    self.ip_name_flag[ip][1] = 0  # Set in_race = 0
+            if failed_attempts[ip] == 3:
+                # Only log it. Setting in_race = 0 here made the database treat the driver as AI
+                # and drop every later lap after a few seconds of network trouble.
+                print(f"MT Line {inspect.currentframe().f_lineno} {ip} has not answered 3 times in a row")
+                logging.warning(f"MT Line {inspect.currentframe().f_lineno} {ip} has not answered 3 times in a row")
             return ip, None
 
         tasks = [fetch(ip) for ip, (name, in_race) in ip_name_flag.items() if in_race]
@@ -1478,7 +1501,7 @@ class MonitorThread(QThread):
         if self.race_in_session:
             if driver_name in self.driver_flags:
                 del self.driver_flags[driver_name]
-                self.flags_updated.emit(self.driver_flags)  # Emit the updated flags dictionary
+                self.flags_updated.emit(dict(self.driver_flags))  # Emit a copy; the GUI keeps what it receives
         else:
             print(f"MT Line {inspect.currentframe().f_lineno} Race not running, cannot delete flag for driver: {driver_name}")
 
@@ -1764,7 +1787,8 @@ class MonitorThread(QThread):
     async def qualify_running(self, data):
         print(f"MT Line {inspect.currentframe().f_lineno} Qualify Running!")
         logging.info(f"MT Line {inspect.currentframe().f_lineno}Qualify Running!")
-        while data['gameStates']['mSessionState'] == 3:
+        state = data['gameStates']['mSessionState']
+        while state == 3:
             # print(f"Qualify Session State: {data['gameStates']['mSessionState']}")
             #self.race_message_updated.emit("Qualifying Running...")
             if not self.running: break
@@ -1772,17 +1796,20 @@ class MonitorThread(QThread):
             if data is not None: 
                 self.data_updated.emit(data)
                 #self.data_updated_newclass.emit(data)
+                state = data.get('gameStates', {}).get('mSessionState', state)  # A failed poll (None) keeps the old state
     
     async def practice_running(self, data):
         print(f"MT Line {inspect.currentframe().f_lineno} Practice Running!")
         logging.info(f"MT Line {inspect.currentframe().f_lineno} Practice Running!")
-        while data['gameStates']['mSessionState'] == 1:
+        state = data['gameStates']['mSessionState']
+        while state == 1:
             # print(f"Practice Session State: {data['gameStates']['mSessionState']}")
             if not self.running: break
             data = await self.get_api_data()
             if data is not None:
                 self.data_updated.emit(data)
                 #self.data_updated_newclass.emit(data)
+                state = data.get('gameStates', {}).get('mSessionState', state)  # A failed poll (None) keeps the old state
 
     async def race_running(self, data):
         if not self.running: return
@@ -1869,17 +1896,25 @@ class MonitorThread(QThread):
         print(f"MT Line {inspect.currentframe().f_lineno} Data to be written to database, Session id: {self.session_id} ")
         logging.info(f"MT Line {inspect.currentframe().f_lineno} Data to be written to database: Sesson id: {self.session_id}")
         self.track_location = data['eventInformation']['mTranslatedTrackVariation']+ ' - ' + data['eventInformation']['mTranslatedTrackLocation']
-        if not self.time_trial: # If it is not a time trial, write race to DB    
-            self.task_queue.put(('write_race', (data, self.session_id)))
-            print(f"MT Line {inspect.currentframe().f_lineno} Session ID received: {self.session_id} Race written to database.")
+        # Laps and results are only written when this is a lap race AND its Races row was written.
+        record_to_db = not self.time_trial
+        self.race_id = 0  # Never reuse the previous race's id
+        if record_to_db: # If it is not a time trial, write race to DB and wait for the id of the new row
+            race_id_box = {}
+            self.task_queue.put(('write_race', (data, self.session_id, lambda rid: race_id_box.__setitem__('id', rid))))
+            print(f"MT Line {inspect.currentframe().f_lineno} Session ID received: {self.session_id} Race sent to database.")
+            waited = 0.0
+            while 'id' not in race_id_box and waited < 15 and self.running:
+                await asyncio.sleep(0.25)
+                waited += 0.25
+            if race_id_box.get('id'):
+                self.race_id = race_id_box['id']
+            else:
+                record_to_db = False
+                print(f"MT Line {inspect.currentframe().f_lineno} No race id from the database, this race is shown live but NOT recorded")
+                logging.error(f"MT Line {inspect.currentframe().f_lineno} No race id from the database (got {race_id_box.get('id', 'no answer')}), race shown live but NOT recorded")
         else:
             print(f"MT Line {inspect.currentframe().f_lineno} Session ID received: {self.session_id} Time Trial No DB write.")
-        self.task_queue.put(('get_latest_race_id', (self.set_race_id,)))  # Only pass the necessary data, not the function
-        print(f"MT Line {inspect.currentframe().f_lineno} self.race_id: {self.race_id}")
-        logging.info(f"MT Line {inspect.currentframe().f_lineno} Current Race ID: {self.race_id}")
-        while self.race_id == 0:
-            await asyncio.sleep(0.5)
-            print(f"MT Line {inspect.currentframe().f_lineno} Waiting for race ID to be updated. Current Race ID: {self.race_id}")
         print(f"MT Line {inspect.currentframe().f_lineno} Race ID received: {self.race_id}, entering live view loop.")
         logging.info(f"MT Line {inspect.currentframe().f_lineno} Race written to database., asked for race ID: {self.race_id}, entering live view loop.")
         #elapsed_time = []
@@ -1890,12 +1925,12 @@ class MonitorThread(QThread):
         self.fetch_api_delay = 0.03  # Set the initial delay for fetching API data
         cache_delay = 0.06  # Set the delay for caching API data. optimal value: 0.0167
         self.start_cache_data = True
-        previous_data = data
+        last_good_data = data  # Last frame that had participants. Used when the server empties the list at race end.
+        empty_since = None     # When the participant list first came back empty
         #asyncio.create_task(self.cache_api_data()) # Start caching API data in the background
-        #await asyncio.sleep(1)  # Initial delay to allow the cache to start        
+        #await asyncio.sleep(1)  # Initial delay to allow the cache to start
         while self.race_in_session:
             if not self.running: break
-            previous_data = data
             #start_time = time.time()     #loop while race is running
             #self.start_cache_data = True
             #await asyncio.sleep(cache_delay)  # Tune for minimum delay between API calls
@@ -1908,47 +1943,67 @@ class MonitorThread(QThread):
                     print(f"MT Line {inspect.currentframe().f_lineno} Data is None, skipping")
                     logging.info(f"MT Line {inspect.currentframe().f_lineno} Data is None, skipping")
                     continue
-                participants = data.get('participants', {}).get('mParticipantInfo', [])  # Proceed with processing the valid data 
-                if not participants or all(participant.get('mCurrentLap', 0) > data['eventInformation']['mLapsInEvent'] for participant in participants):  # Check if all participants have completed every lap or if there is data.
-                    if not participants:                                                       
-                        data = previous_data # Revert to the previous data if no participants are found
-                        logging.info(f"MT Line {inspect.currentframe().f_lineno} No participants found , Race is over. Break loop")
-                        print(f"MT Line {inspect.currentframe().f_lineno} No participants found, Race is over.")
+                participants = data.get('participants', {}).get('mParticipantInfo', [])  # Proceed with processing the valid data
+                if not participants:
+                    # One empty frame can be a hiccup. The race only ends when the list stays empty for 2 seconds.
+                    if empty_since is None: empty_since = time.monotonic()
+                    if time.monotonic() - empty_since < 2.0:
+                        continue
+                    data = last_good_data # Use the last frame that had participants
+                    logging.info(f"MT Line {inspect.currentframe().f_lineno} No participants found , Race is over. Break loop")
+                    print(f"MT Line {inspect.currentframe().f_lineno} No participants found, Race is over.")
+                    self.race_in_session = False
+                else:
+                    empty_since = None
+                    last_good_data = data
+                    laps_in_event = data['eventInformation']['mLapsInEvent']
+                    # If it is a time trial (0 laps), continue loop until no participants are found.
+                    if laps_in_event != 0 and all(participant.get('mCurrentLap', 0) > laps_in_event for participant in participants):
+                        logging.info(f"MT Line {inspect.currentframe().f_lineno} All participants finished, Race is over,Sending Data one last time, breaking the loop")
+                        print(f"MT Line {inspect.currentframe().f_lineno} All participants finished race, Race is over. Sending Data one last time.")
+                        self.race_may_not_be_finished = True
                         self.race_in_session = False
-                    elif not data['eventInformation']['mLapsInEvent'] == 0: # If it is a time trial, continue loop until no participants are found.                           
-                            logging.info(f"MT Line {inspect.currentframe().f_lineno} All participants finished, Race is over,Sending Data one last time, breaking the loop")
-                            print(f"MT Line {inspect.currentframe().f_lineno} All participants finished race, Race is over. Sending Data one last time.")
-                            self.race_may_not_be_finished = True
-                            self.race_in_session = False
 
                 if not self.running: break
-                if data is not None: 
+                if data is not None:
                     self.data_updated.emit(data) #Send the data to Live view
                     #self.data_updated_newclass.emit(data)
                 for participant in participants:
-                    last_seen_participants[participant['mName']] = dict(participant) # Remember the latest record for this driver
-                    if participant['mName'] not in lap_times_dict: lap_times_dict[participant['mName']] = [] # Initialize the key with an empty list
-                    if participant['mName'] not in driver_total_times: driver_total_times[participant['mName']] = 0  # Initialize the key with a value of 0
-                    if (participant.get('mCurrentLap', 0) > last_lap_counts.get(participant['mName'], 1)) and (participant.get('mLastLapTimes') != -123):
-                        if participant['mName'] not in lap_times_dict: lap_times_dict[participant['mName']] = [] # Initialize the key with an empty list
-                        if participant['mName'] not in driver_total_times: driver_total_times[participant['mName']] = 0  # Initialize the key with a value of 0                                    
-                        driver_total_times[participant['mName']] += participant.get('mLastLapTimes', 0)
-                        if not self.time_trial:  
-                            self.task_queue.put(('insert_lap_data', (self.race_id, participant['mName'], participant.get('mCurrentLap', 0) - 1,participant.get('mLastLapTimes'), self.track_location, participant['mCarNames']))) #insert lap into Table
-                            lap_times_dict[participant['mName']].append(participant.get('mLastLapTimes', None))
-                            logging.info(f"MT Line {inspect.currentframe().f_lineno} Storing lap time for {participant['mName']}: Lap {participant.get('mCurrentLap', 0)}, Time {participant.get('mLastLapTimes', 0)},Last Lap:{participant.get('mLastLapTimes', None)} Driver Total Time: {driver_total_times[participant['mName']]} ")
+                    name = participant.get('mName')
+                    if not name: continue
+                    last_seen_participants[name] = dict(participant) # Remember the latest record for this driver
+                    if name not in lap_times_dict: lap_times_dict[name] = [] # Initialize the key with an empty list
+                    if name not in driver_total_times: driver_total_times[name] = 0  # Initialize the key with a value of 0
+                    current_lap = participant.get('mCurrentLap', 0)
+                    previous_lap = last_lap_counts.get(name, 1)
+                    last_lap_time = participant.get('mLastLapTimes')
+                    has_lap_time = (last_lap_time is not None and last_lap_time != -123
+                                    # Same value as the lap we stored last = the game has not replaced it yet
+                                    and not (lap_times_dict[name] and last_lap_time == lap_times_dict[name][-1]))
+                    if current_lap > previous_lap and has_lap_time:
+                        driver_total_times[name] += last_lap_time
+                        if record_to_db:
+                            self.task_queue.put(('insert_lap_data', (self.race_id, name, current_lap - 1, last_lap_time, self.track_location, participant.get('mCarNames', '')))) #insert lap into Table
+                            lap_times_dict[name].append(last_lap_time)
+                            logging.info(f"MT Line {inspect.currentframe().f_lineno} Storing lap time for {name}: Lap {current_lap}, Time {last_lap_time}, Driver Total Time: {driver_total_times[name]} ")
+                    elif current_lap == previous_lap + 1:
+                        # The lap counter went up but the lap time is not published yet (-123).
+                        # Keep the old count so the lap is stored on the next frame instead of being lost.
+                        continue
                     else:
-                        if (participant.get('mSpeeds',0) >10) and (data['gameStates']['mRaceState'] == 1) and (self.driver_flags.get(participant['mName'],None) != 'Falsestart'):
-                            print(f"MT Line {inspect.currentframe().f_lineno} Adding Falsestart to Flags for {participant['mName']} Current lap:{participant.get('mCurrentLap', 0)}")
-                            logging.info(f"MT Line {inspect.currentframe().f_lineno} Adding Falsestart to Flags for {participant['mName']} Current lap:{participant.get('mCurrentLap', 0)}")
-                            self.driver_flags[participant['mName']] = 'Falsestart'
-                            if self.driver_flags is not None: self.flags_updated.emit(self.driver_flags)
-                    last_lap_counts[participant['mName']] = participant.get('mCurrentLap', 0)
+                        if (participant.get('mSpeeds',0) >10) and (data['gameStates']['mRaceState'] == 1) and (self.driver_flags.get(name,None) != 'Falsestart'):
+                            print(f"MT Line {inspect.currentframe().f_lineno} Adding Falsestart to Flags for {name} Current lap:{current_lap}")
+                            logging.info(f"MT Line {inspect.currentframe().f_lineno} Adding Falsestart to Flags for {name} Current lap:{current_lap}")
+                            self.driver_flags[name] = 'Falsestart'
+                            self.flags_updated.emit(dict(self.driver_flags))
+                    last_lap_counts[name] = current_lap
                 self.race_loop_first_time = False
             except Exception as e:
-                logging.error(f"MT Line {inspect.currentframe().f_lineno} An error occurred while processing participant data: {e}")
+                # Skip this frame and keep going. Re-raising here restarted the race as a new, duplicate race.
+                logging.error(f"MT Line {inspect.currentframe().f_lineno} An error occurred while processing participant data: {e}\n{traceback.format_exc()}")
                 print(f"MT Line {inspect.currentframe().f_lineno} An error occurred while processing participant data: {e}")
-                raise
+                await asyncio.sleep(0.1)
+                continue
             #end_time = time.time()
             #elapsed_time.append(end_time - start_time)
             #response_time_ms = (end_time - start_time) * 1000  # Convert to milliseconds
@@ -1964,6 +2019,7 @@ class MonitorThread(QThread):
         self.session = None
         print(f"MT Line {inspect.currentframe().f_lineno} Race Ended Finalizing Race for: Race_{self.race_id} with Driver Total times: {driver_total_times}")
         logging.info(f"MT Line {inspect.currentframe().f_lineno} Race Ended Finalizing Race for: Race_{self.race_id} with Driver Total times: {driver_total_times}")
+        if data is None: data = last_good_data  # A failed poll on the last frame must not lose the result
         if data is not None: participants = data.get('participants', {}).get('mParticipantInfo', [])
         # A driver with recorded laps whose sim left the server before the race ended (e.g. did not follow the
         # server back to the lobby) is missing from the final participant list. Without this, finalize_race writes
@@ -1988,7 +2044,11 @@ class MonitorThread(QThread):
                     logging.info(f"MT Line {inspect.currentframe().f_lineno} Participant: {participant['mName']}, Race Position: {participant.get('mRacePosition', 0)}")
                     participant_name = participant['mName']
                     if data is None or not self.running: return
-                    if participant['mCurrentLap'] <= data['eventInformation']['mLapsInEvent']: # Driver has fewer laps less than he should, either False start Or DNF
+                    laps_in_event = data['eventInformation']['mLapsInEvent']
+                    # A driver who left right after the flag can have a last snapshot from before the line,
+                    # so count the laps actually recorded too before calling it a DNF.
+                    laps_recorded = len(lap_times_dict.get(participant_name, []))
+                    if participant['mCurrentLap'] <= laps_in_event and laps_recorded < laps_in_event: # Driver has fewer laps less than he should, either False start Or DNF
                         print(f"MT Line {inspect.currentframe().f_lineno} Participant: {participant_name}, Current Lap: {participant['mCurrentLap']}, Laps in Event: {data['eventInformation']['mLapsInEvent']}")
                         if self.driver_flags is not None:
                             logging.info(f"MT Line {inspect.currentframe().f_lineno} Participant: {participant_name}, Flags: {self.driver_flags}")
@@ -1996,12 +2056,12 @@ class MonitorThread(QThread):
                                 print(f"MT Line {inspect.currentframe().f_lineno} Adding DNF to Flags for {participant_name}")
                                 logging.info(f"MT Line {inspect.currentframe().f_lineno} Adding DNF to Flags for {participant_name}")
                                 self.driver_flags[participant_name] = 'DNF'
-                                if self.driver_flags is not None: self.flags_updated.emit(self.driver_flags)
+                                self.flags_updated.emit(dict(self.driver_flags))
                                 await asyncio.sleep(0.5)
                             print(f"MT Line {inspect.currentframe().f_lineno} Participant: {participant_name}, Flags: {self.driver_flags.get('participant_name',0)}")
                 print(f"MT Line {inspect.currentframe().f_lineno} All flags: {self.driver_flags}")                
-                if not self.time_trial:                                
-                    self.task_queue.put(('finalize_race', (data, lap_times_dict,self.driver_flags, self.pit_stops_dict))) # Write final data to DB
+                if record_to_db:                                
+                    self.task_queue.put(('finalize_race', (data, lap_times_dict, dict(self.driver_flags), self.pit_stops_dict, self.race_id))) # Write final data to DB for THIS race
                     print(f"MT Line {inspect.currentframe().f_lineno} Finalizing race")
                     logging.info(f"MT Line {inspect.currentframe().f_lineno} Finalizing race")
                 if data is not None: self.data_updated.emit(data) #Send the data to Live view to update the flags
