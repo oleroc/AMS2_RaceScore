@@ -36,6 +36,15 @@ class ConfigManager:
         self.task_queue = task_queue
         if ConfigManager._instance is None:
             ConfigManager._instance = self
+    def _reload(self):
+        """1.6.1: read config.ini into a NEW parser and swap the reference. Reading into the shared parser in
+        place let another thread (the monitor's 2 s IP check vs the GUI) see a half-read parser, whose values
+        are still lists ('list' object has no attribute 'find' at start-up)."""
+        config = configparser.ConfigParser()
+        config.read(self.config_file)
+        self.config = config
+        return config
+
     @classmethod
     def get_config_value(cls, key, section='DEFAULT', default=None):
         if cls._instance is None:
@@ -54,7 +63,6 @@ class ConfigManager:
                 'monitor': '1', # Default monitor to 1
                 'titlebar': 'True',
                 'cp_integration': 'False',
-                'source': 'agent', # 1.6.1: agent = the Race Control agents (/crest), crest2 = the old CREST2 servers
                 'agent_port': '8790',
                 'version': self.__version__,
                 'author': self.__author__,
@@ -88,7 +96,7 @@ class ConfigManager:
                 print(f"CM Line {inspect.currentframe().f_lineno} Config file created with all default settings at {self.config_file}.")
                 logging.info(f"CM Line {inspect.currentframe().f_lineno} Config file created with all default settings at {self.config_file}.")
             else:
-                self.config.read(self.config_file) # Read the existing config file
+                self._reload() # Read the existing config file
                 existing_version = self.config['config'].get('version')
                 current_version_parts = self.__version__.split(".")
                 existing_version_parts = existing_version.split(".")
@@ -118,7 +126,7 @@ class ConfigManager:
                     self.add_comments()
                     print(f"CM Line {inspect.currentframe().f_lineno} Config file at {self.config_file} updated with missing fields.")
                     logging.info(f"CM Line {inspect.currentframe().f_lineno} Config file at {self.config_file} updated with missing fields.")
-                    self.config.read(self.config_file) # Read the updated config file
+                    self._reload() # Read the updated config file
                 else: logging.info(f"CM Line {inspect.currentframe().f_lineno} All required fields are already present in the config file.")
                     
         except (configparser.Error, IOError) as e:
@@ -138,8 +146,8 @@ class ConfigManager:
                     configfile.write("; Minimum height is 1150\n")
                 elif line.strip().startswith('cp_integration'):
                     configfile.write("; Should be False, unless you have an external app that needs to read from files instead of DB (True/False)\n")
-                elif line.strip().startswith('source'):
-                    configfile.write("; agent = read the Race Control agents (port agent_port), crest2 = the old CREST2 servers (port 8180)\n")
+                elif line.strip().startswith('agent_port'):
+                    configfile.write("; Port of the Race Control agents on the sims (GET /crest)\n")
                 elif line.strip().startswith('simsettings'):
                     configfile.write("; The name and IP address of all sims to monitored.\n")
             configfile.truncate()
@@ -147,7 +155,7 @@ class ConfigManager:
     def read_cp_status(self):
         #config = configparser.ConfigParser()
         try:
-            self.config.read(self.config_file) #Read the existing config file
+            self._reload() #Read the existing config file
             return self.config.get('config', 'cp_integration', fallback='False').strip().lower() == 'true' # Return the data from the config and convert to boolean
         except (configparser.Error, IOError) as e:
             print(f"CM Line {inspect.currentframe().f_lineno} An error occurred while accessing the config file: {e}")
@@ -157,7 +165,7 @@ class ConfigManager:
     def read_ip_address(self):
         #config = configparser.ConfigParser()
         try:
-            self.config.read(self.config_file) #Read the existing config file
+            self._reload() #Read the existing config file
             return self.config['config']['ip_address'] # Return the IP address from the config
         except (configparser.Error, IOError) as e:
             print(f"CM Line {inspect.currentframe().f_lineno} An error occurred while accessing the config file: {e}")
@@ -167,7 +175,7 @@ class ConfigManager:
     def read_config_file(self):
         #config = configparser.ConfigParser()
         try:
-            self.config.read(self.config_file) #Read the existing config file
+            self._reload() #Read the existing config file
 
             return self.config
         except (configparser.Error, IOError) as e:
@@ -1236,11 +1244,6 @@ class ControlPanel(QObject):
     def stop(self):
         self.running = False  # ControlPanel is a plain QObject: no session, quit() or wait() to call
 
-def use_agents():
-    """1.6.1: True = read the Race Control agents (GET /crest), False = the old CREST2 servers."""
-    return (ConfigManager.get_config_value('source', 'config', 'agent') or 'agent').strip().lower() != 'crest2'
-
-
 def agent_port():
     try:
         return int((ConfigManager.get_config_value('agent_port', 'config', '8790') or '8790').strip())
@@ -1249,8 +1252,9 @@ def agent_port():
 
 
 def api_url(ip, query=""):
-    """The one place a sim's URL is built (1.6.1, SCORE_PLAN 2b). The agent's /crest answers exactly as CREST2."""
-    url = f"http://{ip}:{agent_port()}/crest" if use_agents() else f"http://{ip}:8180/crest2/v1/api"
+    """The one place a sim's URL is built (1.6.1, SCORE_PLAN 2b): the Race Control agent's /crest, which answers
+    exactly as CREST2 did. CREST2 itself is no longer read (SCORE_PLAN rev 3)."""
+    url = f"http://{ip}:{agent_port()}/crest"
     return url + (f"?{query}" if query else "")
 
 
@@ -1303,7 +1307,7 @@ class MonitorThread(QThread):
         # sim read instead after a switch, until the session ends.
         self.giver_override = None
         self._giver_fails = 0       # failed polls of the data giver in a row
-        self._next_poll = 0.0       # 100 ms floor between polls (agents only)
+        self._next_poll = 0.0       # 100 ms floor between polls
         self._idle_search_at = 0.0  # outside a session, look for another giver at most every 10 s
 
         self.init_signals()
@@ -1742,16 +1746,15 @@ class MonitorThread(QThread):
         print(f"MT Line {inspect.currentframe().f_lineno} Cache API data stopped.")
 
     async def get_api_data(self):
-        """One poll of the data giver. 1.6.1 with source=agent (SCORE_PLAN 2b): at most 10 polls a second,
-        and after 2 failed polls in a row another sim becomes the data giver."""
-        agents = use_agents()
-        if agents and self.running:
+        """One poll of the data giver. 1.6.1 (SCORE_PLAN 2b): at most 10 polls a second, and after 2 failed
+        polls in a row another sim becomes the data giver."""
+        if self.running:
             wait = self._next_poll - time.monotonic()
             if wait > 0:
                 await asyncio.sleep(wait)
             self._next_poll = time.monotonic() + 0.1
-        data = await self._get_api_data_once(agents)
-        if not agents or not self.running:
+        data = await self._get_api_data_once()
+        if not self.running:
             return data
         if data is not None:
             self._giver_fails = 0
@@ -1823,7 +1826,7 @@ class MonitorThread(QThread):
             self._giver_fails = 0
             self.ip_address_updated.emit(self.ip_address)
 
-    async def _get_api_data_once(self, agents):
+    async def _get_api_data_once(self):
         def _handle_restore():
             if not self.connecton_restored_message_shown:
                 logging.info(f"MT Line {inspect.currentframe().f_lineno}MT: Connection Restored")
@@ -1837,8 +1840,7 @@ class MonitorThread(QThread):
                 logging.error(f"MT Line {inspect.currentframe().f_lineno}MT: {msg}" + (f" - {exception}" if exception else ""))
                 self.api_signal_status_updated.emit(True, msg)
                 self.connecton_restored_message_shown = False
-            if not agents:  # 1.6.1: with the agents the 100 ms floor paces the retries, so a switch is not delayed
-                await asyncio.sleep(sleep)
+            # 1.6.1: no sleep here; the 100 ms floor in get_api_data paces the retries, so a switch is not delayed
 
         def _update_state(label, current):
             attr = f"previous_{label.lower()}_state"
@@ -1854,7 +1856,7 @@ class MonitorThread(QThread):
         self.session = self.session or aiohttp.ClientSession()
         error_message_shown = False
         try:
-            async with self.session.get(api_url(self.giver_override or self.ip_address), timeout=1 if agents else 3) as r:
+            async with self.session.get(api_url(self.giver_override or self.ip_address), timeout=1) as r:
                 if r.status != 200:
                     if not error_message_shown:
                         error_message_shown = True
@@ -2084,7 +2086,7 @@ class MonitorThread(QThread):
                         continue
                     # 1.6.1: only this sim's game may have left (driver quit, game crashed). If another sim of this
                     # race still has its driver racing, read that one instead of ending the race.
-                    if use_agents() and await self.switch_giver(need_racing=True) is not None:
+                    if await self.switch_giver(need_racing=True) is not None:
                         empty_since = None
                         continue
                     data = last_good_data # Use the last frame that had participants
@@ -2807,7 +2809,7 @@ class GuiMainApp(QMainWindow):
             sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             sock.settimeout(0.05)  # 50ms timeout
             try:
-                result = sock.connect_ex((ip, agent_port() if use_agents() else 8180))  # 1.6.1: the agent answers when the PC is on
+                result = sock.connect_ex((ip, agent_port()))  # 1.6.1: the agent answers when the PC is on
                 if result == 0:
                     active_computers.append(ip)
                     self.sim_radio_group.button(i).setEnabled(True)
